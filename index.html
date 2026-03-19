@@ -1,98 +1,379 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Business IT Support | Suncoast Tech Support</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #0f172a;
-      color: white;
-    }
-    .container {
-      padding: 40px 20px;
-      max-width: 900px;
-      margin: auto;
-      text-align: center;
-    }
-    h1 {
-      font-size: 36px;
-      margin-bottom: 10px;
-    }
-    h2 {
-      font-size: 28px;
-      margin-bottom: 10px;
-    }
-    p {
-      font-size: 18px;
-      color: #cbd5f5;
-    }
-    .cta {
-      margin-top: 30px;
-    }
-    .btn {
-      background: #22c55e;
-      color: black;
-      padding: 15px 25px;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 5px;
-      display: inline-block;
-      margin: 10px;
-    }
-    .section {
-      margin-top: 50px;
-    }
-    .card {
-      background: #1e293b;
-      padding: 20px;
-      margin: 10px;
-      border-radius: 8px;
-    }
-  </style>
-</head>
-<body>
-
-<div class="container">
-  <h1>Reliable IT Support for Tampa Bay Businesses</h1>
-  <p>No contracts. Fast response. Local support you can trust.</p>
-
-  <div class="cta">
-    <a class="btn" href="tel:+17276479000">Call Now</a>
-  </div>
-
-  <div class="section">
-    <h2>Common Business Issues We Solve</h2>
-    <div class="card">Email not syncing or missing messages</div>
-    <div class="card">Slow or unreliable internet</div>
-    <div class="card">Printer and scanner problems</div>
-    <div class="card">Computer crashes and popups</div>
-  </div>
-
-  <div class="section">
-    <h2>Why Businesses Choose Us</h2>
-    <div class="card">Local Tampa Bay Support</div>
-    <div class="card">No Long-Term Contracts</div>
-    <div class="card">Affordable, Transparent Pricing</div>
-    <div class="card">Fast Response Times</div>
-  </div>
-
-  <div class="section">
-    <h2>Request IT Support</h2>
-    <p>⚡ Typically responds within 15 minutes</p>
-    <p><strong>✔ No contracts &nbsp;&nbsp;✔ Same-day support &nbsp;&nbsp;✔ Local Tampa Bay</strong></p>
-
-    <iframe 
-      aria-label="Contact for support" 
-      frameborder="0" 
-      allow="camera;" 
-      style="height:500px;width:100%;border:none;" 
-      src="https://forms.zohopublic.com/lightmyfire/form/Contactforsupport/formperma/LIsVTeLHmxGHYWEhc2EjoD96lF9EVxdnQC29atrHWgU?zf_enablecamera=true">
-    </iframe>
-  </div>
-</div>
-
-</body>
-</html>
+diff --git a/index.html b/index.html
+index 89b596f790d2b21e5bb6f6372cd7be686288208c..bd4732fc83dd87e6f10f9205d98ecf202f4b6f9e 100644
+--- a/index.html
++++ b/index.html
+@@ -1,59 +1,323 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+-  <meta charset="UTF-8" />
++  <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+-  <title>88 Bit Diamond Hands</title>
+-  <meta name="description" content="Veteran-owned tech support for homes and small businesses in Tampa Bay, FL">
+-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
++  <title>Florida Gulf Coast IT Support | Suncoast Tech Support</title>
++  <meta name="description" content="Managed IT support inspired by the calm and confidence of the Florida Gulf Coast. Fast business tech help for Tampa Bay companies with no long-term contracts.">
++  <style>
++    :root{
++      --bg:#04111f;
++      --panel:#0a2438;
++      --panel-2:#113451;
++      --text:#f5fbff;
++      --muted:#c0d9e8;
++      --line:rgba(255,255,255,.14);
++      --accent:#35d6c4;
++      --accent-2:#0fa5c7;
++      --sand:#f8d9a0;
++      --sea-foam:rgba(83,230,220,.15);
++      --shadow:0 18px 50px rgba(0,12,24,.45);
++      --radius:18px;
++      --max:1120px;
++    }
++    *{box-sizing:border-box}
++    html{scroll-behavior:smooth}
++    body{
++      margin:0;
++      font-family:Arial, Helvetica, sans-serif;
++      background:
++        radial-gradient(circle at 15% 12%, rgba(83,230,220,.15), transparent 28%),
++        radial-gradient(circle at 90% 8%, rgba(248,217,160,.16), transparent 20%),
++        linear-gradient(180deg, #062038 0%, #04111f 44%, #03101c 100%);
++      color:var(--text);
++    }
++    a{color:inherit}
++    .container{width:min(100% - 32px, var(--max)); margin:0 auto}
++    .topbar{
++      border-bottom:1px solid var(--line);
++      backdrop-filter: blur(8px);
++      background:rgba(4,17,31,.75);
++      position:sticky; top:0; z-index:10;
++    }
++    .topbar-inner{
++      display:flex; align-items:center; justify-content:space-between;
++      min-height:72px;
++      gap:16px;
++    }
++    .brand{font-weight:700; letter-spacing:.3px; font-size:18px;}
++    .brand small{display:block; color:var(--muted); font-weight:400; font-size:12px; margin-top:2px;}
++    .nav-cta{display:flex; gap:12px; flex-wrap:wrap;}
++    .btn{
++      display:inline-block;
++      padding:14px 22px;
++      border-radius:12px;
++      text-decoration:none;
++      font-weight:700;
++      transition:.2s ease;
++      border:1px solid transparent;
++    }
++    .btn:hover{transform:translateY(-1px)}
++    .btn-primary{
++      background:linear-gradient(180deg,var(--accent) 0%, var(--accent-2) 100%);
++      color:#03212a;
++      box-shadow:0 10px 30px rgba(53,214,196,.28);
++    }
++    .btn-secondary{border-color:var(--line); background:rgba(255,255,255,.03); color:var(--text);}
++    .hero{padding:72px 0 36px;}
++    .hero-grid{display:grid; grid-template-columns:1.15fr .85fr; gap:28px; align-items:stretch;}
++    .hero-card, .panel{
++      background:
++        linear-gradient(180deg, rgba(17,52,81,.93), rgba(10,36,56,.94)),
++        repeating-linear-gradient(135deg, transparent 0, transparent 16px, rgba(255,255,255,.02) 17px, rgba(255,255,255,.02) 32px);
++      border:1px solid var(--line);
++      border-radius:var(--radius);
++      box-shadow:var(--shadow);
++    }
++    .hero-card{padding:42px}
++    .eyebrow{
++      display:inline-block;
++      font-size:12px;
++      letter-spacing:.14em;
++      text-transform:uppercase;
++      color:#d8fff8;
++      background:var(--sea-foam);
++      border:1px solid rgba(83,230,220,.32);
++      border-radius:999px;
++      padding:8px 12px;
++      margin-bottom:16px;
++    }
++    h1{margin:0 0 14px; font-size:clamp(34px,5vw,56px); line-height:1.05;}
++    .hero p{color:var(--muted); font-size:19px; line-height:1.65; margin:0 0 22px;}
++    .hero-actions{display:flex; flex-wrap:wrap; gap:12px; margin:24px 0 18px;}
++    .trust-row{display:flex; flex-wrap:wrap; gap:10px; margin-top:12px;}
++    .chip{
++      border:1px solid var(--line);
++      background:rgba(255,255,255,.03);
++      color:var(--text);
++      padding:10px 14px;
++      border-radius:999px;
++      font-size:14px;
++    }
++    .stats{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:26px;}
++    .stat{padding:16px; border-radius:14px; background:rgba(255,255,255,.04); border:1px solid var(--line); text-align:left;}
++    .stat strong{display:block; font-size:24px; margin-bottom:6px; color:var(--sand)}
++    .form-panel{padding:26px}
++    .form-panel h2{margin:0 0 8px; font-size:28px;}
++    .subtle{color:var(--muted); margin:0 0 16px; line-height:1.6;}
++    .response-box{
++      margin:16px 0 18px;
++      padding:14px 16px;
++      background:rgba(83,230,220,.11);
++      border:1px solid rgba(83,230,220,.3);
++      border-radius:12px;
++      color:#dffffa;
++      font-weight:700;
++    }
++    .section{padding:18px 0 26px;}
++    .section-head{text-align:center; margin:0 0 24px;}
++    .section-head h2{margin:0 0 10px; font-size:34px;}
++    .section-head p{margin:0; color:var(--muted); font-size:18px;}
++    .cards{display:grid; grid-template-columns:repeat(2,1fr); gap:18px;}
++    .card{
++      padding:24px;
++      border-radius:16px;
++      background:linear-gradient(180deg, rgba(17,52,81,.9), rgba(8,33,51,.94));
++      border:1px solid var(--line);
++      box-shadow:var(--shadow);
++    }
++    .card h3{margin:0 0 10px; font-size:22px;}
++    .card p{margin:0; color:var(--muted); line-height:1.65;}
++    .list{list-style:none; padding:0; margin:0;}
++    .list li{padding:12px 0; border-bottom:1px solid var(--line); color:var(--muted);}
++    .list li:last-child{border-bottom:none}
++    .cta-band{
++      margin:20px 0 48px;
++      padding:28px;
++      border-radius:18px;
++      background:linear-gradient(135deg, rgba(83,230,220,.18), rgba(248,217,160,.12));
++      border:1px solid rgba(248,217,160,.35);
++      display:flex;
++      align-items:center;
++      justify-content:space-between;
++      gap:18px;
++      flex-wrap:wrap;
++    }
++    .cta-band h2{margin:0 0 8px; font-size:30px}
++    .cta-band p{margin:0; color:var(--muted)}
++    footer{border-top:1px solid var(--line); padding:24px 0 40px; color:var(--muted); text-align:center; font-size:14px;}
++    @media (max-width: 900px){
++      .hero-grid, .cards{grid-template-columns:1fr}
++      .stats{grid-template-columns:1fr}
++      .hero-card{padding:30px}
++    }
++  </style>
+ </head>
+ <body>
++  <header class="topbar">
++    <div class="container topbar-inner">
++      <div class="brand">
++        Suncoast Tech Support
++        <small>Florida Gulf Coast Business IT Support</small>
++      </div>
++      <div class="nav-cta">
++        <a class="btn btn-secondary" href="tel:+17276479000">Call 727-647-9000</a>
++        <a class="btn btn-primary" href="#support-form">Request Support</a>
++      </div>
++    </div>
++  </header>
+ 
+-<nav class="container-fluid">
+-  <ul>
+-    <li><strong>88 Bit Diamond Hands</strong></li>
+-  </ul>
+-  <ul>
+-    <li><a href="#services">Services</a></li>
+-    <li><a href="#pricing">Pricing</a></li>
+-    <li><a href="#contact" role="button">Contact</a></li>
+-  </ul>
+-</nav>
+-
+-<main class="container">
+-  <div class="grid">
+-    <section>
+-      <hgroup>
+-        <h2>Veteran-Owned Tech Support</h2>
+-        <h3>Reliable Help for Homes & Small Businesses in Tampa Bay, FL</h3>
+-      </hgroup>
+-      <p>We offer Wi-Fi setup, malware removal, device troubleshooting, and ongoing support with a personal touch.</p>
+-      <figure>
+-        <img src="hero.jpg" alt="Tech support technician helping customer">
+-        <figcaption><a href="https://88bitdiamondhands.com" target="_blank">Visit Our Site</a></figcaption>
+-      </figure>
+-
+-      <h3 id="services">What We Do</h3>
+-      <p>✅ Wi-Fi troubleshooting & upgrades<br>
+-         ✅ Device setup (PC, Mac, phones, routers)<br>
+-         ✅ Virus/malware cleanup<br>
+-         ✅ Cloud backup help & recovery<br>
+-         ✅ Ongoing tech support plans<br>
+-         ✅ Small business tech support</p>
+-
+-      <figure>
+-        <img src="services.jpg" alt="Tech support services collage">
+-        <figcaption><a href="#services">Explore Our Services</a></figcaption>
+-      </figure>
+-
+-      <h3 id="pricing">Pricing</h3>
+-      <p>💵 $60/hr — One-time tech help<br>
+-         💼 $150/month — Business monthly plan (priority service)<br>
+-         🏠 $100/month — Home monthly plan (2 hours & checkups)<br>
+-         🆓 Free consultations for new customers</p>
++  <main>
++    <section class="hero">
++      <div class="container hero-grid">
++        <div class="hero-card">
++          <span class="eyebrow">Florida Gulf Coast • Local • No Long-Term Contracts</span>
++          <h1>Coastal-calm IT support for Tampa Bay businesses that cannot afford downtime.</h1>
++          <p>Inspired by the trust and professionalism of top Gulf Coast service brands, this page blends warm coastal visuals with a conversion-focused layout to help local businesses request support quickly and confidently.</p>
++
++          <div class="hero-actions">
++            <a class="btn btn-primary" href="tel:+17276479000">Call Now</a>
++            <a class="btn btn-secondary" href="#support-form">Get Help Today</a>
++          </div>
++
++          <div class="trust-row">
++            <span class="chip">Same-day support</span>
++            <span class="chip">Local Gulf Coast service</span>
++            <span class="chip">Straightforward pricing</span>
++          </div>
++
++          <div class="stats">
++            <div class="stat">
++              <strong>No Contracts</strong>
++              Flexible support without long-term lock-in.
++            </div>
++            <div class="stat">
++              <strong>Business Ready</strong>
++              Support for offices, users, devices, and workflows.
++            </div>
++            <div class="stat">
++              <strong>Fast Response</strong>
++              Built for urgent issues where every minute matters.
++            </div>
++          </div>
++        </div>
++
++        <aside class="panel form-panel" id="support-form">
++          <h2>Request IT Support</h2>
++          <p class="subtle">Share what is happening and we route it into support immediately. Perfect for urgent office tech issues and day-to-day business troubleshooting.</p>
++          <div class="response-box">Typically responds within 15 minutes</div>
++          <iframe
++            aria-label="Contact for support"
++            frameborder="0"
++            allow="camera;"
++            style="height:560px;width:100%;border:none;border-radius:12px;background:#fff;"
++            src="https://forms.zohopublic.com/lightmyfire/form/Contactforsupport/formperma/LIsVTeLHmxGHYWEhc2EjoD96lF9EVxdnQC29atrHWgU?zf_enablecamera=true">
++          </iframe>
++        </aside>
++      </div>
++    </section>
++
++    <section class="section">
++      <div class="container">
++        <div class="section-head">
++          <h2>Common business issues we solve</h2>
++          <p>Practical support for the everyday tech problems that slow your team down.</p>
++        </div>
++        <div class="cards">
++          <article class="card">
++            <h3>Email, Microsoft 365, and login issues</h3>
++            <p>Password resets, account lockouts, Outlook sync failures, and mailbox setup fixes that keep your team connected.</p>
++          </article>
++          <article class="card">
++            <h3>Internet, Wi-Fi, and network problems</h3>
++            <p>Slow internet, unstable Wi-Fi, and dropouts affecting office operations, POS systems, printers, and productivity.</p>
++          </article>
++          <article class="card">
++            <h3>Printer, scanner, and office device support</h3>
++            <p>Troubleshooting for driver conflicts, scan-to-email failures, and devices that stall day-to-day office workflows.</p>
++          </article>
++          <article class="card">
++            <h3>PC slowdowns, crashes, and suspicious popups</h3>
++            <p>Hands-on support for performance issues, recurring errors, and security concerns that interrupt business continuity.</p>
++          </article>
++        </div>
++      </div>
++    </section>
++
++    <section class="section">
++      <div class="container">
++        <div class="section-head">
++          <h2>Why Gulf Coast businesses choose Suncoast Tech Support</h2>
++          <p>A modern, local-first support experience with clear next steps and quick response times.</p>
++        </div>
++        <div class="cards">
++          <article class="card">
++            <h3>Locally tuned support</h3>
++            <p>You get help from a team that understands the pace, expectations, and needs of Tampa Bay and Florida Gulf Coast businesses.</p>
++          </article>
++          <article class="card">
++            <h3>No long-term commitments</h3>
++            <p>Engage support when you need it most, with flexible options for businesses not ready for a full MSP agreement.</p>
++          </article>
++          <article class="card">
++            <h3>Conversion-focused intake</h3>
++            <p>The support form routes directly into your Zoho Desk workflow so requests are captured quickly and handled efficiently.</p>
++          </article>
++          <article class="card">
++            <h3>Designed to build trust fast</h3>
++            <p>Coastal visuals, concise copy, and strong calls to action create a professional first impression and reduce visitor hesitation.</p>
++          </article>
++        </div>
++      </div>
++    </section>
++
++    <section class="section">
++      <div class="container">
++        <div class="section-head">
++          <h2>Best fit for</h2>
++          <p>Small offices and teams across Tampa Bay and the Florida Gulf Coast that need dependable IT help.</p>
++        </div>
++        <div class="cards">
++          <article class="card">
++            <h3>Offices and professional teams</h3>
++            <ul class="list">
++              <li>Real estate and property management teams</li>
++              <li>Insurance and financial admin offices</li>
++              <li>Medical and dental front-office operations</li>
++              <li>Service businesses without internal IT staff</li>
++            </ul>
++          </article>
++          <article class="card">
++            <h3>Good reasons to contact now</h3>
++            <ul class="list">
++              <li>Users cannot send or receive email</li>
++              <li>Internet or Wi-Fi disruptions are ongoing</li>
++              <li>Printer/scanner issues are stalling operations</li>
++              <li>Workstations are slow, crashing, or showing popups</li>
++            </ul>
++          </article>
++        </div>
++      </div>
++    </section>
++
++    <section class="container">
++      <div class="cta-band">
++        <div>
++          <h2>Bring Gulf Coast calm to your business tech.</h2>
++          <p>Call now for immediate help, or submit your request and route it directly into support.</p>
++        </div>
++        <div class="nav-cta">
++          <a class="btn btn-primary" href="tel:+17276479000">Call Now</a>
++          <a class="btn btn-secondary" href="#support-form">Request Support</a>
++        </div>
++      </div>
+     </section>
+-  </div>
+-</main>
++  </main>
+ 
+-<section aria-label="Subscribe example" id="contact">
+-  <div class="container">
+\ No newline at end of file
++  <footer>
++    <div class="container">
++      Suncoast Tech Support • Florida Gulf Coast business IT support • No long-term contracts
++    </div>
++  </footer>
++</body>
++</html>
