@@ -1,180 +1,459 @@
 diff --git a/index.html b/index.html
-index 89b596f790d2b21e5bb6f6372cd7be686288208c..bd4732fc83dd87e6f10f9205d98ecf202f4b6f9e 100644
+index 89b596f790d2b21e5bb6f6372cd7be686288208c..291ab09bbd082448053dced38c1f69e9a91ab634 100644
 --- a/index.html
 +++ b/index.html
-@@ -1,59 +1,323 @@
+@@ -1,59 +1,467 @@
  <!DOCTYPE html>
  <html lang="en">
  <head>
--  <meta charset="UTF-8" />
-+  <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta charset="UTF-8" />
+-  <meta name="viewport" content="width=device-width, initial-scale=1">
 -  <title>88 Bit Diamond Hands</title>
 -  <meta name="description" content="Veteran-owned tech support for homes and small businesses in Tampa Bay, FL">
 -  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
-+  <title>Florida Gulf Coast IT Support | Suncoast Tech Support</title>
-+  <meta name="description" content="Managed IT support inspired by the calm and confidence of the Florida Gulf Coast. Fast business tech help for Tampa Bay companies with no long-term contracts.">
++  <meta name="viewport" content="width=device-width, initial-scale=1" />
++  <title>88 Bit Diamond Hands | Florida Gulf Coast Tech Support</title>
++  <meta name="description" content="Veteran-owned tech support for homes and small businesses across Tampa Bay and the Florida Gulf Coast. Fast response, friendly service, and clear pricing." />
 +  <style>
-+    :root{
-+      --bg:#04111f;
-+      --panel:#0a2438;
-+      --panel-2:#113451;
-+      --text:#f5fbff;
-+      --muted:#c0d9e8;
-+      --line:rgba(255,255,255,.14);
-+      --accent:#35d6c4;
-+      --accent-2:#0fa5c7;
-+      --sand:#f8d9a0;
-+      --sea-foam:rgba(83,230,220,.15);
-+      --shadow:0 18px 50px rgba(0,12,24,.45);
-+      --radius:18px;
-+      --max:1120px;
++    :root {
++      --navy-950: #041224;
++      --navy-900: #07223a;
++      --sea-700: #0e8fb2;
++      --sea-500: #38c7d7;
++      --foam-200: #d8f7f8;
++      --sand-300: #f3d59c;
++      --text-100: #f3fbff;
++      --text-300: #bed6e3;
++      --line: rgba(255, 255, 255, 0.16);
++      --card: rgba(8, 34, 58, 0.85);
++      --shadow: 0 16px 36px rgba(0, 12, 26, 0.4);
++      --radius: 18px;
++      --max-width: 1120px;
 +    }
-+    *{box-sizing:border-box}
-+    html{scroll-behavior:smooth}
-+    body{
-+      margin:0;
-+      font-family:Arial, Helvetica, sans-serif;
++
++    * { box-sizing: border-box; }
++    html { scroll-behavior: smooth; }
++
++    body {
++      margin: 0;
++      color: var(--text-100);
++      font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
 +      background:
-+        radial-gradient(circle at 15% 12%, rgba(83,230,220,.15), transparent 28%),
-+        radial-gradient(circle at 90% 8%, rgba(248,217,160,.16), transparent 20%),
-+        linear-gradient(180deg, #062038 0%, #04111f 44%, #03101c 100%);
-+      color:var(--text);
++        radial-gradient(circle at 85% 12%, rgba(243, 213, 156, 0.22), transparent 30%),
++        radial-gradient(circle at 12% 8%, rgba(56, 199, 215, 0.16), transparent 26%),
++        linear-gradient(180deg, #082844 0%, #061a30 45%, #041224 100%);
++      line-height: 1.6;
 +    }
-+    a{color:inherit}
-+    .container{width:min(100% - 32px, var(--max)); margin:0 auto}
-+    .topbar{
-+      border-bottom:1px solid var(--line);
-+      backdrop-filter: blur(8px);
-+      background:rgba(4,17,31,.75);
-+      position:sticky; top:0; z-index:10;
++
++    img { max-width: 100%; display: block; }
++    a { color: inherit; text-decoration: none; }
++
++    .container {
++      width: min(calc(100% - 32px), var(--max-width));
++      margin: 0 auto;
 +    }
-+    .topbar-inner{
-+      display:flex; align-items:center; justify-content:space-between;
-+      min-height:72px;
-+      gap:16px;
++
++    .topbar {
++      position: sticky;
++      top: 0;
++      z-index: 20;
++      border-bottom: 1px solid var(--line);
++      backdrop-filter: blur(10px);
++      background: rgba(4, 18, 36, 0.76);
 +    }
-+    .brand{font-weight:700; letter-spacing:.3px; font-size:18px;}
-+    .brand small{display:block; color:var(--muted); font-weight:400; font-size:12px; margin-top:2px;}
-+    .nav-cta{display:flex; gap:12px; flex-wrap:wrap;}
-+    .btn{
-+      display:inline-block;
-+      padding:14px 22px;
-+      border-radius:12px;
-+      text-decoration:none;
-+      font-weight:700;
-+      transition:.2s ease;
-+      border:1px solid transparent;
++
++    .topbar-inner {
++      min-height: 74px;
++      display: flex;
++      align-items: center;
++      justify-content: space-between;
++      gap: 12px;
 +    }
-+    .btn:hover{transform:translateY(-1px)}
-+    .btn-primary{
-+      background:linear-gradient(180deg,var(--accent) 0%, var(--accent-2) 100%);
-+      color:#03212a;
-+      box-shadow:0 10px 30px rgba(53,214,196,.28);
++
++    .brand-wrap {
++      display: flex;
++      align-items: center;
++      gap: 12px;
 +    }
-+    .btn-secondary{border-color:var(--line); background:rgba(255,255,255,.03); color:var(--text);}
-+    .hero{padding:72px 0 36px;}
-+    .hero-grid{display:grid; grid-template-columns:1.15fr .85fr; gap:28px; align-items:stretch;}
-+    .hero-card, .panel{
-+      background:
-+        linear-gradient(180deg, rgba(17,52,81,.93), rgba(10,36,56,.94)),
-+        repeating-linear-gradient(135deg, transparent 0, transparent 16px, rgba(255,255,255,.02) 17px, rgba(255,255,255,.02) 32px);
-+      border:1px solid var(--line);
-+      border-radius:var(--radius);
-+      box-shadow:var(--shadow);
++
++    .brand-logo {
++      width: 38px;
++      height: 38px;
++      border-radius: 10px;
++      border: 1px solid var(--line);
++      object-fit: cover;
++      background: rgba(255, 255, 255, 0.08);
 +    }
-+    .hero-card{padding:42px}
-+    .eyebrow{
-+      display:inline-block;
-+      font-size:12px;
-+      letter-spacing:.14em;
-+      text-transform:uppercase;
-+      color:#d8fff8;
-+      background:var(--sea-foam);
-+      border:1px solid rgba(83,230,220,.32);
-+      border-radius:999px;
-+      padding:8px 12px;
-+      margin-bottom:16px;
++
++    .brand-title {
++      font-weight: 800;
++      letter-spacing: 0.2px;
++      font-size: 1rem;
 +    }
-+    h1{margin:0 0 14px; font-size:clamp(34px,5vw,56px); line-height:1.05;}
-+    .hero p{color:var(--muted); font-size:19px; line-height:1.65; margin:0 0 22px;}
-+    .hero-actions{display:flex; flex-wrap:wrap; gap:12px; margin:24px 0 18px;}
-+    .trust-row{display:flex; flex-wrap:wrap; gap:10px; margin-top:12px;}
-+    .chip{
-+      border:1px solid var(--line);
-+      background:rgba(255,255,255,.03);
-+      color:var(--text);
-+      padding:10px 14px;
-+      border-radius:999px;
-+      font-size:14px;
++
++    .brand-sub {
++      display: block;
++      font-size: 0.78rem;
++      color: var(--text-300);
++      margin-top: 1px;
++      font-weight: 500;
 +    }
-+    .stats{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:26px;}
-+    .stat{padding:16px; border-radius:14px; background:rgba(255,255,255,.04); border:1px solid var(--line); text-align:left;}
-+    .stat strong{display:block; font-size:24px; margin-bottom:6px; color:var(--sand)}
-+    .form-panel{padding:26px}
-+    .form-panel h2{margin:0 0 8px; font-size:28px;}
-+    .subtle{color:var(--muted); margin:0 0 16px; line-height:1.6;}
-+    .response-box{
-+      margin:16px 0 18px;
-+      padding:14px 16px;
-+      background:rgba(83,230,220,.11);
-+      border:1px solid rgba(83,230,220,.3);
-+      border-radius:12px;
-+      color:#dffffa;
-+      font-weight:700;
++
++    .nav-links {
++      display: flex;
++      align-items: center;
++      gap: 18px;
++      color: var(--text-300);
++      font-weight: 600;
 +    }
-+    .section{padding:18px 0 26px;}
-+    .section-head{text-align:center; margin:0 0 24px;}
-+    .section-head h2{margin:0 0 10px; font-size:34px;}
-+    .section-head p{margin:0; color:var(--muted); font-size:18px;}
-+    .cards{display:grid; grid-template-columns:repeat(2,1fr); gap:18px;}
-+    .card{
-+      padding:24px;
-+      border-radius:16px;
-+      background:linear-gradient(180deg, rgba(17,52,81,.9), rgba(8,33,51,.94));
-+      border:1px solid var(--line);
-+      box-shadow:var(--shadow);
++
++    .btn {
++      padding: 11px 16px;
++      border-radius: 12px;
++      border: 1px solid transparent;
++      font-weight: 700;
++      transition: transform 0.2s ease, box-shadow 0.2s ease;
++      display: inline-flex;
++      align-items: center;
++      justify-content: center;
 +    }
-+    .card h3{margin:0 0 10px; font-size:22px;}
-+    .card p{margin:0; color:var(--muted); line-height:1.65;}
-+    .list{list-style:none; padding:0; margin:0;}
-+    .list li{padding:12px 0; border-bottom:1px solid var(--line); color:var(--muted);}
-+    .list li:last-child{border-bottom:none}
-+    .cta-band{
-+      margin:20px 0 48px;
-+      padding:28px;
-+      border-radius:18px;
-+      background:linear-gradient(135deg, rgba(83,230,220,.18), rgba(248,217,160,.12));
-+      border:1px solid rgba(248,217,160,.35);
-+      display:flex;
-+      align-items:center;
-+      justify-content:space-between;
-+      gap:18px;
-+      flex-wrap:wrap;
++
++    .btn:hover {
++      transform: translateY(-1px);
 +    }
-+    .cta-band h2{margin:0 0 8px; font-size:30px}
-+    .cta-band p{margin:0; color:var(--muted)}
-+    footer{border-top:1px solid var(--line); padding:24px 0 40px; color:var(--muted); text-align:center; font-size:14px;}
-+    @media (max-width: 900px){
-+      .hero-grid, .cards{grid-template-columns:1fr}
-+      .stats{grid-template-columns:1fr}
-+      .hero-card{padding:30px}
++
++    .btn-primary {
++      background: linear-gradient(180deg, var(--sea-500), var(--sea-700));
++      color: #022131;
++      box-shadow: 0 10px 25px rgba(56, 199, 215, 0.35);
++    }
++
++    .btn-secondary {
++      border-color: var(--line);
++      background: rgba(255, 255, 255, 0.04);
++      color: var(--text-100);
++    }
++
++    .hero {
++      padding: 76px 0 34px;
++    }
++
++    .hero-grid {
++      display: grid;
++      grid-template-columns: 1.1fr 0.9fr;
++      gap: 24px;
++      align-items: stretch;
++    }
++
++    .card {
++      border: 1px solid var(--line);
++      border-radius: var(--radius);
++      box-shadow: var(--shadow);
++      background: linear-gradient(180deg, rgba(9, 42, 70, 0.9), rgba(6, 27, 46, 0.92));
++    }
++
++    .hero-copy {
++      padding: 34px;
++    }
++
++    .eyebrow {
++      display: inline-block;
++      padding: 7px 12px;
++      border-radius: 999px;
++      text-transform: uppercase;
++      letter-spacing: 0.12em;
++      font-size: 0.72rem;
++      color: var(--foam-200);
++      background: rgba(56, 199, 215, 0.16);
++      border: 1px solid rgba(56, 199, 215, 0.35);
++      margin-bottom: 14px;
++      font-weight: 700;
++    }
++
++    h1 {
++      margin: 0 0 12px;
++      line-height: 1.05;
++      font-size: clamp(2rem, 4.8vw, 3.45rem);
++    }
++
++    .lead {
++      color: var(--text-300);
++      margin: 0;
++      font-size: 1.08rem;
++    }
++
++    .hero-actions {
++      margin-top: 22px;
++      display: flex;
++      flex-wrap: wrap;
++      gap: 10px;
++    }
++
++    .mini-trust {
++      margin-top: 18px;
++      display: flex;
++      flex-wrap: wrap;
++      gap: 10px;
++      color: var(--text-300);
++      font-size: 0.92rem;
++    }
++
++    .pill {
++      padding: 8px 12px;
++      border-radius: 999px;
++      border: 1px solid var(--line);
++      background: rgba(255, 255, 255, 0.04);
++    }
++
++    .support-panel {
++      padding: 24px;
++    }
++
++    .support-panel h2 {
++      margin: 0 0 6px;
++      font-size: 1.7rem;
++    }
++
++    .support-panel p {
++      margin: 0;
++      color: var(--text-300);
++    }
++
++    .response-note {
++      margin: 16px 0;
++      padding: 11px 13px;
++      border-radius: 12px;
++      background: rgba(56, 199, 215, 0.14);
++      border: 1px solid rgba(56, 199, 215, 0.35);
++      font-weight: 700;
++      color: var(--foam-200);
++      font-size: 0.92rem;
++    }
++
++    iframe {
++      width: 100%;
++      min-height: 520px;
++      border: none;
++      border-radius: 12px;
++      background: #fff;
++    }
++
++    .section {
++      padding: 26px 0;
++    }
++
++    .section-head {
++      text-align: center;
++      margin-bottom: 18px;
++    }
++
++    .section-head h2 {
++      margin: 0;
++      font-size: clamp(1.7rem, 3vw, 2.15rem);
++    }
++
++    .section-head p {
++      margin: 8px 0 0;
++      color: var(--text-300);
++    }
++
++    .grid-2 {
++      display: grid;
++      grid-template-columns: repeat(2, 1fr);
++      gap: 16px;
++    }
++
++    .feature {
++      padding: 22px;
++    }
++
++    .feature h3 {
++      margin: 0 0 8px;
++      font-size: 1.28rem;
++    }
++
++    .feature p,
++    .feature li {
++      color: var(--text-300);
++      margin: 0;
++    }
++
++    .clean-list {
++      list-style: none;
++      margin: 0;
++      padding: 0;
++    }
++
++    .clean-list li {
++      padding: 10px 0;
++      border-bottom: 1px solid var(--line);
++    }
++
++    .clean-list li:last-child {
++      border-bottom: none;
++    }
++
++    .pricing .price {
++      font-size: 1.6rem;
++      font-weight: 800;
++      color: var(--sand-300);
++      margin-bottom: 6px;
++      line-height: 1.2;
++    }
++
++    .cta-band {
++      margin: 16px 0 46px;
++      padding: 24px;
++      border-radius: 18px;
++      border: 1px solid rgba(243, 213, 156, 0.46);
++      background: linear-gradient(130deg, rgba(56, 199, 215, 0.18), rgba(243, 213, 156, 0.14));
++      display: flex;
++      align-items: center;
++      justify-content: space-between;
++      gap: 16px;
++      flex-wrap: wrap;
++    }
++
++    .cta-band h2 {
++      margin: 0 0 6px;
++      font-size: 1.8rem;
++    }
++
++    .cta-band p {
++      margin: 0;
++      color: var(--text-300);
++    }
++
++    footer {
++      border-top: 1px solid var(--line);
++      color: var(--text-300);
++      text-align: center;
++      padding: 24px 0 40px;
++      font-size: 0.93rem;
++    }
++
++    @media (max-width: 930px) {
++      .hero-grid,
++      .grid-2 {
++        grid-template-columns: 1fr;
++      }
++
++      .nav-links a:not(.btn) {
++        display: none;
++      }
++
++      .hero-copy {
++        padding: 28px;
++      }
 +    }
 +  </style>
  </head>
  <body>
 +  <header class="topbar">
 +    <div class="container topbar-inner">
-+      <div class="brand">
-+        Suncoast Tech Support
-+        <small>Florida Gulf Coast Business IT Support</small>
++      <div class="brand-wrap">
++        <img class="brand-logo" src="logo.png" alt="88 Bit Diamond Hands logo" />
++        <div>
++          <span class="brand-title">88 Bit Diamond Hands</span>
++          <span class="brand-sub">Florida Gulf Coast Tech Support</span>
++        </div>
 +      </div>
-+      <div class="nav-cta">
-+        <a class="btn btn-secondary" href="tel:+17276479000">Call 727-647-9000</a>
-+        <a class="btn btn-primary" href="#support-form">Request Support</a>
-+      </div>
++      <nav class="nav-links" aria-label="Primary">
++        <a href="#services">Services</a>
++        <a href="#pricing">Pricing</a>
++        <a href="#contact" class="btn btn-primary">Contact</a>
++      </nav>
 +    </div>
 +  </header>
++
++  <main>
++    <section class="hero">
++      <div class="container hero-grid">
++        <article class="card hero-copy">
++          <span class="eyebrow">Veteran-Owned • Tampa Bay • Gulf Coast</span>
++          <h1>Reliable tech support with a Florida Gulf Coast feel.</h1>
++          <p class="lead">We help homes and small businesses stay online, secure, and productive with practical support that is friendly, fast, and easy to understand.</p>
++          <div class="hero-actions">
++            <a class="btn btn-primary" href="tel:+17276479000">Call 727-647-9000</a>
++            <a class="btn btn-secondary" href="#contact">Request Support</a>
++          </div>
++          <div class="mini-trust" aria-label="Trust indicators">
++            <span class="pill">Same-day response</span>
++            <span class="pill">No long contracts</span>
++            <span class="pill">Local Gulf Coast service</span>
++          </div>
++        </article>
++
++        <aside class="card support-panel" id="contact" aria-labelledby="contact-title">
++          <h2 id="contact-title">Request Help</h2>
++          <p>Tell us what is going wrong and we will route your request directly into support.</p>
++          <div class="response-note">Typical response time: within 15 minutes during business hours.</div>
++          <iframe
++            title="88 Bit Diamond Hands Support Form"
++            allow="camera;"
++            src="https://forms.zohopublic.com/lightmyfire/form/Contactforsupport/formperma/LIsVTeLHmxGHYWEhc2EjoD96lF9EVxdnQC29atrHWgU?zf_enablecamera=true">
++          </iframe>
++        </aside>
++      </div>
++    </section>
++
++    <section class="section" id="services">
++      <div class="container">
++        <header class="section-head">
++          <h2>Core Services</h2>
++          <p>Support tailored for homes, home offices, and small businesses across the Gulf Coast.</p>
++        </header>
++        <div class="grid-2">
++          <article class="card feature">
++            <h3>Home & Office Wi-Fi</h3>
++            <p>Signal improvements, router setup, dead-zone fixes, and secure network hardening.</p>
++          </article>
++          <article class="card feature">
++            <h3>Device Setup & Repair</h3>
++            <p>PC, Mac, printer, and mobile setup plus troubleshooting when things stop working.</p>
++          </article>
++          <article class="card feature">
++            <h3>Security & Cleanup</h3>
++            <p>Malware cleanup, suspicious popup removal, and practical security recommendations.</p>
++          </article>
++          <article class="card feature">
++            <h3>Small Business Support</h3>
++            <p>Email, workstation, and day-to-day support for teams that need quick, reliable help.</p>
++          </article>
++        </div>
++      </div>
++    </section>
++
++    <section class="section pricing" id="pricing">
++      <div class="container">
++        <header class="section-head">
++          <h2>Simple Pricing</h2>
++          <p>Transparent options so you can get the support level that fits your needs.</p>
++        </header>
++
++        <div class="grid-2">
++          <article class="card feature">
++            <h3>One-Time Help</h3>
++            <div class="price">$60/hr</div>
++            <ul class="clean-list">
++              <li>On-demand troubleshooting</li>
++              <li>Ideal for urgent issues</li>
++              <li>No ongoing commitment</li>
++            </ul>
++          </article>
++
++          <article class="card feature">
++            <h3>Monthly Plans</h3>
++            <div class="price">From $100/mo</div>
++            <ul class="clean-list">
++              <li>Home plan: $100/month (2 hours + checkups)</li>
++              <li>Business plan: $150/month (priority support)</li>
++              <li>Free consultation for new customers</li>
++            </ul>
++          </article>
++        </div>
++      </div>
++    </section>
  
 -<nav class="container-fluid">
 -  <ul>
@@ -218,148 +497,15 @@ index 89b596f790d2b21e5bb6f6372cd7be686288208c..bd4732fc83dd87e6f10f9205d98ecf20
 -         💼 $150/month — Business monthly plan (priority service)<br>
 -         🏠 $100/month — Home monthly plan (2 hours & checkups)<br>
 -         🆓 Free consultations for new customers</p>
-+  <main>
-+    <section class="hero">
-+      <div class="container hero-grid">
-+        <div class="hero-card">
-+          <span class="eyebrow">Florida Gulf Coast • Local • No Long-Term Contracts</span>
-+          <h1>Coastal-calm IT support for Tampa Bay businesses that cannot afford downtime.</h1>
-+          <p>Inspired by the trust and professionalism of top Gulf Coast service brands, this page blends warm coastal visuals with a conversion-focused layout to help local businesses request support quickly and confidently.</p>
-+
-+          <div class="hero-actions">
-+            <a class="btn btn-primary" href="tel:+17276479000">Call Now</a>
-+            <a class="btn btn-secondary" href="#support-form">Get Help Today</a>
-+          </div>
-+
-+          <div class="trust-row">
-+            <span class="chip">Same-day support</span>
-+            <span class="chip">Local Gulf Coast service</span>
-+            <span class="chip">Straightforward pricing</span>
-+          </div>
-+
-+          <div class="stats">
-+            <div class="stat">
-+              <strong>No Contracts</strong>
-+              Flexible support without long-term lock-in.
-+            </div>
-+            <div class="stat">
-+              <strong>Business Ready</strong>
-+              Support for offices, users, devices, and workflows.
-+            </div>
-+            <div class="stat">
-+              <strong>Fast Response</strong>
-+              Built for urgent issues where every minute matters.
-+            </div>
-+          </div>
-+        </div>
-+
-+        <aside class="panel form-panel" id="support-form">
-+          <h2>Request IT Support</h2>
-+          <p class="subtle">Share what is happening and we route it into support immediately. Perfect for urgent office tech issues and day-to-day business troubleshooting.</p>
-+          <div class="response-box">Typically responds within 15 minutes</div>
-+          <iframe
-+            aria-label="Contact for support"
-+            frameborder="0"
-+            allow="camera;"
-+            style="height:560px;width:100%;border:none;border-radius:12px;background:#fff;"
-+            src="https://forms.zohopublic.com/lightmyfire/form/Contactforsupport/formperma/LIsVTeLHmxGHYWEhc2EjoD96lF9EVxdnQC29atrHWgU?zf_enablecamera=true">
-+          </iframe>
-+        </aside>
-+      </div>
-+    </section>
-+
-+    <section class="section">
-+      <div class="container">
-+        <div class="section-head">
-+          <h2>Common business issues we solve</h2>
-+          <p>Practical support for the everyday tech problems that slow your team down.</p>
-+        </div>
-+        <div class="cards">
-+          <article class="card">
-+            <h3>Email, Microsoft 365, and login issues</h3>
-+            <p>Password resets, account lockouts, Outlook sync failures, and mailbox setup fixes that keep your team connected.</p>
-+          </article>
-+          <article class="card">
-+            <h3>Internet, Wi-Fi, and network problems</h3>
-+            <p>Slow internet, unstable Wi-Fi, and dropouts affecting office operations, POS systems, printers, and productivity.</p>
-+          </article>
-+          <article class="card">
-+            <h3>Printer, scanner, and office device support</h3>
-+            <p>Troubleshooting for driver conflicts, scan-to-email failures, and devices that stall day-to-day office workflows.</p>
-+          </article>
-+          <article class="card">
-+            <h3>PC slowdowns, crashes, and suspicious popups</h3>
-+            <p>Hands-on support for performance issues, recurring errors, and security concerns that interrupt business continuity.</p>
-+          </article>
-+        </div>
-+      </div>
-+    </section>
-+
-+    <section class="section">
-+      <div class="container">
-+        <div class="section-head">
-+          <h2>Why Gulf Coast businesses choose Suncoast Tech Support</h2>
-+          <p>A modern, local-first support experience with clear next steps and quick response times.</p>
-+        </div>
-+        <div class="cards">
-+          <article class="card">
-+            <h3>Locally tuned support</h3>
-+            <p>You get help from a team that understands the pace, expectations, and needs of Tampa Bay and Florida Gulf Coast businesses.</p>
-+          </article>
-+          <article class="card">
-+            <h3>No long-term commitments</h3>
-+            <p>Engage support when you need it most, with flexible options for businesses not ready for a full MSP agreement.</p>
-+          </article>
-+          <article class="card">
-+            <h3>Conversion-focused intake</h3>
-+            <p>The support form routes directly into your Zoho Desk workflow so requests are captured quickly and handled efficiently.</p>
-+          </article>
-+          <article class="card">
-+            <h3>Designed to build trust fast</h3>
-+            <p>Coastal visuals, concise copy, and strong calls to action create a professional first impression and reduce visitor hesitation.</p>
-+          </article>
-+        </div>
-+      </div>
-+    </section>
-+
-+    <section class="section">
-+      <div class="container">
-+        <div class="section-head">
-+          <h2>Best fit for</h2>
-+          <p>Small offices and teams across Tampa Bay and the Florida Gulf Coast that need dependable IT help.</p>
-+        </div>
-+        <div class="cards">
-+          <article class="card">
-+            <h3>Offices and professional teams</h3>
-+            <ul class="list">
-+              <li>Real estate and property management teams</li>
-+              <li>Insurance and financial admin offices</li>
-+              <li>Medical and dental front-office operations</li>
-+              <li>Service businesses without internal IT staff</li>
-+            </ul>
-+          </article>
-+          <article class="card">
-+            <h3>Good reasons to contact now</h3>
-+            <ul class="list">
-+              <li>Users cannot send or receive email</li>
-+              <li>Internet or Wi-Fi disruptions are ongoing</li>
-+              <li>Printer/scanner issues are stalling operations</li>
-+              <li>Workstations are slow, crashing, or showing popups</li>
-+            </ul>
-+          </article>
-+        </div>
-+      </div>
-+    </section>
-+
 +    <section class="container">
 +      <div class="cta-band">
 +        <div>
-+          <h2>Bring Gulf Coast calm to your business tech.</h2>
-+          <p>Call now for immediate help, or submit your request and route it directly into support.</p>
++          <h2>Need help today?</h2>
++          <p>Call now for immediate support or submit your request online in under 2 minutes.</p>
 +        </div>
-+        <div class="nav-cta">
++        <div class="hero-actions">
 +          <a class="btn btn-primary" href="tel:+17276479000">Call Now</a>
-+          <a class="btn btn-secondary" href="#support-form">Request Support</a>
++          <a class="btn btn-secondary" href="#contact">Request Support</a>
 +        </div>
 +      </div>
      </section>
@@ -371,9 +517,7 @@ index 89b596f790d2b21e5bb6f6372cd7be686288208c..bd4732fc83dd87e6f10f9205d98ecf20
 -  <div class="container">
 \ No newline at end of file
 +  <footer>
-+    <div class="container">
-+      Suncoast Tech Support • Florida Gulf Coast business IT support • No long-term contracts
-+    </div>
++    88 Bit Diamond Hands • Veteran-Owned Tech Support • Tampa Bay & Florida Gulf Coast
 +  </footer>
 +</body>
 +</html>
