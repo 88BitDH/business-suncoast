@@ -1,523 +1,469 @@
-diff --git a/index.html b/index.html
-index 89b596f790d2b21e5bb6f6372cd7be686288208c..291ab09bbd082448053dced38c1f69e9a91ab634 100644
---- a/index.html
-+++ b/index.html
-@@ -1,59 +1,467 @@
- <!DOCTYPE html>
- <html lang="en">
- <head>
-   <meta charset="UTF-8" />
--  <meta name="viewport" content="width=device-width, initial-scale=1">
--  <title>88 Bit Diamond Hands</title>
--  <meta name="description" content="Veteran-owned tech support for homes and small businesses in Tampa Bay, FL">
--  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
-+  <meta name="viewport" content="width=device-width, initial-scale=1" />
-+  <title>88 Bit Diamond Hands | Florida Gulf Coast Tech Support</title>
-+  <meta name="description" content="Veteran-owned tech support for homes and small businesses across Tampa Bay and the Florida Gulf Coast. Fast response, friendly service, and clear pricing." />
-+  <style>
-+    :root {
-+      --navy-950: #041224;
-+      --navy-900: #07223a;
-+      --sea-700: #0e8fb2;
-+      --sea-500: #38c7d7;
-+      --foam-200: #d8f7f8;
-+      --sand-300: #f3d59c;
-+      --text-100: #f3fbff;
-+      --text-300: #bed6e3;
-+      --line: rgba(255, 255, 255, 0.16);
-+      --card: rgba(8, 34, 58, 0.85);
-+      --shadow: 0 16px 36px rgba(0, 12, 26, 0.4);
-+      --radius: 18px;
-+      --max-width: 1120px;
-+    }
-+
-+    * { box-sizing: border-box; }
-+    html { scroll-behavior: smooth; }
-+
-+    body {
-+      margin: 0;
-+      color: var(--text-100);
-+      font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
-+      background:
-+        radial-gradient(circle at 85% 12%, rgba(243, 213, 156, 0.22), transparent 30%),
-+        radial-gradient(circle at 12% 8%, rgba(56, 199, 215, 0.16), transparent 26%),
-+        linear-gradient(180deg, #082844 0%, #061a30 45%, #041224 100%);
-+      line-height: 1.6;
-+    }
-+
-+    img { max-width: 100%; display: block; }
-+    a { color: inherit; text-decoration: none; }
-+
-+    .container {
-+      width: min(calc(100% - 32px), var(--max-width));
-+      margin: 0 auto;
-+    }
-+
-+    .topbar {
-+      position: sticky;
-+      top: 0;
-+      z-index: 20;
-+      border-bottom: 1px solid var(--line);
-+      backdrop-filter: blur(10px);
-+      background: rgba(4, 18, 36, 0.76);
-+    }
-+
-+    .topbar-inner {
-+      min-height: 74px;
-+      display: flex;
-+      align-items: center;
-+      justify-content: space-between;
-+      gap: 12px;
-+    }
-+
-+    .brand-wrap {
-+      display: flex;
-+      align-items: center;
-+      gap: 12px;
-+    }
-+
-+    .brand-logo {
-+      width: 38px;
-+      height: 38px;
-+      border-radius: 10px;
-+      border: 1px solid var(--line);
-+      object-fit: cover;
-+      background: rgba(255, 255, 255, 0.08);
-+    }
-+
-+    .brand-title {
-+      font-weight: 800;
-+      letter-spacing: 0.2px;
-+      font-size: 1rem;
-+    }
-+
-+    .brand-sub {
-+      display: block;
-+      font-size: 0.78rem;
-+      color: var(--text-300);
-+      margin-top: 1px;
-+      font-weight: 500;
-+    }
-+
-+    .nav-links {
-+      display: flex;
-+      align-items: center;
-+      gap: 18px;
-+      color: var(--text-300);
-+      font-weight: 600;
-+    }
-+
-+    .btn {
-+      padding: 11px 16px;
-+      border-radius: 12px;
-+      border: 1px solid transparent;
-+      font-weight: 700;
-+      transition: transform 0.2s ease, box-shadow 0.2s ease;
-+      display: inline-flex;
-+      align-items: center;
-+      justify-content: center;
-+    }
-+
-+    .btn:hover {
-+      transform: translateY(-1px);
-+    }
-+
-+    .btn-primary {
-+      background: linear-gradient(180deg, var(--sea-500), var(--sea-700));
-+      color: #022131;
-+      box-shadow: 0 10px 25px rgba(56, 199, 215, 0.35);
-+    }
-+
-+    .btn-secondary {
-+      border-color: var(--line);
-+      background: rgba(255, 255, 255, 0.04);
-+      color: var(--text-100);
-+    }
-+
-+    .hero {
-+      padding: 76px 0 34px;
-+    }
-+
-+    .hero-grid {
-+      display: grid;
-+      grid-template-columns: 1.1fr 0.9fr;
-+      gap: 24px;
-+      align-items: stretch;
-+    }
-+
-+    .card {
-+      border: 1px solid var(--line);
-+      border-radius: var(--radius);
-+      box-shadow: var(--shadow);
-+      background: linear-gradient(180deg, rgba(9, 42, 70, 0.9), rgba(6, 27, 46, 0.92));
-+    }
-+
-+    .hero-copy {
-+      padding: 34px;
-+    }
-+
-+    .eyebrow {
-+      display: inline-block;
-+      padding: 7px 12px;
-+      border-radius: 999px;
-+      text-transform: uppercase;
-+      letter-spacing: 0.12em;
-+      font-size: 0.72rem;
-+      color: var(--foam-200);
-+      background: rgba(56, 199, 215, 0.16);
-+      border: 1px solid rgba(56, 199, 215, 0.35);
-+      margin-bottom: 14px;
-+      font-weight: 700;
-+    }
-+
-+    h1 {
-+      margin: 0 0 12px;
-+      line-height: 1.05;
-+      font-size: clamp(2rem, 4.8vw, 3.45rem);
-+    }
-+
-+    .lead {
-+      color: var(--text-300);
-+      margin: 0;
-+      font-size: 1.08rem;
-+    }
-+
-+    .hero-actions {
-+      margin-top: 22px;
-+      display: flex;
-+      flex-wrap: wrap;
-+      gap: 10px;
-+    }
-+
-+    .mini-trust {
-+      margin-top: 18px;
-+      display: flex;
-+      flex-wrap: wrap;
-+      gap: 10px;
-+      color: var(--text-300);
-+      font-size: 0.92rem;
-+    }
-+
-+    .pill {
-+      padding: 8px 12px;
-+      border-radius: 999px;
-+      border: 1px solid var(--line);
-+      background: rgba(255, 255, 255, 0.04);
-+    }
-+
-+    .support-panel {
-+      padding: 24px;
-+    }
-+
-+    .support-panel h2 {
-+      margin: 0 0 6px;
-+      font-size: 1.7rem;
-+    }
-+
-+    .support-panel p {
-+      margin: 0;
-+      color: var(--text-300);
-+    }
-+
-+    .response-note {
-+      margin: 16px 0;
-+      padding: 11px 13px;
-+      border-radius: 12px;
-+      background: rgba(56, 199, 215, 0.14);
-+      border: 1px solid rgba(56, 199, 215, 0.35);
-+      font-weight: 700;
-+      color: var(--foam-200);
-+      font-size: 0.92rem;
-+    }
-+
-+    iframe {
-+      width: 100%;
-+      min-height: 520px;
-+      border: none;
-+      border-radius: 12px;
-+      background: #fff;
-+    }
-+
-+    .section {
-+      padding: 26px 0;
-+    }
-+
-+    .section-head {
-+      text-align: center;
-+      margin-bottom: 18px;
-+    }
-+
-+    .section-head h2 {
-+      margin: 0;
-+      font-size: clamp(1.7rem, 3vw, 2.15rem);
-+    }
-+
-+    .section-head p {
-+      margin: 8px 0 0;
-+      color: var(--text-300);
-+    }
-+
-+    .grid-2 {
-+      display: grid;
-+      grid-template-columns: repeat(2, 1fr);
-+      gap: 16px;
-+    }
-+
-+    .feature {
-+      padding: 22px;
-+    }
-+
-+    .feature h3 {
-+      margin: 0 0 8px;
-+      font-size: 1.28rem;
-+    }
-+
-+    .feature p,
-+    .feature li {
-+      color: var(--text-300);
-+      margin: 0;
-+    }
-+
-+    .clean-list {
-+      list-style: none;
-+      margin: 0;
-+      padding: 0;
-+    }
-+
-+    .clean-list li {
-+      padding: 10px 0;
-+      border-bottom: 1px solid var(--line);
-+    }
-+
-+    .clean-list li:last-child {
-+      border-bottom: none;
-+    }
-+
-+    .pricing .price {
-+      font-size: 1.6rem;
-+      font-weight: 800;
-+      color: var(--sand-300);
-+      margin-bottom: 6px;
-+      line-height: 1.2;
-+    }
-+
-+    .cta-band {
-+      margin: 16px 0 46px;
-+      padding: 24px;
-+      border-radius: 18px;
-+      border: 1px solid rgba(243, 213, 156, 0.46);
-+      background: linear-gradient(130deg, rgba(56, 199, 215, 0.18), rgba(243, 213, 156, 0.14));
-+      display: flex;
-+      align-items: center;
-+      justify-content: space-between;
-+      gap: 16px;
-+      flex-wrap: wrap;
-+    }
-+
-+    .cta-band h2 {
-+      margin: 0 0 6px;
-+      font-size: 1.8rem;
-+    }
-+
-+    .cta-band p {
-+      margin: 0;
-+      color: var(--text-300);
-+    }
-+
-+    footer {
-+      border-top: 1px solid var(--line);
-+      color: var(--text-300);
-+      text-align: center;
-+      padding: 24px 0 40px;
-+      font-size: 0.93rem;
-+    }
-+
-+    @media (max-width: 930px) {
-+      .hero-grid,
-+      .grid-2 {
-+        grid-template-columns: 1fr;
-+      }
-+
-+      .nav-links a:not(.btn) {
-+        display: none;
-+      }
-+
-+      .hero-copy {
-+        padding: 28px;
-+      }
-+    }
-+  </style>
- </head>
- <body>
-+  <header class="topbar">
-+    <div class="container topbar-inner">
-+      <div class="brand-wrap">
-+        <img class="brand-logo" src="logo.png" alt="88 Bit Diamond Hands logo" />
-+        <div>
-+          <span class="brand-title">88 Bit Diamond Hands</span>
-+          <span class="brand-sub">Florida Gulf Coast Tech Support</span>
-+        </div>
-+      </div>
-+      <nav class="nav-links" aria-label="Primary">
-+        <a href="#services">Services</a>
-+        <a href="#pricing">Pricing</a>
-+        <a href="#contact" class="btn btn-primary">Contact</a>
-+      </nav>
-+    </div>
-+  </header>
-+
-+  <main>
-+    <section class="hero">
-+      <div class="container hero-grid">
-+        <article class="card hero-copy">
-+          <span class="eyebrow">Veteran-Owned • Tampa Bay • Gulf Coast</span>
-+          <h1>Reliable tech support with a Florida Gulf Coast feel.</h1>
-+          <p class="lead">We help homes and small businesses stay online, secure, and productive with practical support that is friendly, fast, and easy to understand.</p>
-+          <div class="hero-actions">
-+            <a class="btn btn-primary" href="tel:+17276479000">Call 727-647-9000</a>
-+            <a class="btn btn-secondary" href="#contact">Request Support</a>
-+          </div>
-+          <div class="mini-trust" aria-label="Trust indicators">
-+            <span class="pill">Same-day response</span>
-+            <span class="pill">No long contracts</span>
-+            <span class="pill">Local Gulf Coast service</span>
-+          </div>
-+        </article>
-+
-+        <aside class="card support-panel" id="contact" aria-labelledby="contact-title">
-+          <h2 id="contact-title">Request Help</h2>
-+          <p>Tell us what is going wrong and we will route your request directly into support.</p>
-+          <div class="response-note">Typical response time: within 15 minutes during business hours.</div>
-+          <iframe
-+            title="88 Bit Diamond Hands Support Form"
-+            allow="camera;"
-+            src="https://forms.zohopublic.com/lightmyfire/form/Contactforsupport/formperma/LIsVTeLHmxGHYWEhc2EjoD96lF9EVxdnQC29atrHWgU?zf_enablecamera=true">
-+          </iframe>
-+        </aside>
-+      </div>
-+    </section>
-+
-+    <section class="section" id="services">
-+      <div class="container">
-+        <header class="section-head">
-+          <h2>Core Services</h2>
-+          <p>Support tailored for homes, home offices, and small businesses across the Gulf Coast.</p>
-+        </header>
-+        <div class="grid-2">
-+          <article class="card feature">
-+            <h3>Home & Office Wi-Fi</h3>
-+            <p>Signal improvements, router setup, dead-zone fixes, and secure network hardening.</p>
-+          </article>
-+          <article class="card feature">
-+            <h3>Device Setup & Repair</h3>
-+            <p>PC, Mac, printer, and mobile setup plus troubleshooting when things stop working.</p>
-+          </article>
-+          <article class="card feature">
-+            <h3>Security & Cleanup</h3>
-+            <p>Malware cleanup, suspicious popup removal, and practical security recommendations.</p>
-+          </article>
-+          <article class="card feature">
-+            <h3>Small Business Support</h3>
-+            <p>Email, workstation, and day-to-day support for teams that need quick, reliable help.</p>
-+          </article>
-+        </div>
-+      </div>
-+    </section>
-+
-+    <section class="section pricing" id="pricing">
-+      <div class="container">
-+        <header class="section-head">
-+          <h2>Simple Pricing</h2>
-+          <p>Transparent options so you can get the support level that fits your needs.</p>
-+        </header>
-+
-+        <div class="grid-2">
-+          <article class="card feature">
-+            <h3>One-Time Help</h3>
-+            <div class="price">$60/hr</div>
-+            <ul class="clean-list">
-+              <li>On-demand troubleshooting</li>
-+              <li>Ideal for urgent issues</li>
-+              <li>No ongoing commitment</li>
-+            </ul>
-+          </article>
-+
-+          <article class="card feature">
-+            <h3>Monthly Plans</h3>
-+            <div class="price">From $100/mo</div>
-+            <ul class="clean-list">
-+              <li>Home plan: $100/month (2 hours + checkups)</li>
-+              <li>Business plan: $150/month (priority support)</li>
-+              <li>Free consultation for new customers</li>
-+            </ul>
-+          </article>
-+        </div>
-+      </div>
-+    </section>
- 
--<nav class="container-fluid">
--  <ul>
--    <li><strong>88 Bit Diamond Hands</strong></li>
--  </ul>
--  <ul>
--    <li><a href="#services">Services</a></li>
--    <li><a href="#pricing">Pricing</a></li>
--    <li><a href="#contact" role="button">Contact</a></li>
--  </ul>
--</nav>
--
--<main class="container">
--  <div class="grid">
--    <section>
--      <hgroup>
--        <h2>Veteran-Owned Tech Support</h2>
--        <h3>Reliable Help for Homes & Small Businesses in Tampa Bay, FL</h3>
--      </hgroup>
--      <p>We offer Wi-Fi setup, malware removal, device troubleshooting, and ongoing support with a personal touch.</p>
--      <figure>
--        <img src="hero.jpg" alt="Tech support technician helping customer">
--        <figcaption><a href="https://88bitdiamondhands.com" target="_blank">Visit Our Site</a></figcaption>
--      </figure>
--
--      <h3 id="services">What We Do</h3>
--      <p>✅ Wi-Fi troubleshooting & upgrades<br>
--         ✅ Device setup (PC, Mac, phones, routers)<br>
--         ✅ Virus/malware cleanup<br>
--         ✅ Cloud backup help & recovery<br>
--         ✅ Ongoing tech support plans<br>
--         ✅ Small business tech support</p>
--
--      <figure>
--        <img src="services.jpg" alt="Tech support services collage">
--        <figcaption><a href="#services">Explore Our Services</a></figcaption>
--      </figure>
--
--      <h3 id="pricing">Pricing</h3>
--      <p>💵 $60/hr — One-time tech help<br>
--         💼 $150/month — Business monthly plan (priority service)<br>
--         🏠 $100/month — Home monthly plan (2 hours & checkups)<br>
--         🆓 Free consultations for new customers</p>
-+    <section class="container">
-+      <div class="cta-band">
-+        <div>
-+          <h2>Need help today?</h2>
-+          <p>Call now for immediate support or submit your request online in under 2 minutes.</p>
-+        </div>
-+        <div class="hero-actions">
-+          <a class="btn btn-primary" href="tel:+17276479000">Call Now</a>
-+          <a class="btn btn-secondary" href="#contact">Request Support</a>
-+        </div>
-+      </div>
-     </section>
--  </div>
--</main>
-+  </main>
- 
--<section aria-label="Subscribe example" id="contact">
--  <div class="container">
-\ No newline at end of file
-+  <footer>
-+    88 Bit Diamond Hands • Veteran-Owned Tech Support • Tampa Bay & Florida Gulf Coast
-+  </footer>
-+</body>
-+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>88 Bit Diamond Hands | Florida Gulf Coast Tech Support</title>
+  <meta
+    name="description"
+    content="Veteran-owned tech support for homes and small businesses across Tampa Bay and the Florida Gulf Coast. Fast response, friendly service, and clear pricing."
+  />
+  <style>
+    :root {
+      --navy-950: #041224;
+      --navy-900: #07223a;
+      --sea-700: #0e8fb2;
+      --sea-500: #38c7d7;
+      --foam-200: #d8f7f8;
+      --sand-300: #f3d59c;
+      --text-100: #f3fbff;
+      --text-300: #bed6e3;
+      --line: rgba(255, 255, 255, 0.16);
+      --shadow: 0 16px 36px rgba(0, 12, 26, 0.4);
+      --radius: 18px;
+      --max-width: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--text-100);
+      font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(circle at 85% 12%, rgba(243, 213, 156, 0.22), transparent 30%),
+        radial-gradient(circle at 12% 8%, rgba(56, 199, 215, 0.16), transparent 26%),
+        linear-gradient(180deg, #082844 0%, #061a30 45%, #041224 100%);
+      line-height: 1.6;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(calc(100% - 32px), var(--max-width));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(10px);
+      background: rgba(4, 18, 36, 0.76);
+    }
+
+    .topbar-inner {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-logo {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      object-fit: cover;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .brand-title {
+      font-weight: 800;
+      letter-spacing: 0.2px;
+      font-size: 1rem;
+    }
+
+    .brand-sub {
+      display: block;
+      font-size: 0.78rem;
+      color: var(--text-300);
+      margin-top: 1px;
+      font-weight: 500;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      color: var(--text-300);
+      font-weight: 600;
+    }
+
+    .btn {
+      padding: 11px 16px;
+      border-radius: 12px;
+      border: 1px solid transparent;
+      font-weight: 700;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(180deg, var(--sea-500), var(--sea-700));
+      color: #022131;
+      box-shadow: 0 10px 25px rgba(56, 199, 215, 0.35);
+    }
+
+    .btn-secondary {
+      border-color: var(--line);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text-100);
+    }
+
+    .hero {
+      padding: 76px 0 34px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      background: linear-gradient(180deg, rgba(9, 42, 70, 0.9), rgba(6, 27, 46, 0.92));
+    }
+
+    .hero-copy {
+      padding: 34px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 7px 12px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.72rem;
+      color: var(--foam-200);
+      background: rgba(56, 199, 215, 0.16);
+      border: 1px solid rgba(56, 199, 215, 0.35);
+      margin-bottom: 14px;
+      font-weight: 700;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      line-height: 1.05;
+      font-size: clamp(2rem, 4.8vw, 3.45rem);
+    }
+
+    .lead {
+      color: var(--text-300);
+      margin: 0;
+      font-size: 1.08rem;
+    }
+
+    .hero-actions {
+      margin-top: 22px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .mini-trust {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      color: var(--text-300);
+      font-size: 0.92rem;
+    }
+
+    .pill {
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .support-panel {
+      padding: 24px;
+    }
+
+    .support-panel h2 {
+      margin: 0 0 6px;
+      font-size: 1.7rem;
+    }
+
+    .support-panel p {
+      margin: 0;
+      color: var(--text-300);
+    }
+
+    .response-note {
+      margin: 16px 0;
+      padding: 11px 13px;
+      border-radius: 12px;
+      background: rgba(56, 199, 215, 0.14);
+      border: 1px solid rgba(56, 199, 215, 0.35);
+      font-weight: 700;
+      color: var(--foam-200);
+      font-size: 0.92rem;
+    }
+
+    iframe {
+      width: 100%;
+      min-height: 520px;
+      border: none;
+      border-radius: 12px;
+      background: #fff;
+    }
+
+    .section {
+      padding: 26px 0;
+    }
+
+    .section-head {
+      text-align: center;
+      margin-bottom: 18px;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(1.7rem, 3vw, 2.15rem);
+    }
+
+    .section-head p {
+      margin: 8px 0 0;
+      color: var(--text-300);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .feature {
+      padding: 22px;
+    }
+
+    .feature h3 {
+      margin: 0 0 8px;
+      font-size: 1.28rem;
+    }
+
+    .feature p,
+    .feature li {
+      color: var(--text-300);
+      margin: 0;
+    }
+
+    .clean-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .clean-list li {
+      padding: 10px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .clean-list li:last-child {
+      border-bottom: none;
+    }
+
+    .pricing .price {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--sand-300);
+      margin-bottom: 6px;
+      line-height: 1.2;
+    }
+
+    .cta-band {
+      margin: 16px 0 46px;
+      padding: 24px;
+      border-radius: 18px;
+      border: 1px solid rgba(243, 213, 156, 0.46);
+      background: linear-gradient(130deg, rgba(56, 199, 215, 0.18), rgba(243, 213, 156, 0.14));
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .cta-band h2 {
+      margin: 0 0 6px;
+      font-size: 1.8rem;
+    }
+
+    .cta-band p {
+      margin: 0;
+      color: var(--text-300);
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      color: var(--text-300);
+      text-align: center;
+      padding: 24px 0 40px;
+      font-size: 0.93rem;
+    }
+
+    @media (max-width: 930px) {
+      .hero-grid,
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links a:not(.btn) {
+        display: none;
+      }
+
+      .hero-copy {
+        padding: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand-wrap">
+        <img class="brand-logo" src="logo.png" alt="88 Bit Diamond Hands logo" />
+        <div>
+          <span class="brand-title">88 Bit Diamond Hands</span>
+          <span class="brand-sub">Florida Gulf Coast Tech Support</span>
+        </div>
+      </div>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#services">Services</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact" class="btn btn-primary">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <article class="card hero-copy">
+          <span class="eyebrow">Veteran-Owned • Tampa Bay • Gulf Coast</span>
+          <h1>Reliable tech support with a Florida Gulf Coast feel.</h1>
+          <p class="lead">We help homes and small businesses stay online, secure, and productive with practical support that is friendly, fast, and easy to understand.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="tel:+17276479000">Call 727-647-9000</a>
+            <a class="btn btn-secondary" href="#contact">Request Support</a>
+          </div>
+          <div class="mini-trust" aria-label="Trust indicators">
+            <span class="pill">Same-day response</span>
+            <span class="pill">No long contracts</span>
+            <span class="pill">Local Gulf Coast service</span>
+          </div>
+        </article>
+
+        <aside class="card support-panel" id="contact" aria-labelledby="contact-title">
+          <h2 id="contact-title">Request Help</h2>
+          <p>Tell us what is going wrong and we will route your request directly into support.</p>
+          <div class="response-note">Typical response time: within 15 minutes during business hours.</div>
+          <iframe
+            title="88 Bit Diamond Hands Support Form"
+            allow="camera;"
+            src="https://forms.zohopublic.com/lightmyfire/form/Contactforsupport/formperma/LIsVTeLHmxGHYWEhc2EjoD96lF9EVxdnQC29atrHWgU?zf_enablecamera=true">
+          </iframe>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <header class="section-head">
+          <h2>Core Services</h2>
+          <p>Support tailored for homes, home offices, and small businesses across the Gulf Coast.</p>
+        </header>
+        <div class="grid-2">
+          <article class="card feature">
+            <h3>Home & Office Wi-Fi</h3>
+            <p>Signal improvements, router setup, dead-zone fixes, and secure network hardening.</p>
+          </article>
+          <article class="card feature">
+            <h3>Device Setup & Repair</h3>
+            <p>PC, Mac, printer, and mobile setup plus troubleshooting when things stop working.</p>
+          </article>
+          <article class="card feature">
+            <h3>Security & Cleanup</h3>
+            <p>Malware cleanup, suspicious popup removal, and practical security recommendations.</p>
+          </article>
+          <article class="card feature">
+            <h3>Small Business Support</h3>
+            <p>Email, workstation, and day-to-day support for teams that need quick, reliable help.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section pricing" id="pricing">
+      <div class="container">
+        <header class="section-head">
+          <h2>Simple Pricing</h2>
+          <p>Transparent options so you can get the support level that fits your needs.</p>
+        </header>
+
+        <div class="grid-2">
+          <article class="card feature">
+            <h3>One-Time Help</h3>
+            <div class="price">$60/hr</div>
+            <ul class="clean-list">
+              <li>On-demand troubleshooting</li>
+              <li>Ideal for urgent issues</li>
+              <li>No ongoing commitment</li>
+            </ul>
+          </article>
+
+          <article class="card feature">
+            <h3>Monthly Plans</h3>
+            <div class="price">From $100/mo</div>
+            <ul class="clean-list">
+              <li>Home plan: $100/month (2 hours + checkups)</li>
+              <li>Business plan: $150/month (priority support)</li>
+              <li>Free consultation for new customers</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="cta-band">
+        <div>
+          <h2>Need help today?</h2>
+          <p>Call now for immediate support or submit your request online in under 2 minutes.</p>
+        </div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="tel:+17276479000">Call Now</a>
+          <a class="btn btn-secondary" href="#contact">Request Support</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    88 Bit Diamond Hands • Veteran-Owned Tech Support • Tampa Bay & Florida Gulf Coast
+  </footer>
+</body>
+</html>
