@@ -2,578 +2,576 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Suncoast Tech Support | IT Support for Small Offices in Clearwater & Pinellas County</title>
-  <meta
-    name="description"
-    content="IT support for small offices in Clearwater and Pinellas County. Fast help for email, Microsoft 365, Wi-Fi, printers, computers, and practical security support for offices with 5-20 users."
-  />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Small Office IT Support in the Clearwater Area | Suncoast Tech Support</title>
+  <meta name="description" content="Local IT support for small offices in the Clearwater area. Wi-Fi, email, printer, Microsoft 365, cybersecurity, and on-site or remote help for offices under 20 employees." />
+  <meta name="keywords" content="small office IT support Clearwater area, business computer support Clearwater area, Microsoft 365 support Clearwater area, local IT support small office, Wi-Fi troubleshooting office, printer support office, Suncoast Tech Support" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Small Office IT Support in the Clearwater Area | Suncoast Tech Support" />
+  <meta property="og:description" content="Local IT support for offices under 20 employees. Call, text, email, or request support online." />
+  <meta property="og:type" content="website" />
+
+  <!-- Replace with your real IDs before publishing -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+    gtag('config', 'AW-XXXXXXXXX');
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Suncoast Tech Support",
+    "url": "https://suncoasttechsupport.net/",
+    "telephone": "+1-727-496-4668",
+    "email": "support@suncoasttechsupport.net",
+    "areaServed": "Clearwater Area",
+    "description": "Local IT support for small offices under 20 employees, including Wi-Fi, email, printer, Microsoft 365, and cybersecurity help."
+  }
+  </script>
+
   <style>
-    :root {
-      --bg: #0A1B2E;
-      --bg-2: #13263D;
-      --panel: #17314D;
-      --line: rgba(255,255,255,0.12);
-      --text: #F5FAFC;
-      --muted: #B8CBD8;
-      --accent: #18B7C9;
-      --accent-2: #56D6E2;
-      --cta: #22C55E;
-      --cta-dark: #16A34A;
-      --warm: #E7C27A;
-      --shadow: 0 18px 44px rgba(0, 8, 20, 0.35);
-      --radius: 18px;
-      --max: 1160px;
+    :root{
+      --bg:#f7fafc;
+      --card:#ffffff;
+      --text:#163047;
+      --muted:#5b6b79;
+      --line:#d9e3ea;
+      --primary:#0f5f8f;
+      --accent:#ff8a3d;
+      --soft:#eaf5fb;
+      --soft2:#fff4ec;
+      --max:1120px;
+      --radius:18px;
+      --shadow:0 10px 30px rgba(16,54,84,.08);
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: "Inter", "Segoe UI", Arial, sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at top right, rgba(86,214,226,0.12), transparent 24%),
-        radial-gradient(circle at left top, rgba(231,194,122,0.12), transparent 22%),
-        linear-gradient(180deg, #11263a 0%, #0A1B2E 38%, #0A1B2E 100%);
-      line-height: 1.6;
+    *{box-sizing:border-box}
+
+    html{scroll-behavior:smooth}
+
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      color:var(--text);
+      background:var(--bg);
+      line-height:1.55;
     }
 
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
+    a{color:inherit;text-decoration:none}
 
-    .container {
-      width: min(calc(100% - 32px), var(--max));
-      margin: 0 auto;
+    .container{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:0 20px;
     }
 
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      backdrop-filter: blur(10px);
-      background: rgba(10, 27, 46, 0.82);
-      border-bottom: 1px solid var(--line);
+    .section{padding:52px 0}
+
+    .hero{
+      background:linear-gradient(135deg,#0d4d73 0%, #0f5f8f 55%, #1575aa 100%);
+      color:#fff;
+      padding:70px 0 54px;
     }
 
-    .topbar-inner {
-      min-height: 76px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.35fr .95fr;
+      gap:26px;
+      align-items:center;
     }
 
-    .brand {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
+    .eyebrow{
+      display:inline-block;
+      background:rgba(255,255,255,.14);
+      border:1px solid rgba(255,255,255,.22);
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:13px;
+      margin-bottom:14px;
     }
 
-    .brand-title {
-      font-size: 1.05rem;
-      font-weight: 800;
-      letter-spacing: 0.2px;
+    h1,h2,h3{margin:0 0 14px}
+    h1{font-size:44px;line-height:1.08}
+    h2{font-size:32px}
+    h3{font-size:22px}
+    p{margin:0 0 14px}
+
+    .lead{
+      font-size:19px;
+      max-width:760px;
     }
 
-    .brand-sub {
-      color: var(--muted);
-      font-size: 0.82rem;
-      font-weight: 500;
+    .hero-card, .card{
+      background:var(--card);
+      color:var(--text);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:24px;
     }
 
-    .nav {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      color: var(--muted);
-      font-weight: 600;
-      flex-wrap: wrap;
+    .muted{color:var(--muted)}
+
+    .cta-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:18px;
     }
 
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      border-radius: 12px;
-      padding: 12px 18px;
-      font-weight: 800;
-      border: 1px solid transparent;
-      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
-      cursor: pointer;
+    .btn{
+      display:inline-block;
+      padding:14px 18px;
+      border-radius:12px;
+      font-weight:700;
+      border:2px solid transparent;
+      transition:transform .15s ease, opacity .15s ease;
     }
 
-    .btn:hover { transform: translateY(-1px); }
+    .btn:hover{transform:translateY(-1px); opacity:.96}
 
-    .btn-primary {
-      background: linear-gradient(180deg, var(--cta) 0%, var(--cta-dark) 100%);
-      color: #05140a;
-      box-shadow: 0 12px 28px rgba(34, 197, 94, 0.28);
+    .btn-primary{background:var(--accent);color:#1f2e3a}
+    .btn-secondary{background:transparent;color:#fff;border-color:rgba(255,255,255,.3)}
+    .btn-dark{background:var(--primary);color:#fff}
+
+    .grid-3{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
     }
 
-    .btn-secondary {
-      background: rgba(255,255,255,0.03);
-      border-color: var(--line);
-      color: var(--text);
+    .grid-2{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:18px;
     }
 
-    .hero {
-      padding: 78px 0 34px;
+    .service-card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:22px;
+      box-shadow:var(--shadow);
     }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 24px;
-      align-items: stretch;
+    .pricing{
+      background:linear-gradient(180deg,var(--soft) 0%, transparent 100%);
     }
 
-    .panel {
-      background: linear-gradient(180deg, rgba(23,49,77,0.96), rgba(15,34,55,0.96));
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
+    .price{
+      font-size:34px;
+      font-weight:800;
+      color:var(--primary);
+      margin:8px 0 10px;
     }
 
-    .hero-copy {
-      padding: 38px;
+    .tag{
+      display:inline-block;
+      font-size:12px;
+      font-weight:700;
+      color:var(--primary);
+      background:var(--soft);
+      border-radius:999px;
+      padding:7px 10px;
+      margin-bottom:10px;
     }
 
-    .eyebrow {
-      display: inline-block;
-      margin-bottom: 16px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      font-size: 0.74rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: #dffcff;
-      background: rgba(24,183,201,0.12);
-      border: 1px solid rgba(86,214,226,0.24);
+    .cta-band{
+      background:linear-gradient(135deg,var(--soft2),#fff);
+      border-top:1px solid #f0dccf;
+      border-bottom:1px solid #f0dccf;
     }
 
-    h1 {
-      margin: 0 0 14px;
-      font-size: clamp(2.15rem, 5vw, 3.6rem);
-      line-height: 1.05;
+    .contact-layout{
+      display:grid;
+      grid-template-columns:0.95fr 1.05fr;
+      gap:18px;
+      align-items:stretch;
     }
 
-    .lead {
-      margin: 0;
-      color: var(--muted);
-      font-size: 1.08rem;
-      max-width: 60ch;
+    .contact-panel,
+    .iframe-wrap{
+      height:100%;
     }
 
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 26px;
+    .contact-panel{
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:24px;
+      box-shadow:var(--shadow);
     }
 
-    .micro-trust {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 18px;
+    .contact-inline{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px 14px;
+      margin:10px 0 14px;
+      font-weight:700;
+      align-items:center;
     }
 
-    .pill {
-      padding: 8px 12px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.04);
-      color: var(--muted);
-      font-size: 0.92rem;
-      font-weight: 600;
+    .contact-inline a{
+      color:var(--primary);
+      text-decoration:none;
+      word-break:break-word;
     }
 
-    .hero-note {
-      margin-top: 22px;
-      color: var(--warm);
-      font-weight: 700;
-      font-size: 0.98rem;
+    .contact-sep{
+      color:var(--muted);
+      font-weight:400;
     }
 
-    .form-panel {
-      padding: 26px;
+    .iframe-wrap{
+      display:flex;
+      flex-direction:column;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:12px;
+      box-shadow:var(--shadow);
     }
 
-    .form-panel h2 {
-      margin: 0 0 8px;
-      font-size: 1.75rem;
+    .iframe-wrap iframe{
+      width:100%;
+      height:760px;
+      border:none;
+      border-radius:12px;
+      display:block;
     }
 
-    .form-panel p {
-      margin: 0;
-      color: var(--muted);
+    .pill-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:14px;
     }
 
-    .response-note {
-      margin: 16px 0 18px;
-      padding: 12px 14px;
-      border-radius: 12px;
-      font-weight: 700;
-      color: #dffcff;
-      background: rgba(24,183,201,0.12);
-      border: 1px solid rgba(86,214,226,0.24);
+    .pill{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:999px;
+      padding:10px 14px;
+      font-weight:700;
+      box-shadow:var(--shadow);
     }
 
-    iframe {
-      width: 100%;
-      min-height: 560px;
-      border: none;
-      border-radius: 14px;
-      background: #ffffff;
+    .list{margin:0; padding-left:18px;}
+
+    .trust{background:#fff}
+
+    .footer-cta{
+      background:linear-gradient(135deg,#143952 0%, #0f5f8f 100%);
+      color:#fff;
+      border-radius:22px;
+      padding:34px;
+      box-shadow:var(--shadow);
     }
 
-    .section {
-      padding: 30px 0;
-    }
+    .footer-cta .contact-inline a,
+    .hero .contact-inline a{color:#fff}
 
-    .section-head {
-      text-align: center;
-      margin-bottom: 22px;
-    }
+    .small{font-size:14px}
 
-    .section-head h2 {
-      margin: 0 0 8px;
-      font-size: clamp(1.8rem, 3vw, 2.3rem);
-    }
-
-    .section-head p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 1.02rem;
-    }
-
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
-    }
-
-    .card {
-      padding: 24px;
-      border-radius: 16px;
-      border: 1px solid var(--line);
-      background: linear-gradient(180deg, rgba(23,49,77,0.94), rgba(15,34,55,0.94));
-      box-shadow: var(--shadow);
-    }
-
-    .card h3 {
-      margin: 0 0 10px;
-      font-size: 1.24rem;
-    }
-
-    .card p {
-      margin: 0;
-      color: var(--muted);
-    }
-
-    .list {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    .list li {
-      padding: 11px 0;
-      border-bottom: 1px solid var(--line);
-      color: var(--muted);
-    }
-
-    .list li:last-child { border-bottom: none; }
-
-    .accent {
-      color: var(--warm);
-      font-weight: 800;
-    }
-
-    .pricing-box {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
-    }
-
-    .price {
-      font-size: 1.65rem;
-      line-height: 1.2;
-      margin-bottom: 8px;
-      font-weight: 900;
-      color: var(--warm);
-    }
-
-    .cta-band {
-      margin: 12px 0 50px;
-      padding: 26px;
-      border-radius: 18px;
-      border: 1px solid rgba(231,194,122,0.32);
-      background: linear-gradient(130deg, rgba(24,183,201,0.14), rgba(231,194,122,0.11));
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-      flex-wrap: wrap;
-      box-shadow: var(--shadow);
-    }
-
-    .cta-band h2 {
-      margin: 0 0 6px;
-      font-size: 1.9rem;
-    }
-
-    .cta-band p {
-      margin: 0;
-      color: var(--muted);
-    }
-
-    footer {
-      border-top: 1px solid var(--line);
-      color: var(--muted);
-      text-align: center;
-      padding: 24px 0 42px;
-      font-size: 0.94rem;
-    }
-
-    @media (max-width: 960px) {
+    /* Tablet */
+    @media (max-width: 1024px){
       .hero-grid,
+      .contact-layout,
+      .grid-3{
+        grid-template-columns:1fr;
+      }
+
+      .grid-2{
+        grid-template-columns:1fr 1fr;
+      }
+
+      h1{font-size:40px}
+      h2{font-size:30px}
+
+      .iframe-wrap iframe{
+        height:900px;
+      }
+    }
+
+    /* Mobile */
+    @media (max-width: 767px){
+      .section{padding:40px 0}
+      .container{padding:0 16px}
+      h1{font-size:34px}
+      h2{font-size:28px}
+      h3{font-size:20px}
+      .lead{font-size:18px}
       .grid-2,
-      .pricing-box {
-        grid-template-columns: 1fr;
+      .grid-3{
+        grid-template-columns:1fr;
       }
-
-      .nav a:not(.btn) {
-        display: none;
+      .contact-panel{
+        padding:20px;
       }
+      .contact-inline{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:8px;
+      }
+      .contact-sep{
+        display:none;
+      }
+      .cta-row{
+        gap:10px;
+      }
+      .btn{
+        width:100%;
+        text-align:center;
+      }
+      .iframe-wrap iframe{
+        height:980px;
+      }
+    }
 
-      .hero-copy {
-        padding: 30px;
+    /* Larger desktop */
+    @media (min-width: 1280px){
+      .iframe-wrap iframe{
+        height:720px;
       }
     }
   </style>
 </head>
 <body>
-  <header class="topbar">
-    <div class="container topbar-inner">
-      <div class="brand">
-        <span class="brand-title">Suncoast Tech Support</span>
-        <span class="brand-sub">Business IT Support for Clearwater & Pinellas County</span>
+  <header class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">Clearwater Area • Small Offices Under 20 Employees</div>
+        <h1>Local IT Support for Small Offices That Need Things Fixed Fast</h1>
+        <p class="lead">Suncoast Tech Support helps small offices in the Clearwater area solve computer, Wi-Fi, email, printer, and security issues without long contracts or MSP bloat.</p>
+        <p>Built for real estate offices, insurance agencies, accounting firms, medical admin offices, and other small teams that need dependable local help.</p>
+
+        <div class="contact-inline">
+          <span><strong>Call:</strong> <a href="tel:17274964668" onclick="trackContact('phone_click')">(727) 496-4668</a></span>
+          <span class="contact-sep">•</span>
+          <span><strong>Text:</strong> <a href="sms:17274964668" onclick="trackContact('text_click')">Send a text</a></span>
+          <span class="contact-sep">•</span>
+          <span><strong>Email:</strong> <a href="mailto:support@suncoasttechsupport.net" onclick="trackContact('email_click')">support@suncoasttechsupport.net</a></span>
+        </div>
+
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#contact">Request Support</a>
+          <a class="btn btn-secondary" href="tel:17274964668" onclick="trackContact('phone_click')">Call Now</a>
+        </div>
       </div>
-      <nav class="nav" aria-label="Primary">
-        <a href="#services">Services</a>
-        <a href="#industries">Industries</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#contact" class="btn btn-primary">Call or Request Support</a>
-      </nav>
+
+      <div class="hero-card">
+        <h3>Small office problems we handle every day</h3>
+        <p class="muted">Slow computers. Outlook not syncing. Printers not working. Wi-Fi dropping. Staff locked out. New PC setups. Suspicious popups. On-site when needed, remote when possible.</p>
+        <div class="pill-row">
+          <span class="pill">Wi-Fi & Internet</span>
+          <span class="pill">Microsoft 365</span>
+          <span class="pill">Printers</span>
+          <span class="pill">Computer Repair</span>
+          <span class="pill">Office Setup</span>
+          <span class="pill">Basic Security</span>
+        </div>
+      </div>
     </div>
   </header>
 
   <main>
-    <section class="hero">
-      <div class="container hero-grid">
-        <article class="panel hero-copy">
-          <span class="eyebrow">Local • Small Offices • Fast Response</span>
-          <h1>IT support for small offices in Clearwater & Pinellas County.</h1>
-          <p class="lead">
-            Fix email, Microsoft 365, printer, Wi-Fi, computer, and day-to-day user issues fast with local support designed for offices with 5–20 users.
-          </p>
-
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="tel:+17276479000">Call 727-647-9000</a>
-            <a class="btn btn-secondary" href="#contact">Request Support</a>
+    <section class="section">
+      <div class="container">
+        <h2>Core IT Services for Small Offices</h2>
+        <p class="muted">Practical support that keeps your office productive without making things complicated.</p>
+        <div class="grid-3" style="margin-top:18px;">
+          <div class="service-card">
+            <h3>Day-to-Day IT Support</h3>
+            <p>Fix slow computers, login issues, software problems, and general troubleshooting that slows down staff.</p>
           </div>
-
-          <div class="micro-trust" aria-label="Trust indicators">
-            <span class="pill">No long-term contracts</span>
-            <span class="pill">Break-fix and monthly support</span>
-            <span class="pill">Practical security support</span>
+          <div class="service-card">
+            <h3>Wi-Fi and Network Support</h3>
+            <p>Resolve dropped connections, weak office Wi-Fi, unstable internet, and network issues affecting cloud apps and calls.</p>
           </div>
-
-          <div class="hero-note">
-            Best fit for small offices that need responsive local help without overcomplicated MSP jargon.
+          <div class="service-card">
+            <h3>Email and Microsoft 365</h3>
+            <p>Help with Outlook, Microsoft 365, password resets, account access, and email sync issues.</p>
           </div>
-        </article>
-
-        <aside class="panel form-panel" id="contact" aria-labelledby="contact-title">
-          <h2 id="contact-title">Request Business IT Support</h2>
-          <p>
-            Tell us what is going wrong and route your request directly into support. Calling is the fastest option for urgent issues.
-          </p>
-          <div class="response-note">Typical response time: within 15 minutes during business hours.</div>
-          <iframe
-            title="Suncoast Tech Support Request Form"
-            allow="camera;"
-            src="https://forms.zohopublic.com/lightmyfire/form/Contactforsupport/formperma/LIsVTeLHmxGHYWEhc2EjoD96lF9EVxdnQC29atrHWgU?zf_enablecamera=true">
-          </iframe>
-        </aside>
+          <div class="service-card">
+            <h3>Printer and Device Setup</h3>
+            <p>Set up printers, workstations, new computers, and small office device changes without disrupting the day.</p>
+          </div>
+          <div class="service-card">
+            <h3>On-Site and Remote Help</h3>
+            <p>Remote support when it is faster. On-site support when the issue needs hands-on attention.</p>
+          </div>
+          <div class="service-card">
+            <h3>Small Office Security Basics</h3>
+            <p>Reduce risk from suspicious emails, weak account security, outdated software, and unsafe office setups.</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="section" id="services">
+    <section class="section pricing">
       <div class="container">
-        <header class="section-head">
-          <h2>Core Office IT Services</h2>
-          <p>Built around the real issues that slow down small teams and front-office workflows.</p>
-        </header>
+        <h2>Simple Pricing for Small Offices</h2>
+        <p class="muted">Clear, flexible support options that fit smaller teams.</p>
+        <div class="grid-3" style="margin-top:18px;">
+          <div class="card">
+            <div class="tag">One-Time Help</div>
+            <h3>Troubleshooting & Repair</h3>
+            <div class="price">$179</div>
+            <p>Best for immediate issues like slow PCs, printer problems, email issues, and general office troubleshooting.</p>
+          </div>
+          <div class="card">
+            <div class="tag">Project Work</div>
+            <h3>Office Setup & Changes</h3>
+            <div class="price">Call for a quote</div>
+            <p>Ideal for new computers, workstation moves, office changes, printer rollouts, and network improvements.</p>
+          </div>
+          <div class="card">
+            <div class="tag">Ongoing Support</div>
+            <h3>Small Office IT Support</h3>
+            <div class="price">Call for a quote</div>
+            <p>For offices that want dependable help without hiring a full-time IT person or signing a big MSP contract.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <div class="grid-2">
-          <article class="card">
-            <h3>Email & Microsoft 365 Support</h3>
-            <p>Outlook problems, password resets, sync issues, account access, mailbox setup, and Microsoft 365 troubleshooting for day-to-day office operations.</p>
-          </article>
+    <section class="section cta-band" id="contact">
+      <div class="container contact-layout">
+        <div class="contact-panel">
+          <h2>Get Small Office IT Help</h2>
+          <p>Call, text, email, or send a quick request below. Choose whichever is easiest and Suncoast will follow up with the best next step.</p>
 
-          <article class="card">
-            <h3>Office Network & Wi-Fi Support</h3>
-            <p>Slow internet, unstable Wi-Fi, router and firewall issues, access point setup, and connectivity fixes that help keep your office productive.</p>
-          </article>
+          <div class="contact-inline">
+            <span><strong>Call:</strong> <a href="tel:17274964668" onclick="trackContact('phone_click')">(727) 496-4668</a></span>
+            <span class="contact-sep">•</span>
+            <span><strong>Text:</strong> <a href="sms:17274964668" onclick="trackContact('text_click')">Send a text</a></span>
+            <span class="contact-sep">•</span>
+            <span><strong>Email:</strong> <a href="mailto:support@suncoasttechsupport.net" onclick="trackContact('email_click')">support@suncoasttechsupport.net</a></span>
+          </div>
 
-          <article class="card">
-            <h3>Workstation & User Support</h3>
-            <p>Desktop and laptop issues, slow systems, crashes, onboarding help, login issues, printer mapping, and everyday user support for small teams.</p>
-          </article>
+          <div class="cta-row">
+            <a class="btn btn-dark" href="tel:17274964668" onclick="trackContact('phone_click')">Call Now</a>
+            <a class="btn btn-dark" href="sms:17274964668" onclick="trackContact('text_click')">Text Now</a>
+          </div>
 
-          <article class="card">
-            <h3>Printer, Scanner & Office Device Support</h3>
-            <p>Printer and scanner troubleshooting, shared device setup, scan-to-email issues, and support for the office tools your staff depends on.</p>
-          </article>
+          <p class="small muted" style="margin-top:14px;">Prefer typing it out? Use the embedded form.</p>
+        </div>
+
+        <div class="iframe-wrap">
+          <iframe aria-label="Contact for support" frameborder="0" allow="camera;" src="https://forms.zohopublic.com/lightmyfire/form/Contactforsupport/formperma/LIsVTeLHmxGHYWEhc2EjoD96lF9EVxdnQC29atrHWgU?zf_enablecamera=true"></iframe>
+          <div class="cta-row" style="margin-top:12px;">
+            <a class="btn btn-primary" href="https://forms.zohopublic.com/lightmyfire/form/Contactforsupport/formperma/LIsVTeLHmxGHYWEhc2EjoD96lF9EVxdnQC29atrHWgU" target="_blank" rel="noopener" onclick="trackContact('form_click')">Open Form in New Window</a>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="section">
       <div class="container">
-        <header class="section-head">
-          <h2>Security That Makes Sense for Small Offices</h2>
-          <p>Practical protection without turning the page into a compliance brochure.</p>
-        </header>
-
-        <div class="grid-2">
-          <article class="card">
-            <h3>Security & Protection</h3>
-            <p>Help with suspicious popups, malware cleanup, email threat awareness, safer account practices, and recommendations that fit small business environments.</p>
-          </article>
-
-          <article class="card">
-            <h3>Modern Tools & Light Automation</h3>
-            <p>Guidance on useful modern tools and simple automation where it actually saves time for your office, without forcing AI buzzwords into every conversation.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="industries">
-      <div class="container">
-        <header class="section-head">
-          <h2>We Support Offices Like Yours</h2>
-          <p>Local support for the kinds of organizations that need quick answers and dependable follow-through.</p>
-        </header>
-
-        <div class="grid-2">
-          <article class="card">
-            <h3>Ideal industries</h3>
+        <h2>Security That Makes Sense for Small Offices</h2>
+        <div class="grid-2" style="margin-top:18px;">
+          <div class="card">
+            <p>Small offices often do not need enterprise complexity. They need clear, practical protection that staff can actually use.</p>
             <ul class="list">
-              <li>Accounting firms and bookkeeping offices</li>
-              <li>Insurance agencies</li>
-              <li>Real estate and property management offices</li>
-              <li>Medical and administrative offices</li>
+              <li>Help spotting phishing and suspicious emails</li>
+              <li>Safer setup for computers and user accounts</li>
+              <li>Antivirus and endpoint protection support</li>
+              <li>Password and account security guidance</li>
+              <li>Software update and basic risk reduction support</li>
             </ul>
-          </article>
-
-          <article class="card">
-            <h3>Good reasons to call now</h3>
-            <ul class="list">
-              <li>Email is down or Microsoft 365 is not working</li>
-              <li>Office Wi-Fi or internet is unstable</li>
-              <li>A printer, scanner, or workstation is blocking work</li>
-              <li>Users are dealing with slow systems, popups, or access issues</li>
-            </ul>
-          </article>
+          </div>
+          <div class="card">
+            <h3>Plain-English support</h3>
+            <p>No scare tactics. No overloaded tech jargon. Just sensible guidance that helps your office stay productive and safer.</p>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="section">
       <div class="container">
-        <header class="section-head">
-          <h2>Why Small Offices Choose Suncoast Tech Support</h2>
-          <p>Positioned for businesses that want responsive help first, with room to grow into recurring support later.</p>
-        </header>
-
-        <div class="grid-2">
-          <article class="card">
-            <h3>Local to Clearwater & surrounding areas</h3>
-            <p>Built for Clearwater and Pinellas County businesses that want a nearby provider, clear communication, and practical help without a giant corporate help desk.</p>
-          </article>
-
-          <article class="card">
-            <h3>Balanced support model</h3>
-            <p>Start with break-fix when you need it most, then move into monthly support if it makes sense. <span class="accent">Fast cash now, recurring later.</span></p>
-          </article>
-
-          <article class="card">
-            <h3>No overcomplicated sales pitch</h3>
-            <p>Business-focused, security-aware, and modern without sounding like an enterprise-only MSP site built for 200-seat organizations.</p>
-          </article>
-
-          <article class="card">
-            <h3>Phone-first contact path</h3>
-            <p>Visitors can call immediately for urgent support or submit the form to enter your Zoho workflow. That matches how small offices actually buy help.</p>
-          </article>
+        <h2>We Support Offices Like Yours</h2>
+        <p class="muted">Local support for the kinds of small offices that need stable, dependable technology every day.</p>
+        <div class="grid-2" style="margin-top:18px;">
+          <div class="service-card">
+            <h3>Real Estate Offices</h3>
+            <p>Email, printers, Wi-Fi, shared workstations, and everyday support for offices that need to stay client-ready.</p>
+          </div>
+          <div class="service-card">
+            <h3>Insurance Agencies</h3>
+            <p>Reliable systems, staff account access, printer support, and smoother day-to-day office operations.</p>
+          </div>
+          <div class="service-card">
+            <h3>Accounting and Professional Offices</h3>
+            <p>Performance issues, file access, Microsoft 365 support, and technology cleanup that saves staff time.</p>
+          </div>
+          <div class="service-card">
+            <h3>Medical and Administrative Offices</h3>
+            <p>Stable office systems, workstation setup, and dependable support for teams that cannot afford disruption.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section pricing" id="pricing">
+    <section class="section trust">
       <div class="container">
-        <header class="section-head">
-          <h2>Business Support Options</h2>
-          <p>Structured to support quick one-time fixes while opening the door to recurring service.</p>
-        </header>
-
-        <div class="pricing-box">
-          <article class="card">
-            <h3>On-Demand Business Support</h3>
-            <div class="price">$60/hr</div>
-            <ul class="list">
-              <li>Best for urgent issues and one-time support needs</li>
-              <li>Email, Wi-Fi, printer, computer, and user troubleshooting</li>
-              <li>No ongoing commitment</li>
-            </ul>
-          </article>
-
-          <article class="card">
-            <h3>Monthly Business Support Plans</h3>
-            <div class="price">Starting at $150/mo</div>
-            <ul class="list">
-              <li>Good fit for small offices that need reliable help</li>
-              <li>Priority support and ongoing IT guidance</li>
-              <li>Free consultation for new business customers</li>
-            </ul>
-          </article>
+        <h2>Why Small Offices Use Suncoast</h2>
+        <div class="grid-3" style="margin-top:18px;">
+          <div class="card">
+            <h3>Local and Responsive</h3>
+            <p>You are working with a local business, not a national help desk or a call-center maze.</p>
+          </div>
+          <div class="card">
+            <h3>Built for Small Offices</h3>
+            <p>Designed for offices under 20 employees that need real support without full MSP overhead.</p>
+          </div>
+          <div class="card">
+            <h3>Clear, Professional Support</h3>
+            <p>Friendly enough to be approachable. Professional enough to support business operations seriously.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="container">
-      <div class="cta-band">
-        <div>
-          <h2>Need help today?</h2>
-          <p>Call now for the fastest response, or submit your request online and route it directly into support.</p>
-        </div>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="tel:+17276479000">Call Now</a>
-          <a class="btn btn-secondary" href="#contact">Request Support</a>
+    <section class="section">
+      <div class="container">
+        <div class="footer-cta">
+          <h2>Ready for Better IT Support?</h2>
+          <p>Whether your office needs quick troubleshooting, better reliability, or ongoing support, Suncoast Tech Support can help.</p>
+
+          <div class="contact-inline">
+            <span><strong>Call:</strong> <a href="tel:17274964668" onclick="trackContact('phone_click')">(727) 496-4668</a></span>
+            <span class="contact-sep">•</span>
+            <span><strong>Text:</strong> <a href="sms:17274964668" onclick="trackContact('text_click')">Text us</a></span>
+            <span class="contact-sep">•</span>
+            <span><strong>Email:</strong> <a href="mailto:support@suncoasttechsupport.net" onclick="trackContact('email_click')">support@suncoasttechsupport.net</a></span>
+          </div>
+
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#contact">Request Support</a>
+            <a class="btn btn-secondary" href="tel:17274964668" onclick="trackContact('phone_click')">Call Now</a>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer>
-    Suncoast Tech Support • Business IT Support • Clearwater, Pinellas County & surrounding areas
-  </footer>
+  <script>
+    function trackContact(actionName) {
+      if (typeof gtag === 'function') {
+        gtag('event', actionName, {
+          event_category: 'contact',
+          event_label: actionName
+        });
+      }
+    }
+  </script>
 </body>
 </html>
