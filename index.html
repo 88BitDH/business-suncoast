@@ -7,61 +7,313 @@
   <meta name="description" content="Managed IT services for Clearwater area businesses. Fast support, strong security, proactive maintenance, and no long-term contracts." />
   <meta name="keywords" content="managed IT services Clearwater, business IT support Clearwater area, MSP Clearwater, small business IT support Clearwater, cybersecurity for small business Clearwater" />
   <meta name="robots" content="index, follow" />
+
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17992501324"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'AW-17992501324');
-</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17992501324"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-17992501324');
+  </script>
+
   <style>
     :root{
-      --bg:#f7fafc; --card:#ffffff; --text:#163047; --muted:#5b6b79; --line:#d9e3ea;
-      --primary:#0f5f8f; --accent:#ff8a3d; --soft:#eaf5fb; --max:1140px; --radius:20px;
+      --bg:#f7fafc;
+      --card:#ffffff;
+      --text:#163047;
+      --muted:#5b6b79;
+      --line:#d9e3ea;
+      --primary:#0f5f8f;
+      --accent:#ff8a3d;
+      --soft:#eaf5fb;
+      --max:1140px;
+      --radius:20px;
       --shadow:0 10px 30px rgba(16,54,84,.08);
     }
-    *{box-sizing:border-box} html{scroll-behavior:smooth}
-    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);line-height:1.55;padding-bottom:0}
-    a{text-decoration:none;color:inherit} img{max-width:100%;display:block}
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+
+    body{
+      margin:0;
+      font-family:Arial,Helvetica,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.55;
+      padding-bottom:0;
+    }
+
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+
     .container{max-width:var(--max);margin:0 auto;padding:0 20px}
-    .section{padding:56px 0}.section-tight{padding:34px 0}
-    h1,h2,h3{margin:0 0 14px} h1{font-size:46px;line-height:1.06} h2{font-size:34px} h3{font-size:23px} p{margin:0 0 14px} ul{margin:0;padding-left:20px}
-    .muted{color:var(--muted)} .center{text-align:center}
-    .btn{display:inline-block;padding:14px 18px;border-radius:12px;font-weight:700;border:2px solid transparent;transition:transform .15s ease, opacity .15s ease}
+    .section{padding:56px 0}
+    .section-tight{padding:34px 0}
+
+    h1,h2,h3{margin:0 0 14px}
+    h1{font-size:46px;line-height:1.06}
+    h2{font-size:34px}
+    h3{font-size:23px}
+    p{margin:0 0 14px}
+    ul{margin:0;padding-left:20px}
+
+    .muted{color:var(--muted)}
+    .center{text-align:center}
+
+    .btn{
+      display:inline-block;
+      padding:14px 18px;
+      border-radius:12px;
+      font-weight:700;
+      border:2px solid transparent;
+      transition:transform .15s ease, opacity .15s ease;
+    }
     .btn:hover{transform:translateY(-1px);opacity:.96}
-    .btn-primary{background:var(--accent);color:#1f2e3a}.btn-secondary{background:transparent;color:#fff;border-color:rgba(255,255,255,.32)}
-    .btn-dark{background:var(--primary);color:#fff}.btn-outline{background:#fff;color:var(--primary);border-color:var(--line)}
-    .hero{background:linear-gradient(135deg,#0d4d73 0%, #0f5f8f 55%, #1575aa 100%);color:#fff;padding:28px 0 50px}
-    .topbar{display:flex;align-items:center;justify-content:flex-start;padding-bottom:10px}
-    .logo-wrap{display:flex;align-items:center;gap:14px}
-    .logo-box{width:auto;min-height:50px;background:rgba(255,255,255,.10);border:1px dashed rgba(255,255,255,.40);border-radius:14px;padding:6px 10px;display:flex;align-items:center;justify-content:center;overflow:hidden;color:#fff;font-size:14px}
-    .logo-box img{max-height:48px;width:auto;object-fit:contain}
-    .logo-note{font-size:12px;color:rgba(255,255,255,.86)}
-    .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:24px;align-items:center}
-    .eyebrow{display:inline-block;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.24);border-radius:999px;padding:8px 12px;font-size:13px;margin-bottom:14px}
-    .lead{font-size:20px;max-width:740px}.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px;margin-bottom:16px}
-    .trust-bar{display:flex;flex-wrap:wrap;gap:12px 18px;margin-top:14px;font-weight:700;font-size:15px}
-    .hero-card{background:#fff;color:var(--text);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px}
-    .founder-card{display:grid;grid-template-columns:140px 1fr;gap:16px;align-items:center;margin-bottom:18px}
-    .founder-photo{width:140px;height:140px;border-radius:18px;overflow:hidden;border:1px solid var(--line);background:#edf3f8;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--muted);font-size:13px;padding:10px}
-    .founder-photo img{width:100%;height:100%;object-fit:cover}
-    .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .card,.contact-panel,.faq-item,.iframe-wrap{background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow)}
-    .card,.contact-panel{padding:22px}.faq-item{padding:18px}.iframe-wrap{padding:12px}
-    .pain{background:linear-gradient(180deg,#fff4ec 0%, transparent 100%)} .solution{background:linear-gradient(180deg,var(--soft) 0%, transparent 100%)} .offer{background:linear-gradient(180deg,#eef8f1 0%, transparent 100%)}
-    .icon-list{display:grid;gap:10px;margin-top:14px}.quote{font-style:italic;font-size:18px;margin-bottom:12px}.stars{color:#d5891d;font-size:18px;letter-spacing:1px;margin-bottom:10px}
-    .contact-inline{display:flex;flex-wrap:wrap;gap:10px 14px;margin:10px 0 14px;font-weight:700;align-items:center}
-    .contact-inline a{color:var(--primary);word-break:break-word}.contact-sep{color:var(--muted);font-weight:400}
-    .iframe-wrap iframe{width:100%;height:760px;border:none;border-radius:12px;display:block}
-    .final-cta{background:linear-gradient(135deg,#143952 0%, #0f5f8f 100%);color:#fff;border-radius:24px;padding:34px;box-shadow:var(--shadow)}
-    .mobile-sticky-cta{display:none;position:fixed;left:0;right:0;bottom:0;z-index:999;background:#fff;border-top:1px solid var(--line);box-shadow:0 -6px 18px rgba(15,95,143,.12);padding:10px 12px calc(10px + env(safe-area-inset-bottom))}
-    .mobile-sticky-cta .inner{display:grid;grid-template-columns:1fr 1fr 1.2fr;gap:8px;max-width:760px;margin:0 auto}
-    .mobile-sticky-cta a{display:flex;align-items:center;justify-content:center;text-align:center;min-height:46px;border-radius:12px;font-weight:700;font-size:14px;padding:10px 8px}
-    .mobile-call{background:#eaf5fb;color:var(--primary)} .mobile-text{background:#fff4ec;color:#b9651b} .mobile-assess{background:var(--accent);color:#1f2e3a}
-    @media (max-width:1024px){h1{font-size:40px}h2{font-size:30px}.hero-grid,.grid-3{grid-template-columns:1fr}.grid-2{grid-template-columns:1fr 1fr}.iframe-wrap iframe{height:900px}}
-    @media (max-width:767px){body{padding-bottom:82px}.section{padding:42px 0}.container{padding:0 16px}h1{font-size:34px}h2{font-size:28px}h3{font-size:21px}.lead{font-size:18px}.topbar{flex-direction:column;align-items:flex-start}.grid-2,.grid-3{grid-template-columns:1fr}.founder-card{grid-template-columns:1fr}.founder-photo{width:100%;max-width:240px;height:240px}.contact-inline{flex-direction:column;align-items:flex-start;gap:8px}.contact-sep{display:none}.hero-cta .btn,.contact-panel .btn,.iframe-wrap .btn,.final-cta .btn{width:100%;text-align:center}.iframe-wrap iframe{height:980px}.mobile-sticky-cta{display:block}}
-    @media (min-width:1280px){.iframe-wrap iframe{height:720px}}
+
+    .btn-primary{background:var(--accent);color:#1f2e3a}
+    .btn-secondary{background:transparent;color:#fff;border-color:rgba(255,255,255,.32)}
+    .btn-dark{background:var(--primary);color:#fff}
+    .btn-outline{background:#fff;color:var(--primary);border-color:var(--line)}
+
+    .hero{
+      background:linear-gradient(135deg,#0d4d73 0%, #0f5f8f 55%, #1575aa 100%);
+      color:#fff;
+      padding:20px 0 50px;
+    }
+
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:flex-start;
+      padding-bottom:10px;
+    }
+
+    .logo-wrap{
+      display:flex;
+      align-items:center;
+      gap:14px;
+    }
+
+    .logo-box{
+      width:auto;
+      min-height:56px;
+      padding:0;
+      background:transparent;
+      border:none;
+      border-radius:0;
+      display:flex;
+      align-items:center;
+      justify-content:flex-start;
+      overflow:visible;
+    }
+
+    .logo-box img{
+      width:auto;
+      height:110px;
+      max-width:min(230px, 60vw);
+      object-fit:contain;
+      filter:drop-shadow(0 6px 12px rgba(0,0,0,.18));
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.08fr .92fr;
+      gap:24px;
+      align-items:center;
+    }
+
+    .eyebrow{
+      display:inline-block;
+      background:rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.24);
+      border-radius:999px;
+      padding:8px 12px;
+      font-size:13px;
+      margin-bottom:14px;
+    }
+
+    .lead{font-size:20px;max-width:740px}
+
+    .hero-cta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:18px;
+      margin-bottom:16px;
+    }
+
+    .trust-bar{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px 18px;
+      margin-top:14px;
+      font-weight:700;
+      font-size:15px;
+    }
+
+    .hero-card{
+      background:#fff;
+      color:var(--text);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:22px;
+    }
+
+    .founder-card{
+      display:grid;
+      grid-template-columns:140px 1fr;
+      gap:16px;
+      align-items:center;
+      margin-bottom:18px;
+    }
+
+    .founder-photo{
+      width:140px;
+      height:140px;
+      border-radius:18px;
+      overflow:hidden;
+      border:1px solid var(--line);
+      background:#edf3f8;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      color:var(--muted);
+      font-size:13px;
+      padding:0;
+    }
+
+    .founder-photo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+
+    .card,.contact-panel,.faq-item,.iframe-wrap{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:18px;
+      box-shadow:var(--shadow);
+    }
+
+    .card,.contact-panel{padding:22px}
+    .faq-item{padding:18px}
+    .iframe-wrap{padding:12px}
+
+    .pain{background:linear-gradient(180deg,#fff4ec 0%, transparent 100%)}
+    .solution{background:linear-gradient(180deg,var(--soft) 0%, transparent 100%)}
+    .offer{background:linear-gradient(180deg,#eef8f1 0%, transparent 100%)}
+
+    .icon-list{display:grid;gap:10px;margin-top:14px}
+    .quote{font-style:italic;font-size:18px;margin-bottom:12px}
+    .stars{color:#d5891d;font-size:18px;letter-spacing:1px;margin-bottom:10px}
+    .rating-line{
+      margin:4px 0 8px;
+      font-weight:700;
+      color:#0d4d73;
+    }
+
+    .contact-inline{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px 14px;
+      margin:10px 0 14px;
+      font-weight:700;
+      align-items:center;
+    }
+
+    .contact-inline a{color:var(--primary);word-break:break-word}
+    .contact-sep{color:var(--muted);font-weight:400}
+
+    .iframe-wrap iframe{
+      width:100%;
+      height:760px;
+      border:none;
+      border-radius:12px;
+      display:block;
+    }
+
+    .final-cta{
+      background:linear-gradient(135deg,#143952 0%, #0f5f8f 100%);
+      color:#fff;
+      border-radius:24px;
+      padding:34px;
+      box-shadow:var(--shadow);
+    }
+
+    .mobile-sticky-cta{
+      display:none;
+      position:fixed;
+      left:0;
+      right:0;
+      bottom:0;
+      z-index:999;
+      background:#fff;
+      border-top:1px solid var(--line);
+      box-shadow:0 -6px 18px rgba(15,95,143,.12);
+      padding:10px 12px calc(10px + env(safe-area-inset-bottom));
+    }
+
+    .mobile-sticky-cta .inner{
+      display:grid;
+      grid-template-columns:1fr 1fr 1.2fr;
+      gap:8px;
+      max-width:760px;
+      margin:0 auto;
+    }
+
+    .mobile-sticky-cta a{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      min-height:46px;
+      border-radius:12px;
+      font-weight:700;
+      font-size:14px;
+      padding:10px 8px;
+    }
+
+    .mobile-call{background:#eaf5fb;color:var(--primary)}
+    .mobile-text{background:#fff4ec;color:#b9651b}
+    .mobile-assess{background:var(--accent);color:#1f2e3a}
+
+    @media (max-width:1024px){
+      h1{font-size:40px}
+      h2{font-size:30px}
+      .hero-grid,.grid-3{grid-template-columns:1fr}
+      .grid-2{grid-template-columns:1fr 1fr}
+      .iframe-wrap iframe{height:900px}
+    }
+
+    @media (max-width:767px){
+      body{padding-bottom:82px}
+      .section{padding:42px 0}
+      .container{padding:0 16px}
+      h1{font-size:34px}
+      h2{font-size:28px}
+      h3{font-size:21px}
+      .lead{font-size:18px}
+      .topbar{justify-content:center}
+      .logo-box{justify-content:center}
+      .logo-box img{height:88px;max-width:220px}
+      .grid-2,.grid-3{grid-template-columns:1fr}
+      .founder-card{grid-template-columns:1fr}
+      .founder-photo{width:100%;max-width:240px;height:240px}
+      .contact-inline{flex-direction:column;align-items:flex-start;gap:8px}
+      .contact-sep{display:none}
+      .hero-cta .btn,.contact-panel .btn,.iframe-wrap .btn,.final-cta .btn{width:100%;text-align:center}
+      .iframe-wrap iframe{height:980px}
+      .mobile-sticky-cta{display:block}
+    }
+
+    @media (min-width:1280px){
+      .iframe-wrap iframe{height:720px}
+    }
   </style>
 </head>
 <body>
@@ -70,32 +322,41 @@ gtag('config', 'AW-17992501324');
       <div class="topbar">
         <div class="logo-wrap">
           <div class="logo-box">
-            <img src="images/suncoast-logo.png" alt="Suncoast Tech Support logo"/>
+            <img src="images/suncoast-logo.png" alt="Suncoast Tech Support logo">
+          </div>
         </div>
       </div>
+
       <div class="hero-grid">
         <div>
           <div class="eyebrow">Managed IT Services • Clearwater Area • No Long-Term Contracts</div>
           <h1>Stop IT Problems From Slowing Down Your Business</h1>
           <p class="lead">Managed IT Services for Clearwater businesses — fast support, strong security, and proactive help without long-term contracts.</p>
+
           <div class="hero-cta">
             <a class="btn btn-primary" href="#contact" onclick="trackContact('assessment_click')">Get Your Free IT Assessment</a>
             <a class="btn btn-secondary" href="tel:17274964668" onclick="trackContact('phone_click')">Call Now: (727) 496-4668</a>
           </div>
+
           <div class="trust-bar">
             <span>✔ Trusted by Local Businesses</span>
             <span>✔ Fast Response Times</span>
             <span>✔ No Contracts Required</span>
           </div>
         </div>
+
         <div class="hero-card">
           <div class="founder-card">
             <div class="founder-photo">
-              <img src="images/moe-headshot.jpg" alt="Founder photo"/>
+              <img src="images/moe-headshot.jpg" alt="Founder photo">
             </div>
             <div>
+              <h3>Local owner-led support</h3>
+              <p>Show the real face behind the business. This helps trust, improves local credibility, and makes the page feel less generic.</p>
+              <p class="muted"><strong>Recommended:</strong> use a clean headshot with branded shirt or business-casual look.</p>
             </div>
           </div>
+
           <h3>Why businesses call Suncoast</h3>
           <p class="muted">Slow systems, security worries, downtime, and poor response times all cost money. Suncoast helps prevent problems before they disrupt your business.</p>
         </div>
@@ -145,7 +406,9 @@ gtag('config', 'AW-17992501324');
 
   <section class="section">
     <div class="container">
-      <div class="center"><h2>Why Businesses Switch to Us</h2></div>
+      <div class="center">
+        <h2>Why Businesses Switch to Us</h2>
+      </div>
       <div class="grid-2" style="margin-top:18px;">
         <div class="card">
           <ul class="icon-list">
@@ -168,15 +431,18 @@ gtag('config', 'AW-17992501324');
     <div class="container">
       <div class="center">
         <h2>What Our Clients Say</h2>
+        <p class="rating-line">⭐ 5-Star Rated on Google</p>
         <p class="muted">Add your real Google review quotes here. Keep them short, specific, and believable.</p>
       </div>
+
       <div class="grid-3" style="margin-top:18px;">
         <div class="card"><div class="stars">★★★★★</div><p class="quote">“Suncoast Tech Support eliminated our downtime and made IT stress-free.”</p><p><strong>— Real Name</strong>, Company</p></div>
         <div class="card"><div class="stars">★★★★★</div><p class="quote">“Fast, reliable, and easy to work with. Highly recommend.”</p><p><strong>— Real Name</strong>, Company</p></div>
         <div class="card"><div class="stars">★★★★★</div><p class="quote">“Responsive, professional, and much easier to work with than our previous IT provider.”</p><p><strong>— Real Name</strong>, Company</p></div>
       </div>
+
       <div class="center" style="margin-top:18px;">
-        <a class="btn btn-outline" href="https://g.page/r/" target="_blank" rel="noopener">Read More Google Reviews</a>
+        <a class="btn btn-outline" href="https://www.google.com/maps/place/Suncoast+Tech+Support/@27.9600634,-83.0269243,10z/data=!4m8!3m7!1s0xfda3740f6700f1b:0xbe48f9ed81314891!8m2!3d27.9598495!4d-82.6972656!9m1!1b1!16s%2Fg%2F11yvdld9vh?entry=ttu" target="_blank" rel="noopener">Read More Google Reviews</a>
       </div>
     </div>
   </section>
@@ -208,6 +474,7 @@ gtag('config', 'AW-17992501324');
             <span class="contact-sep">•</span>
             <span><strong>Email:</strong> <a href="mailto:support@suncoasttechsupport.net" onclick="trackContact('email_click')">support@suncoasttechsupport.net</a></span>
           </div>
+
           <div class="iframe-wrap" style="margin-top:6px;">
             <iframe aria-label="Contact for support" frameborder="0" allow="camera;" src="https://forms.zohopublic.com/lightmyfire/form/Contactforsupport/formperma/LIsVTeLHmxGHYWEhc2EjoD96lF9EVxdnQC29atrHWgU?zf_enablecamera=true"></iframe>
             <div style="margin-top:12px;">
