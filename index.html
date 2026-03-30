@@ -1,532 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Managed IT Services for Clearwater Businesses | Suncoast Tech Support</title>
-  <meta name="description" content="Managed IT services for Clearwater area businesses. Fast support, strong security, proactive maintenance, and no long-term contracts." />
-  <meta name="keywords" content="managed IT services Clearwater, business IT support Clearwater area, MSP Clearwater, small business IT support Clearwater, cybersecurity for small business Clearwater" />
-  <meta name="robots" content="index, follow" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Suncoast Tech Support</title>
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17992501324"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'AW-17992501324');
-  </script>
+<!-- Google Ads Tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17992501324"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'AW-17992501324');
+</script>
 
-  <style>
-    :root{
-      --bg:#f7fafc;
-      --card:#ffffff;
-      --text:#163047;
-      --muted:#5b6b79;
-      --line:#d9e3ea;
-      --primary:#0f5f8f;
-      --accent:#ff8a3d;
-      --soft:#eaf5fb;
-      --max:1140px;
-      --radius:20px;
-      --shadow:0 10px 30px rgba(16,54,84,.08);
-    }
+<style>
+body{margin:0;font-family:Arial;background:#0f5f8f;color:white}
+.container{max-width:1100px;margin:auto;padding:20px}
 
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
+.topbar{
+display:flex;
+align-items:center;
+justify-content:flex-start;
+margin-bottom:10px;
+}
 
-    body{
-      margin:0;
-      font-family:Arial,Helvetica,sans-serif;
-      background:var(--bg);
-      color:var(--text);
-      line-height:1.55;
-      padding-bottom:0;
-    }
+.logo-box img{
+height:90px;
+width:auto;
+}
 
-    a{text-decoration:none;color:inherit}
-    img{max-width:100%;display:block}
+.hero-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+align-items:center;
+}
 
-    .container{max-width:var(--max);margin:0 auto;padding:0 20px}
-    .section{padding:56px 0}
-    .section-tight{padding:34px 0}
+.btn{
+padding:14px 20px;
+border-radius:10px;
+font-weight:bold;
+display:inline-block;
+margin-right:10px;
+}
 
-    h1,h2,h3{margin:0 0 14px}
-    h1{font-size:46px;line-height:1.06}
-    h2{font-size:34px}
-    h3{font-size:23px}
-    p{margin:0 0 14px}
-    ul{margin:0;padding-left:20px}
+.btn-primary{background:#ff8a3d;color:#000}
+.btn-secondary{border:1px solid white;color:white}
 
-    .muted{color:var(--muted)}
-    .center{text-align:center}
+.card{
+background:white;
+color:#163047;
+padding:20px;
+border-radius:15px;
+}
 
-    .btn{
-      display:inline-block;
-      padding:14px 18px;
-      border-radius:12px;
-      font-weight:700;
-      border:2px solid transparent;
-      transition:transform .15s ease, opacity .15s ease;
-    }
-    .btn:hover{transform:translateY(-1px);opacity:.96}
+.rating{
+color:#0d4d73;
+font-weight:bold;
+}
 
-    .btn-primary{background:var(--accent);color:#1f2e3a}
-    .btn-secondary{background:transparent;color:#fff;border-color:rgba(255,255,255,.32)}
-    .btn-dark{background:var(--primary);color:#fff}
-    .btn-outline{background:#fff;color:var(--primary);border-color:var(--line)}
-
-    .hero{
-      background:linear-gradient(135deg,#0d4d73 0%, #0f5f8f 55%, #1575aa 100%);
-      color:#fff;
-      padding:20px 0 50px;
-    }
-
-    .topbar{
-      display:flex;
-      align-items:center;
-      justify-content:flex-start;
-      padding-bottom:10px;
-    }
-
-    .logo-wrap{
-      display:flex;
-      align-items:center;
-      gap:14px;
-    }
-
-    .logo-box{
-      width:auto;
-      min-height:56px;
-      padding:0;
-      background:transparent;
-      border:none;
-      border-radius:0;
-      display:flex;
-      align-items:center;
-      justify-content:flex-start;
-      overflow:visible;
-    }
-
-    .logo-box img{
-      width:auto;
-      height:110px;
-      max-width:min(230px, 60vw);
-      object-fit:contain;
-      filter:drop-shadow(0 6px 12px rgba(0,0,0,.18));
-    }
-
-    .hero-grid{
-      display:grid;
-      grid-template-columns:1.08fr .92fr;
-      gap:24px;
-      align-items:center;
-    }
-
-    .eyebrow{
-      display:inline-block;
-      background:rgba(255,255,255,.12);
-      border:1px solid rgba(255,255,255,.24);
-      border-radius:999px;
-      padding:8px 12px;
-      font-size:13px;
-      margin-bottom:14px;
-    }
-
-    .lead{font-size:20px;max-width:740px}
-
-    .hero-cta{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-      margin-top:18px;
-      margin-bottom:16px;
-    }
-
-    .trust-bar{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px 18px;
-      margin-top:14px;
-      font-weight:700;
-      font-size:15px;
-    }
-
-    .hero-card{
-      background:#fff;
-      color:var(--text);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      padding:22px;
-    }
-
-    .founder-card{
-      display:grid;
-      grid-template-columns:140px 1fr;
-      gap:16px;
-      align-items:center;
-      margin-bottom:18px;
-    }
-
-    .founder-photo{
-      width:140px;
-      height:140px;
-      border-radius:18px;
-      overflow:hidden;
-      border:1px solid var(--line);
-      background:#edf3f8;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      color:var(--muted);
-      font-size:13px;
-      padding:0;
-    }
-
-    .founder-photo img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-    }
-
-    .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-
-    .card,.contact-panel,.faq-item,.iframe-wrap{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:18px;
-      box-shadow:var(--shadow);
-    }
-
-    .card,.contact-panel{padding:22px}
-    .faq-item{padding:18px}
-    .iframe-wrap{padding:12px}
-
-    .pain{background:linear-gradient(180deg,#fff4ec 0%, transparent 100%)}
-    .solution{background:linear-gradient(180deg,var(--soft) 0%, transparent 100%)}
-    .offer{background:linear-gradient(180deg,#eef8f1 0%, transparent 100%)}
-
-    .icon-list{display:grid;gap:10px;margin-top:14px}
-    .quote{font-style:italic;font-size:18px;margin-bottom:12px}
-    .stars{color:#d5891d;font-size:18px;letter-spacing:1px;margin-bottom:10px}
-    .rating-line{
-      margin:4px 0 8px;
-      font-weight:700;
-      color:#0d4d73;
-    }
-
-    .contact-inline{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px 14px;
-      margin:10px 0 14px;
-      font-weight:700;
-      align-items:center;
-    }
-
-    .contact-inline a{color:var(--primary);word-break:break-word}
-    .contact-sep{color:var(--muted);font-weight:400}
-
-    .iframe-wrap iframe{
-      width:100%;
-      height:760px;
-      border:none;
-      border-radius:12px;
-      display:block;
-    }
-
-    .final-cta{
-      background:linear-gradient(135deg,#143952 0%, #0f5f8f 100%);
-      color:#fff;
-      border-radius:24px;
-      padding:34px;
-      box-shadow:var(--shadow);
-    }
-
-    .mobile-sticky-cta{
-      display:none;
-      position:fixed;
-      left:0;
-      right:0;
-      bottom:0;
-      z-index:999;
-      background:#fff;
-      border-top:1px solid var(--line);
-      box-shadow:0 -6px 18px rgba(15,95,143,.12);
-      padding:10px 12px calc(10px + env(safe-area-inset-bottom));
-    }
-
-    .mobile-sticky-cta .inner{
-      display:grid;
-      grid-template-columns:1fr 1fr 1.2fr;
-      gap:8px;
-      max-width:760px;
-      margin:0 auto;
-    }
-
-    .mobile-sticky-cta a{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      min-height:46px;
-      border-radius:12px;
-      font-weight:700;
-      font-size:14px;
-      padding:10px 8px;
-    }
-
-    .mobile-call{background:#eaf5fb;color:var(--primary)}
-    .mobile-text{background:#fff4ec;color:#b9651b}
-    .mobile-assess{background:var(--accent);color:#1f2e3a}
-
-    @media (max-width:1024px){
-      h1{font-size:40px}
-      h2{font-size:30px}
-      .hero-grid,.grid-3{grid-template-columns:1fr}
-      .grid-2{grid-template-columns:1fr 1fr}
-      .iframe-wrap iframe{height:900px}
-    }
-
-    @media (max-width:767px){
-      body{padding-bottom:82px}
-      .section{padding:42px 0}
-      .container{padding:0 16px}
-      h1{font-size:34px}
-      h2{font-size:28px}
-      h3{font-size:21px}
-      .lead{font-size:18px}
-      .topbar{justify-content:center}
-      .logo-box{justify-content:center}
-      .logo-box img{height:88px;max-width:220px}
-      .grid-2,.grid-3{grid-template-columns:1fr}
-      .founder-card{grid-template-columns:1fr}
-      .founder-photo{width:100%;max-width:240px;height:240px}
-      .contact-inline{flex-direction:column;align-items:flex-start;gap:8px}
-      .contact-sep{display:none}
-      .hero-cta .btn,.contact-panel .btn,.iframe-wrap .btn,.final-cta .btn{width:100%;text-align:center}
-      .iframe-wrap iframe{height:980px}
-      .mobile-sticky-cta{display:block}
-    }
-
-    @media (min-width:1280px){
-      .iframe-wrap iframe{height:720px}
-    }
-  </style>
+@media(max-width:768px){
+.hero-grid{grid-template-columns:1fr}
+.topbar{justify-content:center}
+}
+</style>
 </head>
+
 <body>
-  <header class="hero">
-    <div class="container">
-      <div class="topbar">
-        <div class="logo-wrap">
-          <div class="logo-box">
-            <img src="images/suncoast-logo.png" alt="Suncoast Tech Support logo">
-          </div>
-        </div>
-      </div>
 
-      <div class="hero-grid">
-        <div>
-          <div class="eyebrow">Managed IT Services • Clearwater Area • No Long-Term Contracts</div>
-          <h1>Stop IT Problems From Slowing Down Your Business</h1>
-          <p class="lead">Managed IT Services for Clearwater businesses — fast support, strong security, and proactive help without long-term contracts.</p>
+<div class="container">
 
-          <div class="hero-cta">
-            <a class="btn btn-primary" href="#contact" onclick="trackContact('assessment_click')">Get Your Free IT Assessment</a>
-            <a class="btn btn-secondary" href="tel:17274964668" onclick="trackContact('phone_click')">Call Now: (727) 496-4668</a>
-          </div>
+<!-- LOGO -->
+<div class="topbar">
+<div class="logo-box">
+<img src="images/suncoast-logo.png">
+</div>
+</div>
 
-          <div class="trust-bar">
-            <span>✔ Trusted by Local Businesses</span>
-            <span>✔ Fast Response Times</span>
-            <span>✔ No Contracts Required</span>
-          </div>
-        </div>
+<div class="hero-grid">
 
-        <div class="hero-card">
-          <div class="founder-card">
-            <div class="founder-photo">
-              <img src="images/moe-headshot.jpg" alt="Founder photo">
-            </div>
-            <div>
-              <h3>Local owner-led support</h3>
-              <p>Show the real face behind the business. This helps trust, improves local credibility, and makes the page feel less generic.</p>
-              <p class="muted"><strong>Recommended:</strong> use a clean headshot with branded shirt or business-casual look.</p>
-            </div>
-          </div>
+<div>
+<h1>Stop IT Problems From Slowing Down Your Business</h1>
 
-          <h3>Why businesses call Suncoast</h3>
-          <p class="muted">Slow systems, security worries, downtime, and poor response times all cost money. Suncoast helps prevent problems before they disrupt your business.</p>
-        </div>
-      </div>
-    </div>
-  </header>
+<p>
+Managed IT Services for Clearwater businesses — fast support, strong security, and proactive help without long-term contracts.
+</p>
 
-  <section class="section pain">
-    <div class="container">
-      <div class="center"><h2>Frustrated With Constant IT Issues?</h2></div>
-      <div class="grid-2" style="margin-top:18px;">
-        <div class="card">
-          <ul class="icon-list">
-            <li>Slow computers killing productivity</li>
-            <li>Downtime costing you money</li>
-            <li>Waiting hours or days for IT support</li>
-            <li>Worried about ransomware or data loss</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>If your IT isn’t reliable, your business isn’t either.</h3>
-          <p>That is the real cost of reactive support. Lost time. Frustrated staff. Missed opportunities. Avoidable risk.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+<a class="btn btn-primary" href="#contact">Get Your Free IT Assessment</a>
+<a class="btn btn-secondary" href="tel:17274964668">Call Now: (727) 496-4668</a>
 
-  <section class="section solution">
-    <div class="container">
-      <div class="center">
-        <h2>We Fix IT Problems Before They Cost You Money</h2>
-        <p class="muted">Suncoast Tech Support proactively monitors, maintains, and secures your systems so you can focus on running your business.</p>
-      </div>
-      <div class="grid-3" style="margin-top:18px;">
-        <div class="card"><h3>Fast, responsive IT support</h3><p>Get help when problems happen, without waiting around.</p></div>
-        <div class="card"><h3>24/7 monitoring and maintenance</h3><p>Reduce surprises and catch issues before they spread.</p></div>
-        <div class="card"><h3>Advanced cybersecurity protection</h3><p>Stronger protection for accounts, endpoints, and everyday risk.</p></div>
-        <div class="card"><h3>Data backup and disaster recovery</h3><p>Prepare for the worst before it becomes expensive downtime.</p></div>
-        <div class="card"><h3>Predictable monthly pricing</h3><p>Simple support options without contract pressure.</p></div>
-        <div class="card"><h3>Local business-focused service</h3><p>Support designed for Clearwater-area businesses, not generic national scripts.</p></div>
-      </div>
-      <div class="center" style="margin-top:22px;">
-        <a class="btn btn-dark" href="#contact" onclick="trackContact('assessment_click')">Schedule Your Free Assessment</a>
-      </div>
-    </div>
-  </section>
+<p>✔ Trusted by Local Businesses<br>
+✔ Fast Response Times<br>
+✔ No Contracts Required</p>
+</div>
 
-  <section class="section">
-    <div class="container">
-      <div class="center">
-        <h2>Why Businesses Switch to Us</h2>
-      </div>
-      <div class="grid-2" style="margin-top:18px;">
-        <div class="card">
-          <ul class="icon-list">
-            <li>No long-term contracts — stay because you want to</li>
-            <li>Fast response times — no more waiting around</li>
-            <li>Local Clearwater-area support</li>
-            <li>We prevent problems instead of reacting to them</li>
-            <li>Clear, honest pricing</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Built for small business reality</h3>
-          <p>You need stable systems, clear communication, and a provider who helps your business stay productive without overcomplicating everything.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+<div class="card">
 
-  <section class="section">
-    <div class="container">
-      <div class="center">
-        <h2>What Our Clients Say</h2>
-        <p class="rating-line">⭐ 5-Star Rated on Google</p>
-        <p class="muted">Add your real Google review quotes here. Keep them short, specific, and believable.</p>
-      </div>
+<img src="images/moe-headshot.jpg" style="width:120px;border-radius:10px;">
 
-      <div class="grid-3" style="margin-top:18px;">
-        <div class="card"><div class="stars">★★★★★</div><p class="quote">“Suncoast Tech Support eliminated our downtime and made IT stress-free.”</p><p><strong>— Real Name</strong>, Company</p></div>
-        <div class="card"><div class="stars">★★★★★</div><p class="quote">“Fast, reliable, and easy to work with. Highly recommend.”</p><p><strong>— Real Name</strong>, Company</p></div>
-        <div class="card"><div class="stars">★★★★★</div><p class="quote">“Responsive, professional, and much easier to work with than our previous IT provider.”</p><p><strong>— Real Name</strong>, Company</p></div>
-      </div>
+<h3>Local owner-led IT support you can trust</h3>
 
-      <div class="center" style="margin-top:18px;">
-        <a class="btn btn-outline" href="https://www.google.com/maps/place/Suncoast+Tech+Support/@27.9600634,-83.0269243,10z/data=!4m8!3m7!1s0xfda3740f6700f1b:0xbe48f9ed81314891!8m2!3d27.9598495!4d-82.6972656!9m1!1b1!16s%2Fg%2F11yvdld9vh?entry=ttu" target="_blank" rel="noopener">Read More Google Reviews</a>
-      </div>
-    </div>
-  </section>
+<p><strong>✔ 20+ Years Experience • ✔ Veteran-Owned • ✔ Certified</strong></p>
 
-  <section class="section offer">
-    <div class="container">
-      <div class="grid-2">
-        <div class="card">
-          <h2>Free IT Assessment for Clearwater Businesses</h2>
-          <p>We will review your systems, identify risks, and show you how to improve performance and security without obligation.</p>
-          <ul class="icon-list">
-            <li>Network and system check</li>
-            <li>Security risk review</li>
-            <li>Performance evaluation</li>
-            <li>Clear action plan</li>
-          </ul>
-          <div style="margin-top:20px;">
-            <a class="btn btn-primary" href="#contact" onclick="trackContact('assessment_click')">Claim Your Free Assessment</a>
-          </div>
-        </div>
+<ul>
+<li>Veteran-owned and operated</li>
+<li>Certified in Cybersecurity and Artificial Intelligence</li>
+<li>Microsoft 365, Azure, and Entra expertise</li>
+<li>Exchange, SharePoint, Teams experience</li>
+<li>Small business and enterprise IT support</li>
+</ul>
 
-        <div class="contact-panel" id="contact">
-          <h3>Book your free assessment</h3>
-          <p>Call, text, email, or send a quick request below. Choose whichever is easiest.</p>
-          <div class="contact-inline">
-            <span><strong>Call:</strong> <a href="tel:17274964668" onclick="trackContact('phone_click')">(727) 496-4668</a></span>
-            <span class="contact-sep">•</span>
-            <span><strong>Text:</strong> <a href="sms:17274964668" onclick="trackContact('text_click')">Send a text</a></span>
-            <span class="contact-sep">•</span>
-            <span><strong>Email:</strong> <a href="mailto:support@suncoasttechsupport.net" onclick="trackContact('email_click')">support@suncoasttechsupport.net</a></span>
-          </div>
+</div>
 
-          <div class="iframe-wrap" style="margin-top:6px;">
-            <iframe aria-label="Contact for support" frameborder="0" allow="camera;" src="https://forms.zohopublic.com/lightmyfire/form/Contactforsupport/formperma/LIsVTeLHmxGHYWEhc2EjoD96lF9EVxdnQC29atrHWgU?zf_enablecamera=true"></iframe>
-            <div style="margin-top:12px;">
-              <a class="btn btn-primary" href="https://forms.zohopublic.com/lightmyfire/form/Contactforsupport/formperma/LIsVTeLHmxGHYWEhc2EjoD96lF9EVxdnQC29atrHWgU" target="_blank" rel="noopener" onclick="trackContact('form_click')">Open Form in New Window</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+</div>
+</div>
 
-  <section class="section-tight">
-    <div class="container">
-      <div class="center"><h2>Frequently Asked Questions</h2></div>
-      <div class="grid-3" style="margin-top:18px;">
-        <div class="faq-item"><h3>How fast do you respond?</h3><p>Most issues are addressed within minutes, not hours.</p></div>
-        <div class="faq-item"><h3>Do I have to sign a contract?</h3><p>No. We earn your business every month.</p></div>
-        <div class="faq-item"><h3>Can you work with our current setup?</h3><p>Yes. We can support, improve, or fully manage your existing systems.</p></div>
-      </div>
-    </div>
-  </section>
+<!-- REVIEWS -->
+<div class="container" style="background:#f7fafc;color:#163047;margin-top:40px;padding:40px;border-radius:10px">
 
-  <section class="section">
-    <div class="container">
-      <div class="final-cta center">
-        <h2>Ready to Stop Dealing With IT Problems?</h2>
-        <p>Book your free IT assessment and find out where your business is losing time, performance, or protection.</p>
-        <div style="margin-top:18px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
-          <a class="btn btn-primary" href="#contact" onclick="trackContact('assessment_click')">Book Your Free IT Assessment</a>
-          <a class="btn btn-secondary" href="tel:17274964668" onclick="trackContact('phone_click')">Call Now: (727) 496-4668</a>
-        </div>
-      </div>
-    </div>
-  </section>
+<h2>What Our Clients Say</h2>
+<p class="rating">⭐ 5-Star Rated on Google</p>
 
-  <div class="mobile-sticky-cta">
-    <div class="inner">
-      <a class="mobile-call" href="tel:17274964668" onclick="trackContact('phone_click')">Call</a>
-      <a class="mobile-text" href="sms:17274964668" onclick="trackContact('text_click')">Text</a>
-      <a class="mobile-assess" href="#contact" onclick="trackContact('assessment_click')">Free Assessment</a>
-    </div>
-  </div>
+<p>"Fast, reliable, and easy to work with. Highly recommend."</p>
 
-  <script>
-    function trackContact(actionName) {
-      if (typeof gtag === 'function') {
-        gtag('event', actionName, {
-          event_category: 'contact',
-          event_label: actionName
-        });
-      }
-    }
-  </script>
+<a href="https://www.google.com/maps/place/Suncoast+Tech+Support/@27.9600634,-83.0269243,10z/data=!4m8!3m7!1s0xfda3740f6700f1b:0xbe48f9ed81314891!8m2!3d27.9598495!4d-82.6972656!9m1!1b1!16s%2Fg%2F11yvdld9vh?entry=ttu" target="_blank">
+Read More Google Reviews
+</a>
+
+</div>
+
 </body>
 </html>
