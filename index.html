@@ -43,6 +43,7 @@ border-radius:10px;
 font-weight:bold;
 display:inline-block;
 margin-right:10px;
+text-decoration:none;
 }
 
 .btn-primary{background:#ff8a3d;color:#000}
@@ -60,9 +61,27 @@ color:#0d4d73;
 font-weight:bold;
 }
 
+.review-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:20px;
+margin-top:20px;
+}
+
+.review-card{
+background:#fff;
+padding:20px;
+border-radius:12px;
+box-shadow:0 8px 20px rgba(0,0,0,.1);
+color:#163047;
+}
+
+.stars{color:#d5891d;margin-bottom:10px}
+
 @media(max-width:768px){
 .hero-grid{grid-template-columns:1fr}
 .topbar{justify-content:center}
+.logo-box img{height:70px}
 }
 </style>
 </head>
@@ -122,11 +141,39 @@ Managed IT Services for Clearwater businesses — fast support, strong security,
 <h2>What Our Clients Say</h2>
 <p class="rating">⭐ 5-Star Rated on Google</p>
 
-<p>"Fast, reliable, and easy to work with. Highly recommend."</p>
+<div class="review-grid">
 
-<a href="https://www.google.com/maps/place/Suncoast+Tech+Support/@27.9600634,-83.0269243,10z/data=!4m8!3m7!1s0xfda3740f6700f1b:0xbe48f9ed81314891!8m2!3d27.9598495!4d-82.6972656!9m1!1b1!16s%2Fg%2F11yvdld9vh?entry=ttu" target="_blank">
+<div class="review-card">
+<div class="stars">★★★★★</div>
+<p><em>
+“I would like to recognize Moe for his exceptional service. He worked with us in getting our tech lab working better with Wi-Fi upgrades to our building and helped improve our security by creating policies in our SonicWall to filter traffic and segment our network.”
+</em></p>
+<p><strong>— Lynn J</strong>, Oldsmar</p>
+</div>
+
+<div class="review-card">
+<div class="stars">★★★★★</div>
+<p><em>
+“Suncoast came to our office to help with several device issues we were having. He took the time to explain the errors and helped us upgrade devices to the latest Android version. He also made recommendations that improved our processes and saved us thousands in unnecessary software subscriptions.”
+</em></p>
+<p><strong>— Julie K</strong>, Largo</p>
+</div>
+
+<div class="review-card">
+<div class="stars">★★★★★</div>
+<p><em>
+“We had a presentation due urgently and I called Moe in a panic on a Sunday. His calm demeanor reassured me everything would be handled. He came onsite, worked through everything, and ensured we met our deadline. Highly recommended.”
+</em></p>
+<p><strong>— Bruce L</strong>, Clearwater</p>
+</div>
+
+</div>
+
+<div style="margin-top:20px;">
+<a class="btn btn-primary" href="https://www.google.com/maps/place/Suncoast+Tech+Support/@27.9600634,-83.0269243,10z/data=!4m8!3m7!1s0xfda3740f6700f1b:0xbe48f9ed81314891!8m2!3d27.9598495!4d-82.6972656!9m1!1b1!16s%2Fg%2F11yvdld9vh?entry=ttu" target="_blank">
 Read More Google Reviews
 </a>
+</div>
 
 </div>
 
