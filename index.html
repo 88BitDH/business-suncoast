@@ -17,6 +17,8 @@
     gtag('config', 'AW-17992501324');
   </script>
 
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
   <style>
     :root{
       --bg:#f7fafc;
@@ -559,22 +561,12 @@
           <h3>Request Your Free IT Risk Assessment</h3>
           <p>Fill this out now before this month’s free spots are gone.</p>
 
-          <form class="inline-form"
-                action="https://formsubmit.co/suncoasttechsupport@gmail.com"
-                method="POST"
-                onsubmit="gtag_report_conversion(); return true;">
-
+          <form class="inline-form" id="leadForm">
             <input type="text" name="name" placeholder="Name" aria-label="Name" required>
             <input type="email" name="email" placeholder="Email" aria-label="Email" required>
             <input type="tel" name="phone" placeholder="Phone" aria-label="Phone">
 
-            <!-- Redirect after submit -->
-            <input type="hidden" name="_next" value="https://business.suncoasttechsupport.net/thank-you.html">
-
-            <!-- Disable captcha -->
-            <input type="hidden" name="_captcha" value="false">
-
-            <button class="btn btn-primary" type="submit">
+            <button class="btn btn-primary" id="leadSubmitBtn" type="submit">
               Claim Your Free IT Risk Assessment
             </button>
           </form>
@@ -666,6 +658,7 @@
     </div>
   </div>
 
+  
   <script>
     function trackContact(actionName) {
       if (typeof gtag === 'function') {
@@ -680,7 +673,7 @@
   <script>
     function gtag_report_conversion(url) {
       var callback = function () {
-        if (typeof(url) != 'undefined') {
+        if (typeof(url) !== 'undefined') {
           window.location = url;
         }
       };
@@ -691,5 +684,50 @@
       return false;
     }
   </script>
+
+  <script>
+    (function () {
+      emailjs.init({
+        publicKey: 'UW7iU4gQwbDKvCQoY'
+      });
+
+      var leadForm = document.getElementById('leadForm');
+      var submitBtn = document.getElementById('leadSubmitBtn');
+
+      if (!leadForm || !submitBtn) return;
+
+      leadForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        var originalText = submitBtn.textContent;
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Submitting...';
+
+        var formData = {
+          name: leadForm.elements['name'].value,
+          email: leadForm.elements['email'].value,
+          phone: leadForm.elements['phone'].value,
+          source: 'B2B Landing Page'
+        };
+
+        emailjs.send(
+          'service_34x2w4r',
+          'template_jcdi9tq',
+          formData
+        ).then(function () {
+          if (typeof gtag === 'function') {
+            gtag_report_conversion();
+          }
+          window.location.href = '/thank-you.html';
+        }).catch(function (error) {
+          console.error('EmailJS error:', error);
+          alert('There was a problem sending your request. Please call (727) 496-4668 or text us now.');
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalText;
+        });
+      });
+    })();
+  </script>
+
 </body>
 </html>
