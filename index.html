@@ -560,10 +560,23 @@
           <p>Fill this out now before this month’s free spots are gone.</p>
 
           <form class="inline-form">
-            <input type="text" name="name" placeholder="Name" aria-label="Name">
-            <input type="email" name="email" placeholder="Email" aria-label="Email">
+                action="https://formsubmit.co/suncoasttechsupport@gmail.com"
+                method="POST"
+                onsubmit="gtag_report_conversion();">
+
+            <input type="text" name="name" placeholder="Name" aria-label="Name" required>
+            <input type="email" name="email" placeholder="Email" aria-label="Email" required>
             <input type="tel" name="phone" placeholder="Phone" aria-label="Phone">
-            <a class="btn btn-primary" href="https://forms.zohopublic.com/lightmyfire/form/Contactforsupport/formperma/LIsVTeLHmxGHYWEhc2EjoD96lF9EVxdnQC29atrHWgU" target="_blank" rel="noopener" onclick="gtag_report_conversion(); trackContact('form_click')">Claim Your Free IT Risk Assessment</a>
+
+            <!-- Redirect after submit -->
+            <input type="hidden" name="_next" value="https://business.suncoasttechsupport.net/thank-you.html">
+
+            <!-- Disable captcha -->
+            <input type="hidden" name="_captcha" value="false">
+
+            <button class="btn btn-primary" type="submit">
+              Claim Your Free IT Risk Assessment
+            </button>
           </form>
 
           <div class="contact-inline" style="margin-top:18px;">
