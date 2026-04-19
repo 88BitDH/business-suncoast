@@ -789,6 +789,15 @@
             <input type="email" name="email" placeholder="Email" aria-label="Email" required>
             <input type="tel" name="phone" placeholder="Phone" aria-label="Phone">
             <textarea name="help" placeholder="What do you need help with?" aria-label="What do you need help with?"></textarea>
+
+            <input type="hidden" name="lead_source" id="lead_source" value="Website">
+            <input type="hidden" name="page_name" id="page_name" value="Business IT Landing Page">
+            <input type="hidden" name="utm_source" id="utm_source" value="">
+            <input type="hidden" name="utm_campaign" id="utm_campaign" value="">
+            <input type="hidden" name="utm_term" id="utm_term" value="">
+            <input type="hidden" name="utm_medium" id="utm_medium" value="">
+            <input type="hidden" name="landing_page" id="landing_page" value="">
+
             <div class="cf-turnstile" data-sitekey="0x4AAAAAACzrFz4NsVodL59R"></div>
             <button class="btn btn-primary" id="leadSubmitBtn" type="submit">
               Request IT Help
@@ -908,6 +917,42 @@
       return false;
     }
   </script>
+
+  <script>
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+
+      var utmSource = params.get('utm_source') || '';
+      var utmCampaign = params.get('utm_campaign') || '';
+      var utmTerm = params.get('utm_term') || '';
+      var utmMedium = params.get('utm_medium') || '';
+
+      var leadSource = 'Website';
+
+      if (utmSource.toLowerCase() === 'google') {
+        leadSource = 'Google Ads';
+      } else if (utmSource) {
+        leadSource = utmSource;
+      }
+
+      var leadSourceField = document.getElementById('lead_source');
+      var pageNameField = document.getElementById('page_name');
+      var utmSourceField = document.getElementById('utm_source');
+      var utmCampaignField = document.getElementById('utm_campaign');
+      var utmTermField = document.getElementById('utm_term');
+      var utmMediumField = document.getElementById('utm_medium');
+      var landingPageField = document.getElementById('landing_page');
+
+      if (leadSourceField) leadSourceField.value = leadSource;
+      if (pageNameField) pageNameField.value = 'Business IT Landing Page';
+      if (utmSourceField) utmSourceField.value = utmSource;
+      if (utmCampaignField) utmCampaignField.value = utmCampaign;
+      if (utmTermField) utmTermField.value = utmTerm;
+      if (utmMediumField) utmMediumField.value = utmMedium;
+      if (landingPageField) landingPageField.value = window.location.href;
+    })();
+  </script>
+
 <!--
   <script>
     (function () {
