@@ -903,6 +903,22 @@
     }
   </script>
 
+  <!-- Mark form submissions so the thank-you page can count each one only once. -->
+  <script>
+    (function () {
+      var leadForm = document.getElementById('leadForm');
+      if (!leadForm) return;
+
+      leadForm.addEventListener('submit', function () {
+        try {
+          sessionStorage.setItem('suncoast_b2b_lead_pending', String(Date.now()));
+        } catch (error) {
+          // Do not interrupt form submission when browser storage is unavailable.
+        }
+      });
+    })();
+  </script>
+
   <script>
     function gtag_report_conversion(url) {
       var callback = function () {
