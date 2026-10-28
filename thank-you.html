@@ -98,6 +98,11 @@
       color: #1f2e3a;
       text-decoration: none;
     }
+  
+    .thank-you-links{width:100%;max-width:600px;display:grid;gap:10px;text-align:center;padding:16px 10px;margin:0 auto}
+    .thank-you-links nav{display:flex;gap:12px 18px;justify-content:center;flex-wrap:wrap}
+    .thank-you-links a{font-size:13px;color:#0f5f8f;min-height:26px}
+    @media(max-width:700px){body{flex-direction:column}.thank-you-links{max-width:100%}}
   </style>
 </head>
 <body>
@@ -115,6 +120,16 @@
       document.getElementById('thankYouResponse').textContent = 'Website reviews are not automatically published or submitted to Google.';
     }
   </script>
-  <p style="margin-top:20px;text-align:center;font-size:14px"><a href="https://docs.google.com/document/d/1C_8kAg7DN8BRhG9cSECQ2Qh824-fmIPj7JtrDChEk_4/edit?tab=t.0#heading=h.bor022r69f3v" target="_blank" rel="noopener noreferrer">Privacy Policy</a></p>
+  <footer class="thank-you-links" aria-label="Suncoast footer links">
+    <nav aria-label="Legal links">
+      <a href="https://docs.google.com/document/d/1C_8kAg7DN8BRhG9cSECQ2Qh824-fmIPj7JtrDChEk_4/edit?tab=t.0" target="_blank" rel="noopener noreferrer">Terms of Service</a>
+      <a href="https://docs.google.com/document/d/1C_8kAg7DN8BRhG9cSECQ2Qh824-fmIPj7JtrDChEk_4/edit?tab=t.0#heading=h.bor022r69f3v" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+      <a href="https://docs.google.com/document/d/1C_8kAg7DN8BRhG9cSECQ2Qh824-fmIPj7JtrDChEk_4/edit?tab=t.0" target="_blank" rel="noopener noreferrer">Client Authorization and Consent</a>
+    </nav>
+    <nav aria-label="Social links">
+      <a href="https://business.suncoasttechsupport.net/facebook/" target="_blank" rel="noopener noreferrer">Facebook</a>
+      <a href="https://business.suncoasttechsupport.net/linkedin/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </nav>
+  </footer>
 </body>
 </html>
