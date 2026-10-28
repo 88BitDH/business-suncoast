@@ -14,9 +14,25 @@
     gtag('config', 'AW-17992501324');
   </script>
 
-  <!-- Count a lead only once after a recent form submission in this browser tab. -->
+  <!-- Review submissions are feedback, not Google Ads business-lead conversions. -->
   <script>
     (function () {
+      var reviewKey = 'suncoast_review_pending';
+      var submittedAt = 0;
+      try {
+        submittedAt = Number(sessionStorage.getItem(reviewKey));
+        sessionStorage.removeItem(reviewKey);
+      } catch (error) { return; }
+      if (submittedAt > 0 && Date.now() - submittedAt >= 0 && Date.now() - submittedAt <= 10 * 60 * 1000) {
+        window.suncoastReviewThankYou = true;
+        try { sessionStorage.removeItem('suncoast_b2b_lead_pending'); } catch (error) {}
+      }
+    })();
+  </script>
+  <!-- Count a lead only once after a recent business inquiry submission in this browser tab. -->
+  <script>
+    (function () {
+      if (window.suncoastReviewThankYou) return;
       var key = 'suncoast_b2b_lead_pending';
       var submittedAt = 0;
       try {
@@ -86,11 +102,19 @@
 </head>
 <body>
   <div class="box">
-    <h1>Thank You!</h1>
-    <p>Your request has been received.</p>
-    <p>We’ll get back to you during business hours within 15–30 minutes.</p>
+    <h1 id="thankYouHeading">Thank You!</h1>
+    <p id="thankYouMessage">Your request has been received.</p>
+    <p id="thankYouResponse">We’ll get back to you during business hours within 15–30 minutes.</p>
     <p>Thank you for contacting Suncoast Tech Support.</p>
     <a class="btn" href="/">Return to Home</a>
   </div>
+  <script>
+    if (window.suncoastReviewThankYou) {
+      document.getElementById('thankYouHeading').textContent = 'Thank You for Your Feedback!';
+      document.getElementById('thankYouMessage').textContent = 'Your website review has been submitted to Suncoast Tech Support for private review.';
+      document.getElementById('thankYouResponse').textContent = 'Website reviews are not automatically published or submitted to Google.';
+    }
+  </script>
+  <p style="margin-top:20px;text-align:center;font-size:14px"><a href="https://docs.google.com/document/d/1C_8kAg7DN8BRhG9cSECQ2Qh824-fmIPj7JtrDChEk_4/edit?tab=t.0#heading=h.bor022r69f3v" target="_blank" rel="noopener noreferrer">Privacy Policy</a></p>
 </body>
 </html>
