@@ -622,7 +622,8 @@ h2{font-size:clamp(29px,3.5vw,43px);line-height:1.16;letter-spacing:-.025em}
 .hero-extra{color:#d6eaf5;font-size:16px}.hero-cta{margin:26px 0 15px;display:flex;gap:11px;flex-wrap:wrap}
 .hero-call{font-size:15px;color:#e4f1f8}.hero-call a{color:#fff;text-decoration:underline;font-weight:700}
 .hero-portrait{position:relative;padding-bottom:23px}
-.hero-portrait>img{height:405px;width:100%;object-fit:cover;object-position:center 25%;border-radius:17px;background:#dce9f1;box-shadow:0 20px 55px #001f3560}
+.hero-crop{height:405px;width:100%;overflow:hidden;border-radius:17px;background:#dce9f1;box-shadow:0 20px 55px #001f3560}
+.hero-crop>img{display:block;height:100%;width:100%;object-fit:cover;object-position:center top;transform:scale(1.45);transform-origin:center top}
 .portrait-label{position:absolute;bottom:0;left:-12px;right:25px;padding:13px 17px;background:white;color:#15374d;border-radius:10px;box-shadow:0 9px 25px #001d3540}
 .portrait-label strong,.portrait-label span{display:block}.portrait-label span{font-size:13px;color:#657a88}
 .proof-strip{background:#fff;border-bottom:1px solid #dfe8ee}
@@ -655,7 +656,7 @@ h2{font-size:clamp(29px,3.5vw,43px);line-height:1.16;letter-spacing:-.025em}
  .top-links .nav-cta{padding:9px 5px}
  .hero-grid{grid-template-columns:1fr;gap:22px}.hero .lead{font-size:18px}
  .hero-cta{display:grid;grid-template-columns:1fr}.hero-cta .btn{width:100%;text-align:center}
- .hero-portrait{max-width:370px;margin:auto;width:100%}.hero-portrait>img{height:275px}.portrait-label{left:8px;right:8px}
+ .hero-portrait{max-width:370px;margin:auto;width:100%}.hero-crop{height:275px}.portrait-label{left:8px;right:8px}
  .proof-grid,.partner-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
  .proof-grid>div{border-right:0;border-bottom:1px solid #e2eaf0;padding:6px}
  .proof-grid strong{font-size:15px}
@@ -664,6 +665,9 @@ h2{font-size:clamp(29px,3.5vw,43px);line-height:1.16;letter-spacing:-.025em}
 }
 
 @media(min-width:768px) and (max-width:1024px){#services nav.grid-3{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* Frame the founder portrait above the embedded logo in the original photo. */
+.founder-inline .founder-photo img{object-position:center top;transform:scale(1.45);transform-origin:center top}
 </style>
 </head>
 <body>
@@ -686,7 +690,7 @@ h2{font-size:clamp(29px,3.5vw,43px);line-height:1.16;letter-spacing:-.025em}
           <p class="hero-call">Or call <a href="tel:17276479000" onclick="trackContact('phone_click')">(727) 647-9000</a></p>
         </div>
         <div class="hero-portrait">
-          <img src="/images/moe-headshot.jpg" alt="Suncoast Tech Support founder" width="640" height="640" fetchpriority="high">
+          <div class="hero-crop"><img src="/images/moe-headshot.jpg" alt="Suncoast Tech Support founder" width="640" height="640" fetchpriority="high"></div>
           <div class="portrait-label"><strong>Local help. Personal accountability.</strong><span>Clearwater &amp; nearby Pinellas County</span></div>
         </div>
       </div>
