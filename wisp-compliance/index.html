@@ -416,7 +416,7 @@
 
           <div class="hero-cta">
             <a class="btn btn-primary" href="#contact" onclick="trackContact('assessment_click')">Get Free Compliance Check</a>
-            <a class="btn btn-secondary" href="tel:17274964668" onclick="trackContact('phone_click')">Call Now: (727) 496-4668</a>
+            <a class="btn btn-secondary" href="tel:17276479000" onclick="trackContact('phone_click')">Call Now: (727) 647-9000</a>
           </div>
 
           <p style="font-weight:700; font-size:16px; margin:0 0 14px;">✔ Takes 30 seconds &nbsp; ✔ No spam &nbsp; ✔ Talk to a real person</p>
@@ -619,6 +619,8 @@
           <p>Fill this out now before this month’s free compliance check spots are gone.<br><strong>(Takes 30 seconds. No spam. No pressure.)</strong></p>
 
           <form class="inline-form" id="leadForm" method="POST" action="https://suncoast-lead-form.iammoeskicova0808.workers.dev/">
+            <input type="hidden" name="lead_source" value="Website">
+            <input type="hidden" name="page_name" value="FTC Safeguards Support">
             <input type="text" name="name" placeholder="Name" aria-label="Name" required>
             <input type="email" name="email" placeholder="Email" aria-label="Email" required>
             <input type="tel" name="phone" placeholder="Phone" aria-label="Phone">
@@ -629,9 +631,9 @@
           </form>
 
           <div class="contact-inline" style="margin-top:18px;">
-            <span><strong>Call:</strong> <a href="tel:17274964668" onclick="trackContact('phone_click')">(727) 496-4668</a></span>
+            <span><strong>Call:</strong> <a href="tel:17276479000" onclick="trackContact('phone_click')">(727) 647-9000</a></span>
             <span class="contact-sep">•</span>
-            <span><strong>Text:</strong> <a href="sms:17274964668" onclick="trackContact('text_click')">Send a text</a></span>
+            <span><strong>Text:</strong> <a href="sms:17276479000" onclick="trackContact('text_click')">Send a text</a></span>
           </div>
 
           <p class="form-note">Prefer not to wait? Call or text now.</p>
@@ -701,7 +703,7 @@
         <p><strong>We only take on 5 new firms per month to properly implement fixes—once those are filled, we book into next month.</strong></p>
         <div style="margin-top:18px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
           <a class="btn btn-primary" href="#contact" onclick="trackContact('assessment_click')">Claim Your Free Compliance Check</a>
-          <a class="btn btn-secondary" href="tel:17274964668" onclick="trackContact('phone_click')">Call Now: (727) 496-4668</a>
+          <a class="btn btn-secondary" href="tel:17276479000" onclick="trackContact('phone_click')">Call Now: (727) 647-9000</a>
         </div>
       </div>
     </div>
@@ -709,8 +711,8 @@
 
   <div class="mobile-sticky-cta">
     <div class="inner">
-      <a class="mobile-call" href="tel:17274964668" onclick="trackContact('phone_click')">Call</a>
-      <a class="mobile-text" href="sms:17274964668" onclick="trackContact('text_click')">Text</a>
+      <a class="mobile-call" href="tel:17276479000" onclick="trackContact('phone_click')">Call</a>
+      <a class="mobile-text" href="sms:17276479000" onclick="trackContact('text_click')">Text</a>
       <a class="mobile-assess" href="#contact" onclick="trackContact('assessment_click')">Get Free Check</a>
     </div>
   </div>
@@ -725,6 +727,21 @@
         });
       }
     }
+  </script>
+
+  <!-- Use the shared one-time business thank-you conversion marker. -->
+  <script>
+    (function () {
+      var form = document.getElementById('leadForm');
+      if (!form) return;
+      form.addEventListener('submit', function () {
+        try {
+          sessionStorage.setItem('suncoast_b2b_lead_pending', String(Date.now()));
+        } catch (error) {
+          // Browser storage is optional; continue submitting the form.
+        }
+      });
+    })();
   </script>
 
   <script>
@@ -778,7 +795,7 @@
           window.location.href = '/thank-you.html';
         }).catch(function (error) {
           console.error('EmailJS error:', error);
-          alert('There was a problem sending your request. Please call (727) 496-4668 or text us now.');
+          alert('There was a problem sending your request. Please call (727) 647-9000 or text us now.');
           submitBtn.disabled = false;
           submitBtn.textContent = originalText;
         });
