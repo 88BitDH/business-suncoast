@@ -549,6 +549,33 @@
   .section-menu{grid-template-columns:1fr}
 }
 
+
+    /* Compact, accessible expanded-detail panels for the business homepage */
+    .site-disclosure{border:1px solid var(--line);border-radius:18px;background:white;box-shadow:var(--shadow);overflow:hidden}
+    .site-disclosure>summary{cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:14px;
+      font-size:clamp(19px,2.4vw,24px);font-weight:700;min-height:66px;padding:18px 22px}
+    .site-disclosure>summary::-webkit-details-marker{display:none}
+    .site-disclosure>summary::after{content:"+";flex:none;display:grid;place-items:center;background:var(--soft);color:var(--primary);
+      font-size:26px;width:35px;height:35px;border-radius:9px}
+    .site-disclosure[open]>summary::after{content:"−"}
+    .site-disclosure>summary:focus-visible,.faq-accordion summary:focus-visible{outline:3px solid var(--primary);outline-offset:-3px}
+    .disclosure-body{padding:2px 22px 22px}
+    .faq-accordion{display:grid;gap:10px;max-width:940px;margin:18px auto 0}
+    .faq-accordion details{border:1px solid var(--line);border-radius:12px;background:#fff}
+    .faq-accordion summary{cursor:pointer;list-style:none;padding:16px 18px;min-height:56px;
+      display:flex;justify-content:space-between;align-items:center;gap:15px;font-weight:700}
+    .faq-accordion summary::-webkit-details-marker{display:none}
+    .faq-accordion summary::after{content:"+";font-size:24px;color:var(--primary)}
+    .faq-accordion details[open] summary::after{content:"−"}
+    .faq-accordion details p{padding:0 18px 16px;margin:0}
+    .service-area-map{width:100%;height:340px;display:block;border:0;border-radius:12px;background:var(--soft)}
+    .service-area-copy{max-width:850px}
+    @media(max-width:767px){
+      .site-disclosure>summary{padding:16px;font-size:20px;min-height:60px}
+      .disclosure-body{padding:0 16px 18px}
+      .service-area-map{height:290px}
+    }
+
 </style>
 </head>
 <body>
@@ -563,6 +590,7 @@
           <a href="#services">Services</a>
           <a href="#options">Support Options</a>
           <a href="#why-suncoast">Why Suncoast</a>
+          <a href="#service-area">Service Area</a>
           <a href="#contact" onclick="trackContact('assessment_click')">Get Help</a>
         </nav>
       </div>
@@ -586,7 +614,7 @@
 
           <p style="font-weight:700; font-size:16px; margin:0 0 14px;">✔ Takes 30 seconds &nbsp; ✔ No spam &nbsp; ✔ Talk to a real person</p>
 
-          <div class="keyword-strip">Businesses searching for <strong>data security services</strong>, <strong>IT services for small business</strong>, <strong>small business IT security</strong>, <strong>data loss prevention</strong>, <strong>cyber security near me</strong>, and <strong>cybersecurity company</strong> often land here because they need fast, practical help with technology, security, and compliance.</div>
+          
 
           <div class="offer-badge">Free 15-Minute IT Review</div>
           <div class="limited">Need help today? Call or send a request now to see if same-day or next-day service is available.</div>
@@ -605,17 +633,7 @@
             ✔ No Contracts Required
           </div>
 
-          <div style="margin-top:16px; display:grid; gap:10px;">
-            <div style="background:#f7fafc; padding:12px; border-radius:12px;">
-              ★★★★★ “Exceptional service and strong security improvements.” — Lynn J
-            </div>
-            <div style="background:#f7fafc; padding:12px; border-radius:12px;">
-              ★★★★★ “Saved us thousands and fixed multiple device issues.” — Julie K
-            </div>
-            <div style="background:#f7fafc; padding:12px; border-radius:12px;">
-              ★★★★★ “Came onsite fast and handled a rush job.” — Bruce L
-            </div>
-          </div>
+          <p style="margin-top:16px;"><a href="https://www.google.com/maps/place/Suncoast+Tech+Support/@27.9600634,-83.0269243,10z/data=!4m8!3m7!1s0xfda3740f6700f1b:0xbe48f9ed81314891!8m2!3d27.9598495!4d-82.6972656!9m1!1b1!16s%2Fg%2F11yvdld9vh?entry=ttu" target="_blank" rel="noopener noreferrer" style="color:#0f5f8f;text-decoration:underline;font-weight:700;">Read current customer reviews on Google</a></p>
         </div>
       </div>
     </div>
@@ -629,13 +647,6 @@
       </div>
 
       <div class="card option-single-card">
-        <div class="section-menu">
-          <a href="#pain-points">Common Problems</a>
-          <a href="#services">Services</a>
-          <a href="#options">Support Options</a>
-          <a href="#why-suncoast">Why Suncoast</a>
-          <a href="#contact" onclick="trackContact('assessment_click')">Get Help</a>
-        </div>
         <div class="option-row">
           <div class="option-item">
             <h3>Free IT Consultation</h3>
@@ -659,48 +670,40 @@
     </div>
   </section>
 
-  <section class="section pain" id="pain-points">
+  <section class="section-tight pain" id="pain-points">
     <div class="container">
-      <div class="section-menu">
-        <a href="#pain-points">Common Problems</a>
-        <a href="#services">Services</a>
-        <a href="#options">Support Options</a>
-        <a href="#contact" onclick="trackContact('assessment_click')">Get Help Now</a>
-      </div>
-      <div class="center"><h2>Common Business IT Problems We Solve</h2></div>
-      <div class="grid-2" style="margin-top:18px;">
-        <div style="padding:10px 0;">
-          <ul class="icon-list">
-            <li>Slow computers, crashes, and login issues</li>
-            <li>Wi-Fi, network, and internet problems</li>
-            <li>Email, Microsoft 365, and sync issues</li>
-            <li>Printer, device setup, user support, and security cleanup</li>
-          </ul>
+      <details class="site-disclosure">
+        <summary>Common Business IT Problems We Solve</summary>
+        <div class="disclosure-body">
+          <div class="grid-2" style="margin-top:14px">
+            <div>
+              <ul class="icon-list">
+                <li>Slow computers, crashes, and login issues</li>
+                <li>Wi-Fi, network, and internet problems</li>
+                <li>Microsoft 365, Outlook, and email issues</li>
+                <li>Printers, devices, user access, and security cleanup</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Unreliable technology slows down your business.</h3>
+              <p>Lost staff time, missed work, and avoidable security issues are good reasons to seek local support.</p>
+              <p style="margin-top:16px"><a href="#contact" style="color:var(--primary);text-decoration:underline">Request IT Help</a></p>
+            </div>
+          </div>
         </div>
-        <div style="padding:10px 0;">
-          <h3>If your technology is unreliable, your business slows down.</h3>
-          <p>That means lost time, frustrated staff, missed customer work, preventable security problems, and compliance concerns that keep hanging around. Fast support matters.</p>
-        </div>
-      </div>
-      <div class="repeat-cta">
-        <p>Get clear, practical help from a local IT partner that can support your business without adding complexity.</p>
-        <a class="btn btn-primary" href="#contact" onclick="trackContact('assessment_click')">Request IT Help</a>
-      </div>
+      </details>
     </div>
   </section>
 
   <section class="section solution" id="services">
     <div class="container">
-      <div class="section-menu">
-        <a href="#pain-points">Common Problems</a>
-        <a href="#services">Services</a>
-        <a href="#options">Support Options</a>
-        <a href="#contact" onclick="trackContact('assessment_click')">Get Help Now</a>
-      </div>
       <div class="center">
         <h2>Business IT Support, Security Help, and Practical Compliance Support</h2>
         <p class="muted">Suncoast Tech Support helps small businesses fix issues quickly, improve reliability, strengthen security, and handle practical compliance-related needs with on-site and remote support.</p>
       </div>
+      <details class="site-disclosure" style="margin-top:18px">
+        <summary>Explore More Service Details</summary>
+        <div class="disclosure-body">
       <div class="grid-3" style="margin-top:18px;">
         <div style="padding:10px 0;"><h3>On-site IT support</h3><p>Get local hands-on help when problems need to be fixed at your office.</p></div>
         <div style="padding:10px 0;"><h3>Remote IT support</h3><p>Resolve many issues faster without waiting for an on-site visit.</p></div>
@@ -709,6 +712,9 @@
         <div style="padding:10px 0;"><h3>Data security services</h3><p>Reduce common risks with practical small business IT security improvements and data loss prevention steps.</p></div>
         <div style="padding:10px 0;"><h3>Security and compliance support</h3><p>Support for security reviews, policy cleanup, account controls, and practical compliance-related improvements for small offices.</p></div>
       </div>
+
+        </div>
+      </details>
       <div class="center" style="margin-top:30px;">
         <h2>Explore Our Business IT Services</h2>
         <p class="muted">Select a service to learn more or request help for your business.</p>
@@ -746,17 +752,11 @@
     </div>
   </section>
 
-  <section class="section" id="why-suncoast">
+  <section class="section-tight" id="why-suncoast">
     <div class="container">
-      <div class="section-menu">
-        <a href="#pain-points">Common Problems</a>
-        <a href="#services">Services</a>
-        <a href="#options">Support Options</a>
-        <a href="#contact" onclick="trackContact('assessment_click')">Get Help Now</a>
-      </div>
-      <div class="center">
-        <h2>Why Local Businesses Choose Suncoast</h2>
-      </div>
+      <details class="site-disclosure">
+        <summary>Why Suncoast? Experience, Partners &amp; Certifications</summary>
+        <div class="disclosure-body">
       <div class="grid-2" style="margin-top:18px;">
         <div class="card">
           <ul class="icon-list">
@@ -800,21 +800,14 @@
           <p style="margin-top:14px;"><strong>Pinellas County Certified Small Business Enterprise (SBE)</strong> &mdash; Recognized through the County's Small Business Enterprise program.</p>
         </div>
       </div>
-      <div class="repeat-cta">
-        <p>Get reliable IT help before small problems turn into expensive downtime.</p>
-        <a class="btn btn-primary" href="#contact" onclick="trackContact('assessment_click')">Get a Free IT Review</a>
-      </div>
+
+        </div>
+      </details>
     </div>
   </section>
 
   <section class="section offer" id="contact">
     <div class="container">
-      <div class="section-menu">
-        <a href="#pain-points">Common Problems</a>
-        <a href="#services">Services</a>
-        <a href="#options">Support Options</a>
-        <a href="#contact" onclick="trackContact('assessment_click')">Get Help Now</a>
-      </div>
       <div class="grid-2">
         <div class="card">
           <h2>Free 15-Minute IT Review</h2>
@@ -886,6 +879,9 @@
         <p class="rating-line">⭐ 5-Star Rated on Google</p>
       </div>
 
+      <details class="site-disclosure" style="margin-top:18px">
+        <summary>Read Customer Stories</summary>
+        <div class="disclosure-body">
       <div class="grid-3" style="margin-top:18px;">
         <div class="card">
           <div class="stars">★★★★★</div>
@@ -906,8 +902,11 @@
         </div>
       </div>
 
+
+        </div>
+      </details>
       <div class="center" style="margin-top:18px;">
-        <a class="btn btn-outline" href="https://www.google.com/maps/place/Suncoast+Tech+Support/@27.9600634,-83.0269243,10z/data=!4m8!3m7!1s0xfda3740f6700f1b:0xbe48f9ed81314891!8m2!3d27.9598495!4d-82.6972656!9m1!1b1!16s%2Fg%2F11yvdld9vh?entry=ttu" target="_blank" rel="noopener">Read More Google Reviews</a>
+        <a class="btn btn-outline" href="https://www.google.com/maps/place/Suncoast+Tech+Support/@27.9600634,-83.0269243,10z/data=!4m8!3m7!1s0xfda3740f6700f1b:0xbe48f9ed81314891!8m2!3d27.9598495!4d-82.6972656!9m1!1b1!16s%2Fg%2F11yvdld9vh?entry=ttu" target="_blank" rel="noopener">View Latest Reviews on Google</a>
       </div>
 
       <div class="repeat-cta">
@@ -917,17 +916,32 @@
     </div>
   </section>
 
-  <section class="section-tight">
+  <section class="section-tight" id="service-area">
+    <div class="container">
+      <details class="site-disclosure">
+        <summary>Our Local Service Area — See Interactive Google Map</summary>
+        <div class="disclosure-body">
+          <p class="service-area-copy">Suncoast supports offices in Clearwater, Dunedin, Largo, Safety Harbor, Palm Harbor, Oldsmar and nearby Pinellas County communities. Onsite service is generally within 20 miles, with travel terms confirmed before scheduling. Remote assistance is also available.</p>
+          <iframe class="service-area-map" title="Google Maps regional overview of Clearwater and Pinellas County"
+            src="https://www.google.com/maps?q=Clearwater%2C%20Pinellas%20County%2C%20Florida&amp;z=10&amp;output=embed"
+            loading="lazy" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          <p style="margin-top:14px"><a href="https://www.google.com/maps/search/?api=1&amp;query=Clearwater%2C+Pinellas+County%2C+Florida" target="_blank" rel="noopener noreferrer" style="color:var(--primary);text-decoration:underline;font-weight:700">Open the area in Google Maps</a></p>
+          <p class="muted" style="font-size:14px">This interactive map shows the region, not a surveyed 20-mile coverage boundary. Contact us to confirm travel and availability for your address.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <section class="section-tight" id="faq">
     <div class="container">
       <div class="center"><h2>Frequently Asked Questions</h2></div>
-      <div class="grid-3" style="margin-top:18px;">
-        <div class="faq-item"><h3>Who is this for?</h3><p>This page is built for small businesses, offices, and local teams that need practical IT help without a long-term contract.</p></div>
-        <div class="faq-item"><h3>Do I have to sign a contract?</h3><p>No. You can start with a one-time issue or project and add ongoing support only if you want it.</p></div>
-        <div class="faq-item"><h3>What do you help with?</h3><p>We help with computers, Wi-Fi, email, Microsoft 365, printers, user issues, data security services, small business IT security, and practical compliance support.</p></div>
-      </div>
-      <div class="repeat-cta">
-        <p>Still deciding? Start with a no-pressure IT review.</p>
-        <a class="btn btn-primary" href="#contact" onclick="trackContact('assessment_click')">Request IT Help</a>
+      <div class="faq-accordion">
+        <details><summary>Who does Suncoast support?</summary>
+          <p>Small businesses, professional offices, and local teams that need practical, commercial IT support.</p></details>
+        <details><summary>Do I need a long-term agreement?</summary>
+          <p>No. Start with one-time IT assistance or a project. Monthly plans have clearly defined support allowances.</p></details>
+        <details><summary>Which services do you provide?</summary>
+          <p>Business PCs, networking, Wi-Fi, Microsoft 365, printers, account support, security reviews, and technical compliance assistance.</p></details>
       </div>
     </div>
   </section>
