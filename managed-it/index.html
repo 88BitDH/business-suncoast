@@ -36,6 +36,43 @@ details{border-bottom:1px solid var(--line);padding:15px 0}summary{cursor:pointe
 footer{background:var(--deep);color:white;padding:27px 0}footer a{color:#dfedf7}
 .other a{display:inline-block;margin:6px 15px 6px 0;font-weight:600}
 @media(max-width:800px){.hero-grid,.two,#contact .two,.grid{grid-template-columns:1fr}.hero{padding:40px 0 48px}.brand img{width:58px;height:58px}}
+
+/* Mobile usability: readable navigation, safe-area CTA, and accessible forms. */
+@media (min-width:801px){.mobile-action-bar{display:none}}
+@media (max-width:800px){
+  body{padding-bottom:calc(79px + env(safe-area-inset-bottom))}
+  .top{align-items:stretch;gap:12px}
+  .brand{width:100%}
+  header nav{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));width:100%;gap:8px}
+  header nav a{display:flex;align-items:center;justify-content:center;min-height:46px;padding:8px 6px;
+    border:1px solid rgba(255,255,255,.3);border-radius:9px;text-align:center;line-height:1.25}
+  .hero-grid{gap:18px}
+  .hero{padding:34px 0 38px}
+  h1{font-size:clamp(30px,8.2vw,42px);overflow-wrap:break-word}
+  .hero p{font-size:17px}
+  .cta{flex-direction:column;gap:10px}
+  .cta .btn{display:flex;align-items:center;justify-content:center;min-height:48px;width:100%;text-align:center}
+  section{padding:37px 0}
+  .grid{gap:13px}
+  article,aside,.panel{padding:20px}
+  input,textarea{font-size:16px;min-height:48px}
+  label{margin-top:13px}
+  .other a{display:block;margin:5px 0;padding:10px 0;min-height:44px}
+  .mobile-action-bar{display:grid;grid-template-columns:1fr 1.2fr;gap:9px;position:fixed;bottom:0;left:0;right:0;
+    padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:#fff;
+    border-top:1px solid var(--line);box-shadow:0 -4px 20px rgba(14,52,78,.12);z-index:900}
+  .mobile-action-bar a{display:flex;align-items:center;justify-content:center;min-height:48px;
+    border-radius:10px;text-align:center;text-decoration:none;font-size:15px;font-weight:700}
+  .mobile-action-bar .call{color:var(--blue);background:#e6f2fa}
+  .mobile-action-bar .help{color:#19303f;background:var(--orange)}
+}
+@media (max-width:380px){
+  .wrap{width:calc(100% - 24px)}
+  article,aside,.panel{padding:16px}
+  header nav a{font-size:13px}
+  h2{font-size:26px}
+  .mobile-action-bar{padding-left:10px;padding-right:10px}
+}
 </style>
 </head>
 <body>
@@ -56,12 +93,16 @@ footer{background:var(--deep);color:white;padding:27px 0}footer a{color:#dfedf7}
 <input type="hidden" name="utm_source" id="utm_source"><input type="hidden" name="utm_medium" id="utm_medium">
 <input type="hidden" name="utm_campaign" id="utm_campaign"><input type="hidden" name="utm_term" id="utm_term">
 <input type="hidden" name="landing_page" id="landing_page">
-<div class="cf-turnstile" data-sitekey="0x4AAAAAACzrFz4NsVodL59R"></div><button type="submit" class="btn primary">Send business IT request</button>
+<div class="cf-turnstile" data-sitekey="0x4AAAAAACzrFz4NsVodL59R" data-size="compact"></div><button type="submit" class="btn primary">Send business IT request</button>
 </form><p class="note muted">Your request will be routed to Suncoast Tech Support.</p></div></div></section>
 <section class="alt"><div class="wrap"><h2>Frequently asked question</h2><details><summary>Do you offer a one-time review or project?</summary><p>Support is scoped to your users, devices and response needs. Ask for a quote; one-time work is also available.</p></details><details><summary>Where do you provide service?</summary><p>Suncoast supports businesses in Clearwater and the surrounding Pinellas County service area. Some assistance can be provided remotely.</p></details></div></section>
 <section><div class="wrap other"><h2>More business IT services</h2><a href="/it-support/">Business IT</a><a href="/microsoft-365/">Microsoft 365</a><a href="/office-networking/">Office Networks</a><a href="/business-security.html">Security Review</a><a href="/wisp-compliance/">FTC Safeguards</a><a href="/managed-it/">Ongoing IT</a></div></section>
 </main>
 <footer><div class="wrap"><strong>Suncoast Tech Support</strong> · Clearwater &amp; Pinellas County<br>Call or text <a href="tel:17276479000">(727) 647-9000</a> · <a href="/">Business homepage</a></div></footer>
+<nav class="mobile-action-bar" aria-label="Mobile contact actions">
+  <a class="call" href="tel:17276479000">Call Suncoast</a>
+  <a class="help" href="#contact">Request IT Help</a>
+</nav>
 <script>
 (function(){
 var form=document.getElementById('leadForm');if(!form)return;
