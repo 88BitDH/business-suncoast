@@ -73,6 +73,18 @@ footer{background:var(--deep);color:white;padding:27px 0}footer a{color:#dfedf7}
   h2{font-size:26px}
   .mobile-action-bar{padding-left:10px;padding-right:10px}
 }
+
+/* Shared footer: company, document links, and branded social redirects */
+.b2b-footer{background:#0e344e;color:white;padding:28px 18px 105px}
+.b2b-footer-inner{max-width:1120px;margin:auto;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:25px}
+.b2b-footer strong{display:block;font-size:18px;margin:0 0 12px}
+.b2b-footer p{margin:0;font-size:15px;line-height:1.6}
+.b2b-footer a{color:white;text-decoration:underline;text-underline-offset:3px}
+.b2b-footer nav{display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+.b2b-footer nav a{min-height:24px}
+@media(max-width:800px){.b2b-footer-inner{grid-template-columns:1fr;gap:24px}
+  .b2b-footer nav a{min-height:40px;display:inline-flex;align-items:center}}
+@media(min-width:801px){.b2b-footer{padding-bottom:28px}}
 </style>
 </head>
 <body>
@@ -98,7 +110,20 @@ footer{background:var(--deep);color:white;padding:27px 0}footer a{color:#dfedf7}
 <section class="alt"><div class="wrap"><h2>Frequently asked question</h2><details><summary>Do you offer a one-time review or project?</summary><p>No. Start with a one-time business issue or project and discuss ongoing service if needed.</p></details><details><summary>Where do you provide service?</summary><p>Suncoast supports businesses in Clearwater and the surrounding Pinellas County service area. Some assistance can be provided remotely.</p></details></div></section>
 <section><div class="wrap other"><h2>More business IT services</h2><a href="/it-support/">Business IT</a><a href="/microsoft-365/">Microsoft 365</a><a href="/office-networking/">Office Networks</a><a href="/business-security.html">Security Review</a><a href="/wisp-compliance/">FTC Safeguards</a><a href="/managed-it/">Ongoing IT</a></div></section>
 </main>
-<footer><div class="wrap"><strong>Suncoast Tech Support</strong> · Clearwater &amp; Pinellas County<br>Call or text <a href="tel:17276479000">(727) 647-9000</a> · <a href="/">Business homepage</a></div> · <a href="https://docs.google.com/document/d/1C_8kAg7DN8BRhG9cSECQ2Qh824-fmIPj7JtrDChEk_4/edit?tab=t.0#heading=h.bor022r69f3v" target="_blank" rel="noopener noreferrer">Privacy Policy</a></footer>
+<footer class="b2b-footer">
+  <div class="b2b-footer-inner">
+    <div><strong>Suncoast Tech Support</strong><p>Veteran-Owned · Insured<br>Call or text <a href="tel:17276479000">(727) 647-9000</a></p></div>
+    <nav aria-label="Legal information"><strong>Legal</strong>
+      <a href="https://docs.google.com/document/d/1C_8kAg7DN8BRhG9cSECQ2Qh824-fmIPj7JtrDChEk_4/edit?tab=t.0" target="_blank" rel="noopener noreferrer">Terms of Service</a>
+      <a href="https://docs.google.com/document/d/1C_8kAg7DN8BRhG9cSECQ2Qh824-fmIPj7JtrDChEk_4/edit?tab=t.0#heading=h.bor022r69f3v" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+      <a href="https://docs.google.com/document/d/1C_8kAg7DN8BRhG9cSECQ2Qh824-fmIPj7JtrDChEk_4/edit?tab=t.0" target="_blank" rel="noopener noreferrer">Client Authorization and Consent</a>
+    </nav>
+    <nav aria-label="Social media"><strong>Follow Suncoast</strong>
+      <a href="https://business.suncoasttechsupport.net/facebook/" target="_blank" rel="noopener noreferrer">Facebook</a>
+      <a href="https://business.suncoasttechsupport.net/linkedin/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </nav>
+  </div>
+</footer>
 <nav class="mobile-action-bar" aria-label="Mobile contact actions">
   <a class="call" href="tel:17276479000">Call Suncoast</a>
   <a class="help" href="#contact">Request IT Help</a>
