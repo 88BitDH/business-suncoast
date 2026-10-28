@@ -594,6 +594,14 @@
     @media(min-width:768px){.site-footer{padding-bottom:24px}}
     @media(max-width:767px){.review-form button{width:100%}}
 
+
+    .site-footer .footer-groups{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:26px;align-items:start}
+    .site-footer h3{font-size:18px;color:#fff;margin:0 0 12px}
+    .site-footer .footer-links{display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+    .site-footer .footer-links a{color:#fff;line-height:1.5;text-decoration:underline;text-underline-offset:3px}
+    .site-footer a:focus-visible{outline:3px solid #ff8a3d;outline-offset:3px}
+    @media(max-width:767px){.site-footer .footer-groups{grid-template-columns:1fr;gap:24px}
+      .site-footer .footer-links a{display:inline-flex;align-items:center;min-height:42px}}
 </style>
 </head>
 <body>
@@ -1014,9 +1022,26 @@
   </section>
 
   <footer class="site-footer">
-    <div class="container">
-      <span>© Suncoast Tech Support · Veteran-Owned · Insured</span>
-      <a href="https://docs.google.com/document/d/1C_8kAg7DN8BRhG9cSECQ2Qh824-fmIPj7JtrDChEk_4/edit?tab=t.0#heading=h.bor022r69f3v" target="_blank" rel="noopener noreferrer">Privacy Policy <span class="sr-only">(opens in a new tab)</span></a>
+    <div class="container" style="display:block">
+      <div class="footer-groups">
+        <div>
+          <h3>Suncoast Tech Support</h3>
+          <p style="margin:8px 0">Veteran-Owned · Insured</p>
+          <p style="margin:8px 0">Call or text <a href="tel:17276479000">(727) 647-9000</a></p>
+        </div>
+        <nav aria-label="Legal information" class="footer-links">
+          <h3>Legal</h3>
+          <a href="https://docs.google.com/document/d/1C_8kAg7DN8BRhG9cSECQ2Qh824-fmIPj7JtrDChEk_4/edit?tab=t.0" target="_blank" rel="noopener noreferrer">Terms of Service</a>
+          <a href="https://docs.google.com/document/d/1C_8kAg7DN8BRhG9cSECQ2Qh824-fmIPj7JtrDChEk_4/edit?tab=t.0#heading=h.bor022r69f3v" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+          <a href="https://docs.google.com/document/d/1C_8kAg7DN8BRhG9cSECQ2Qh824-fmIPj7JtrDChEk_4/edit?tab=t.0" target="_blank" rel="noopener noreferrer">Client Authorization and Consent</a>
+        </nav>
+        <nav aria-label="Suncoast social media" class="footer-links">
+          <h3>Follow Suncoast</h3>
+          <a href="https://business.suncoasttechsupport.net/facebook/" target="_blank" rel="noopener noreferrer">Facebook</a>
+          <a href="https://business.suncoasttechsupport.net/linkedin/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </nav>
+      </div>
+      <p style="font-size:13px;margin:22px 0 0;opacity:.85">© Suncoast Tech Support · 88 Bit Diamond Hands LLC</p>
     </div>
   </footer>
 
