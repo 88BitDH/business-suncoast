@@ -576,6 +576,24 @@
       .service-area-map{height:290px}
     }
 
+
+    /* On-site review collection and footer */
+    .review-form{max-width:650px;display:grid;gap:8px;margin-top:18px}
+    .review-form label{font-weight:700;font-size:15px}
+    .review-form input:not([type="checkbox"]),.review-form textarea,.review-form select{
+      width:100%;font:inherit;font-size:16px;min-height:48px;border-radius:10px;
+      border:1px solid #9aadb9;background:#fff;color:var(--text);padding:12px}
+    .review-form textarea{min-height:125px;resize:vertical}
+    .review-form .review-optin{display:flex;align-items:flex-start;gap:10px;font-weight:400;font-size:15px;line-height:1.45;margin:8px 0}
+    .review-form .review-optin input{height:20px;width:20px;flex-shrink:0;margin-top:2px}
+    .review-form button{justify-self:start;min-height:48px}
+    .site-footer{padding:24px 0 100px;background:#123d5b;color:#fff}
+    .site-footer .container{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+    .site-footer a{color:#fff;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+    .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+    @media(min-width:768px){.site-footer{padding-bottom:24px}}
+    @media(max-width:767px){.review-form button{width:100%}}
+
 </style>
 </head>
 <body>
@@ -633,7 +651,7 @@
             ✔ No Contracts Required
           </div>
 
-          <p style="margin-top:16px;"><a href="https://www.google.com/maps/place/Suncoast+Tech+Support/@27.9600634,-83.0269243,10z/data=!4m8!3m7!1s0xfda3740f6700f1b:0xbe48f9ed81314891!8m2!3d27.9598495!4d-82.6972656!9m1!1b1!16s%2Fg%2F11yvdld9vh?entry=ttu" target="_blank" rel="noopener noreferrer" style="color:#0f5f8f;text-decoration:underline;font-weight:700;">Read current customer reviews on Google</a></p>
+          <p style="margin-top:16px;"><a href="#customer-reviews" onclick="document.getElementById('customer-reviews').open=true" style="color:#0f5f8f;text-decoration:underline;font-weight:700;">Read customer reviews here</a></p>
         </div>
       </div>
     </div>
@@ -879,7 +897,7 @@
         <p class="rating-line">⭐ 5-Star Rated on Google</p>
       </div>
 
-      <details class="site-disclosure" style="margin-top:18px">
+      <details class="site-disclosure" id="customer-reviews" style="margin-top:18px">
         <summary>Read Customer Stories</summary>
         <div class="disclosure-body">
       <div class="grid-3" style="margin-top:18px;">
@@ -906,9 +924,44 @@
         </div>
       </details>
       <div class="center" style="margin-top:18px;">
-        <a class="btn btn-outline" href="https://www.google.com/maps/place/Suncoast+Tech+Support/@27.9600634,-83.0269243,10z/data=!4m8!3m7!1s0xfda3740f6700f1b:0xbe48f9ed81314891!8m2!3d27.9598495!4d-82.6972656!9m1!1b1!16s%2Fg%2F11yvdld9vh?entry=ttu" target="_blank" rel="noopener">View Latest Reviews on Google</a>
+        <a class="btn btn-outline" href="#customer-reviews" onclick="document.getElementById('customer-reviews').open=true">Read Reviews on This Page</a>
       </div>
 
+
+      <details class="site-disclosure" id="submit-review" style="margin-top:20px">
+        <summary>Leave a Review for Suncoast Tech Support</summary>
+        <div class="disclosure-body">
+          <p>Worked with Suncoast? Share your experience here without leaving our website. All feedback is welcome. Website submissions are sent privately to Suncoast for review and are not automatically posted to Google.</p>
+          <form id="websiteReviewForm" method="POST" action="https://suncoast-lead-form.iammoeskicova0808.workers.dev/" class="review-form">
+            <label for="review-name">Your name</label>
+            <input type="text" id="review-name" name="name" autocomplete="name" maxlength="160" required>
+            <label for="review-email">Your email (never shown publicly)</label>
+            <input type="email" id="review-email" name="email" autocomplete="email" maxlength="240" required>
+            <label for="review-rating">Your experience</label>
+            <select id="review-rating" name="review_rating" required>
+              <option value="" disabled selected>Select a rating</option>
+              <option value="5">5 stars — Excellent</option>
+              <option value="4">4 stars — Good</option>
+              <option value="3">3 stars — Average</option>
+              <option value="2">2 stars — Poor</option>
+              <option value="1">1 star — Very poor</option>
+            </select>
+            <label for="review-message">Your review</label>
+            <textarea id="review-message" name="help" rows="5" maxlength="3000" required placeholder="Tell us about your experience with Suncoast Tech Support"></textarea>
+            <label class="review-optin" for="review-consent">
+              <input type="checkbox" name="publish_consent" id="review-consent" value="yes">
+              <span>You may contact me to request permission to display this review on your website. This is optional.</span>
+            </label>
+            <input type="hidden" name="page_name" value="Website Customer Review">
+            <input type="hidden" name="lead_source" value="Customer Website Feedback">
+            <input type="hidden" name="phone" value="">
+            <div class="cf-turnstile" data-sitekey="0x4AAAAAACzrFz4NsVodL59R" data-size="compact"></div>
+            <button type="submit" class="btn btn-primary">Submit Website Review</button>
+          </form>
+          <p class="muted" style="font-size:14px;margin-top:12px">Submitting this form sends feedback to Suncoast; it does not publish a Google review. Your review is not posted publicly automatically. See our <a href="https://docs.google.com/document/d/1C_8kAg7DN8BRhG9cSECQ2Qh824-fmIPj7JtrDChEk_4/edit?tab=t.0#heading=h.bor022r69f3v" target="_blank" rel="noopener noreferrer" style="color:var(--primary);text-decoration:underline">Privacy Policy</a>.</p>
+          <p style="margin-top:12px">Prefer to post directly on Google? <a href="https://www.google.com/maps/place/Suncoast+Tech+Support/@27.9600634,-83.0269243,10z/data=!4m8!3m7!1s0xfda3740f6700f1b:0xbe48f9ed81314891!8m2!3d27.9598495!4d-82.6972656!9m1!1b1!16s%2Fg%2F11yvdld9vh?entry=ttu" target="_blank" rel="noopener noreferrer" style="color:var(--primary);text-decoration:underline;font-weight:700">Open Suncoast's Google listing in a new tab</a>, then select the option to write a review.</p>
+        </div>
+      </details>
       <div class="repeat-cta">
         <p>Get fast, reliable help for your business without staying stuck with poor IT support.</p>
         <a class="btn btn-primary" href="#contact" onclick="trackContact('assessment_click')">Request IT Help</a>
@@ -959,6 +1012,13 @@
       </div>
     </div>
   </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>© Suncoast Tech Support · Veteran-Owned · Insured</span>
+      <a href="https://docs.google.com/document/d/1C_8kAg7DN8BRhG9cSECQ2Qh824-fmIPj7JtrDChEk_4/edit?tab=t.0#heading=h.bor022r69f3v" target="_blank" rel="noopener noreferrer">Privacy Policy <span class="sr-only">(opens in a new tab)</span></a>
+    </div>
+  </footer>
 
   <div class="mobile-sticky-cta">
     <div class="inner">
@@ -1092,5 +1152,24 @@
   </script>
 -->
 
+  <!-- Review submissions use the existing contact intake but never set the ad-lead marker. -->
+  <script>
+    (function(){
+      var form=document.getElementById('websiteReviewForm');
+      if(!form) return;
+      form.addEventListener('submit',function(){
+        var message=document.getElementById('review-message');
+        var rating=document.getElementById('review-rating').value;
+        var consent=document.getElementById('review-consent').checked;
+        if(message && !message.dataset.prepared) {
+          message.value='Customer website review ('+rating+'/5 stars). Permission to contact about website publication: '+
+            (consent?'Yes':'No')+'.\n\n'+message.value;
+          message.dataset.prepared='1';
+        }
+        try { sessionStorage.setItem('suncoast_review_pending',String(Date.now())); }
+        catch(error) { /* Do not interrupt review submission. */ }
+      });
+    })();
+  </script>
 </body>
 </html>
