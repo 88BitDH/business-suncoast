@@ -602,129 +602,105 @@
     .site-footer a:focus-visible{outline:3px solid #ff8a3d;outline-offset:3px}
     @media(max-width:767px){.site-footer .footer-groups{grid-template-columns:1fr;gap:24px}
       .site-footer .footer-links a{display:inline-flex;align-items:center;min-height:42px}}
+
+/* Suncoast business-first layout inspired by the reference site's clarity, not its branding. */
+:root{--max:1180px;--accent:#ff9a3c;--bg:#f5f8fb;--text:#173047}
+.container{max-width:var(--max)}body{line-height:1.6}
+h1{font-size:clamp(38px,5.3vw,66px);line-height:1.08;letter-spacing:-.045em}
+h2{font-size:clamp(29px,3.5vw,43px);line-height:1.16;letter-spacing:-.025em}
+.section{padding:64px 0}.section-tight{padding:41px 0}
+.btn{border-radius:9px;min-height:48px;padding:14px 20px}
+.btn-primary{background:var(--accent);color:#163247;border-color:var(--accent)}
+.hero{padding:0 0 58px;background:linear-gradient(118deg,#0c3552 0%,#0f5b80 70%,#197a9c 100%);overflow:hidden}
+.topbar{padding:12px 0 24px}.logo-box img{height:90px;width:auto;filter:none}
+.top-links{gap:11px 22px;justify-content:flex-end}
+.top-links a{color:#ebf5fc;text-decoration:none;font-size:15px;padding:10px 0}
+.top-links .nav-cta{background:#ff9a3c;color:#173047;padding:11px 17px;border-radius:9px}
+.hero-grid{grid-template-columns:1.14fr .86fr;align-items:center;gap:52px}
+.hero-main{max-width:690px}.hero .eyebrow{font-size:12px;font-weight:800;letter-spacing:.07em}
+.hero .lead{font-size:clamp(18px,2.1vw,23px);color:#f0f8fe;margin:20px 0 14px}
+.hero-extra{color:#d6eaf5;font-size:16px}.hero-cta{margin:26px 0 15px;display:flex;gap:11px;flex-wrap:wrap}
+.hero-call{font-size:15px;color:#e4f1f8}.hero-call a{color:#fff;text-decoration:underline;font-weight:700}
+.hero-portrait{position:relative;padding-bottom:23px}
+.hero-portrait>img{height:405px;width:100%;object-fit:cover;object-position:center 25%;border-radius:17px;background:#dce9f1;box-shadow:0 20px 55px #001f3560}
+.portrait-label{position:absolute;bottom:0;left:-12px;right:25px;padding:13px 17px;background:white;color:#15374d;border-radius:10px;box-shadow:0 9px 25px #001d3540}
+.portrait-label strong,.portrait-label span{display:block}.portrait-label span{font-size:13px;color:#657a88}
+.proof-strip{background:#fff;border-bottom:1px solid #dfe8ee}
+.proof-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;padding-top:23px;padding-bottom:23px}
+.proof-grid>div{padding:3px 15px;border-right:1px solid #e1eaf0}.proof-grid>div:last-child{border:0}
+.proof-grid strong,.proof-grid span{display:block}.proof-grid strong{font-size:18px;color:#145376}.proof-grid span{font-size:13px;color:#5e7483}
+#services{background:#f5f8fb}
+#services> .container >.center h2{max-width:850px;margin-left:auto;margin-right:auto}
+#services nav.grid-3{gap:18px}
+#services nav.grid-3 .card{padding:27px;min-height:205px;background:#fff;border-radius:14px;border:1px solid #dbe7ee;box-shadow:0 6px 20px #0b3b5412}
+#services nav.grid-3 .card h3{font-size:21px}#services nav.grid-3 .card h3 a{color:#0c5f85;text-decoration:underline;text-underline-offset:4px}
+#services nav.grid-3 .card p{font-size:15px;color:#5b7080}
+#services nav.grid-3 .card:hover{border-color:#9fc7dc}
+#why-suncoast{background:#fff}
+.partners-section{background:#eaf3f9}.section-overline{font-size:12px;letter-spacing:.12em;font-weight:800;color:#17658b}
+.partner-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:24px}
+.partner-card{background:white;border:1px solid #d6e5ed;border-radius:14px;padding:24px}
+.partner-wordmark{display:flex;align-items:center;justify-content:center;height:72px;border-radius:9px;background:#f2f6f9;font-size:33px;color:#263b85;font-weight:800;letter-spacing:-.05em;margin-bottom:17px}
+.partner-card h3{font-size:19px;margin:0 0 6px}.partner-card p{color:#567081;font-size:15px}
+.partner-disclaimer{font-size:13px;color:#5d7383;margin:15px 0 0}
+#options{background:#f5f8fb}#options .card{box-shadow:0 8px 24px #0c3e5a0e}
+#contact{background:#eaf4f9}.reviews{background:#fff}
+.final-cta{background:#0f3e5e;color:white;border-radius:18px;padding:42px 30px}
+.final-cta p{color:#edf6fb}
+@media(max-width:1024px){.hero-grid{gap:29px}.top-links{gap:9px 14px}}
+@media(max-width:767px){
+ .hero{padding-bottom:38px}.topbar{justify-content:center}.logo-box img{height:75px;max-width:190px}
+ .top-links{width:100%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+ .top-links a{font-size:13px;padding:9px 5px;border:1px solid #fff4;border-radius:8px;display:flex;align-items:center;justify-content:center;min-height:44px;text-decoration:none;text-align:center}
+ .top-links .nav-cta{padding:9px 5px}
+ .hero-grid{grid-template-columns:1fr;gap:22px}.hero .lead{font-size:18px}
+ .hero-cta{display:grid;grid-template-columns:1fr}.hero-cta .btn{width:100%;text-align:center}
+ .hero-portrait{max-width:370px;margin:auto;width:100%}.hero-portrait>img{height:275px}.portrait-label{left:8px;right:8px}
+ .proof-grid,.partner-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+ .proof-grid>div{border-right:0;border-bottom:1px solid #e2eaf0;padding:6px}
+ .proof-grid strong{font-size:15px}
+ .partner-grid{grid-template-columns:1fr}.section{padding:40px 0}.section-tight{padding:32px 0}
+ .partner-card{padding:18px}.final-cta{padding:26px 18px}
+}
+
 </style>
 </head>
 <body>
   <header class="hero">
     <div class="container">
       <div class="topbar">
-        <div class="logo-box">
-          <img src="images/suncoast-logo.png" alt="Suncoast Tech Support logo">
-        </div>
-        <nav class="top-links" aria-label="Page sections">
-          <a href="#pain-points">Common Problems</a>
-          <a href="#services">Services</a>
-          <a href="#options">Support Options</a>
-          <a href="#why-suncoast">Why Suncoast</a>
-          <a href="#service-area">Service Area</a>
-          <a href="#contact" onclick="trackContact('assessment_click')">Get Help</a>
+        <a href="/" class="logo-box" aria-label="Suncoast business homepage"><img src="/images/suncoast-logo.png" alt="Suncoast Tech Support logo" width="230" height="110"></a>
+        <nav class="top-links" aria-label="Main sections">
+          <a href="#services">Services</a><a href="#why-suncoast">About</a><a href="#partners">Partners</a>
+          <a href="#options">Plans</a><a href="#reviews">Reviews</a><a href="#contact" class="nav-cta" onclick="trackContact('assessment_click')">Get IT Help</a>
         </nav>
       </div>
-
       <div class="hero-grid">
-        <div>
-          <div class="eyebrow">Local Business IT Support • Security & Compliance Help • Clearwater & Tampa Bay</div>
-          <h1>Business IT Support for Slow Tech, Security Gaps, and Compliance Concerns</h1>
-          <p class="lead">Fast, practical IT help for small businesses in Clearwater and Tampa Bay. Fix computer issues, Wi-Fi drops, Microsoft 365 problems, printer headaches, data security concerns, and basic compliance issues without the runaround. Ideal if you are looking for a new IT support company or tired of your current IT support.</p>
-
-          <div class="hero-pain">
-            <span>Slow computers, Wi-Fi drops, printer problems, or login issues?</span>
-            <span>Not satisfied with your current IT support or looking for a new IT partner?</span>
-            <span>Need fast local help before downtime, missed work, security problems, or compliance gaps get worse?</span>
-          </div>
-
-          <div class="hero-cta">
-            <a class="btn btn-primary" href="#contact" onclick="trackContact('assessment_click')">Request IT Help</a>
-            <a class="btn btn-secondary" href="tel:17276479000" onclick="trackContact('phone_click')">Call Now: (727) 647-9000</a>
-          </div>
-
-          <p style="font-weight:700; font-size:16px; margin:0 0 14px;">✔ Takes 30 seconds &nbsp; ✔ No spam &nbsp; ✔ Talk to a real person</p>
-
-          
-
-          <div class="offer-badge">Free 15-Minute IT Review</div>
-          <div class="limited">Need help today? Call or send a request now to see if same-day or next-day service is available.</div>
-          <div class="scarcity-list">
-            <span>Slow tech, bad support, and recurring IT issues waste time, frustrate staff, and create security risk if they are not fixed quickly.</span>
-          </div>
+        <div class="hero-main">
+          <span class="eyebrow">VETERAN-OWNED · PINELLAS COUNTY BUSINESS IT</span>
+          <h1>Better technology. A stronger business.</h1>
+          <p class="lead">Dependable local support for small offices, Microsoft 365, networks, business computers, and practical cybersecurity.</p>
+          <p class="hero-extra">From a one-time IT problem to ongoing support, work directly with a local technology provider that understands small business.</p>
+          <div class="hero-cta"><a href="#services" class="btn btn-primary">Explore Our Services</a><a href="#contact" class="btn btn-secondary" onclick="trackContact('assessment_click')">Request a Free Consultation</a></div>
+          <p class="hero-call">Or call <a href="tel:17276479000" onclick="trackContact('phone_click')">(727) 647-9000</a></p>
         </div>
-
-        <div class="hero-card">
-          <h3>Why local businesses call Suncoast</h3>
-          <p class="muted">When technology breaks, work stops. Suncoast helps local businesses fix problems fast, improve reliability, and reduce security risk without overcomplicating the process.</p>
-
-          <div style="margin-top:14px; font-weight:700; line-height:1.8;">
-            ✔ Trusted by Local Businesses<br>
-            ✔ Fast Response Times<br>
-            ✔ No Contracts Required
-          </div>
-
-          <p style="margin-top:16px;"><a href="#customer-reviews" onclick="document.getElementById('customer-reviews').open=true" style="color:#0f5f8f;text-decoration:underline;font-weight:700;">Read customer reviews here</a></p>
+        <div class="hero-portrait">
+          <img src="/images/moe-headshot.jpg" alt="Suncoast Tech Support founder" width="640" height="640" fetchpriority="high">
+          <div class="portrait-label"><strong>Local help. Personal accountability.</strong><span>Clearwater &amp; nearby Pinellas County</span></div>
         </div>
       </div>
     </div>
   </header>
-
-  <section class="section-tight" id="options">
-    <div class="container">
-      <div class="center">
-        <h2>Simple Business IT Options</h2>
-        <p class="muted">Start with a quick review, move into project support, or choose ongoing support if you want a longer-term IT partner for business technology, security, and compliance needs.</p>
-      </div>
-
-      <div class="card option-single-card">
-        <div class="option-row">
-          <div class="option-item">
-            <h3>Free IT Consultation</h3>
-            <p><strong>15 minutes · Free</strong></p>
-            <p class="muted">Talk through your business IT need and get guidance on next steps. Technical assessment and repair work are quoted separately.</p>
-          </div>
-
-          <div class="option-item">
-            <h3>One-Time Business IT Help</h3>
-            <p><strong>Remote $125/hr · Onsite $159/hr</strong></p>
-            <p class="muted">One-hour minimum. Additional time, travel outside the standard service area, equipment, and larger projects are quoted separately.</p>
-          </div>
-
-          <div class="option-item">
-            <h3>Ongoing Business IT Support</h3>
-            <p><strong>Plans from $149/month</strong></p>
-            <p class="muted">Defined monthly support allowances for small offices; proactive managed IT and security are separately scoped. <a href="/managed-it/">Compare business support plans</a>.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section-tight pain" id="pain-points">
-    <div class="container">
-      <details class="site-disclosure">
-        <summary>Common Business IT Problems We Solve</summary>
-        <div class="disclosure-body">
-          <div class="grid-2" style="margin-top:14px">
-            <div>
-              <ul class="icon-list">
-                <li>Slow computers, crashes, and login issues</li>
-                <li>Wi-Fi, network, and internet problems</li>
-                <li>Microsoft 365, Outlook, and email issues</li>
-                <li>Printers, devices, user access, and security cleanup</li>
-              </ul>
-            </div>
-            <div>
-              <h3>Unreliable technology slows down your business.</h3>
-              <p>Lost staff time, missed work, and avoidable security issues are good reasons to seek local support.</p>
-              <p style="margin-top:16px"><a href="#contact" style="color:var(--primary);text-decoration:underline">Request IT Help</a></p>
-            </div>
-          </div>
-        </div>
-      </details>
-    </div>
-  </section>
-
+  <div class="proof-strip"><div class="container proof-grid">
+    <div><strong>20+ years</strong><span>Experience</span></div>
+    <div><strong>Local support</strong><span>Remote and onsite</span></div>
+    <div><strong>Florida OSD</strong><span>Veteran-owned certified</span></div>
+    <div><strong>Pinellas SBE</strong><span>County certified</span></div>
+  </div></div>
   <section class="section solution" id="services">
     <div class="container">
       <div class="center">
-        <h2>Business IT Support, Security Help, and Practical Compliance Support</h2>
+        <h2>Practical IT services for your business</h2>
         <p class="muted">Suncoast Tech Support helps small businesses fix issues quickly, improve reliability, strengthen security, and handle practical compliance-related needs with on-site and remote support.</p>
       </div>
       <details class="site-disclosure" style="margin-top:18px">
@@ -832,67 +808,45 @@
     </div>
   </section>
 
-  <section class="section offer" id="contact">
+  <section class="section-tight partners-section" id="partners">
     <div class="container">
-      <div class="grid-2">
-        <div class="card">
-          <h2>Free 15-Minute IT Review</h2>
-          <p>Limited availability for small businesses in Clearwater and the Tampa Bay area.</p>
-          <p><strong>Call, text, or send a request now and we will help you figure out the best next step.</strong></p>
-          <p><strong>Most requests start with a quick conversation about the issue, urgency, and whether remote or on-site support makes more sense.</strong></p>
+      <p class="section-overline">TECHNOLOGY PARTNERS</p>
+      <h2>Specialized protection, supported locally.</h2>
+      <p class="muted">Suncoast works with providers offering additional digital safety and privacy solutions.</p>
+      <div class="partner-grid">
+        <article class="partner-card"><div class="partner-wordmark">Aura</div><h3>Identity &amp; digital safety</h3><p>Protection options for identity, online activity, and unwanted calls.</p></article>
+        <article class="partner-card"><div class="partner-wordmark">DeleteMe</div><h3>Personal data removal</h3><p>Privacy services that help reduce data broker exposure.</p></article>
+      </div>
+      <p class="partner-disclaimer">Partner names are shown for identification. Their product terms apply. Official brand artwork will be added once approved logo files are available.</p>
+    </div>
+  </section>
 
-          <h3 style="margin-top:22px;">What Happens During Your Free IT Review:</h3>
-          <ul class="steps-list">
-            <li>Listen to the problem and how it is affecting your business</li>
-            <li>Review the affected devices, users, or systems</li>
-            <li>Determine whether remote or on-site support is best</li>
-            <li>Explain likely next steps, scope, and priority</li>
-            <li>Help you move toward a fix quickly</li>
-          </ul>
-        </div>
+  <section class="section-tight" id="options">
+    <div class="container">
+      <div class="center">
+        <h2>Simple Business IT Options</h2>
+        <p class="muted">Start with a quick review, move into project support, or choose ongoing support if you want a longer-term IT partner for business technology, security, and compliance needs.</p>
+      </div>
 
-        <div class="form-panel">
-          <div style="background:#f7fafc; border:1px solid var(--line); border-radius:14px; padding:16px; margin-bottom:18px;">
-            <h3 style="margin-bottom:10px;">Need Better Business IT Support?</h3>
-            <p>Work with a local IT partner for data security services, IT services for small business, and fast help with computer, Wi-Fi, email, Microsoft 365, printer, and security issues without getting locked into contracts.</p>
-            <ul class="icon-list" style="margin-top:12px;">
-              <li>On-site and remote support</li>
-              <li>No long-term contracts</li>
-              <li>Local Clearwater support</li>
-              <li>Projects and ongoing support available</li>
-            </ul>
+      <div class="card option-single-card">
+        <div class="option-row">
+          <div class="option-item">
+            <h3>Free IT Consultation</h3>
+            <p><strong>15 minutes · Free</strong></p>
+            <p class="muted">Talk through your business IT need and get guidance on next steps. Technical assessment and repair work are quoted separately.</p>
           </div>
 
-          <h3>Request Business IT Help</h3>
-          <p>Fill this out now and tell us a little about the issue.<br><strong>(Takes about 30 seconds. No spam. No pressure.)</strong></p>
-
-          <form class="inline-form" id="leadForm" method="POST" action="https://suncoast-lead-form.iammoeskicova0808.workers.dev/">
-            <input type="text" name="name" placeholder="Name" aria-label="Name" required>
-            <input type="email" name="email" placeholder="Email" aria-label="Email" required>
-            <input type="tel" name="phone" placeholder="Phone" aria-label="Phone">
-            <textarea name="help" placeholder="What do you need help with?" aria-label="What do you need help with?"></textarea>
-
-            <input type="hidden" name="lead_source" id="lead_source" value="Website">
-            <input type="hidden" name="page_name" id="page_name" value="Business IT Landing Page">
-            <input type="hidden" name="utm_source" id="utm_source" value="">
-            <input type="hidden" name="utm_campaign" id="utm_campaign" value="">
-            <input type="hidden" name="utm_term" id="utm_term" value="">
-            <input type="hidden" name="utm_medium" id="utm_medium" value="">
-            <input type="hidden" name="landing_page" id="landing_page" value="">
-
-            <div class="cf-turnstile" data-sitekey="0x4AAAAAACzrFz4NsVodL59R" data-size="compact"></div>
-            <button class="btn btn-primary" id="leadSubmitBtn" type="submit">
-              Request IT Help
-            </button>
-          </form>
-
-          <div class="contact-inline" style="margin-top:18px;">
-            <span><strong>Call:</strong> <a href="tel:17276479000" onclick="trackContact('phone_click')">(727) 647-9000</a></span>
-            <span class="contact-sep">•</span>
-            <span><strong>Text:</strong> <a href="sms:17276479000" onclick="trackContact('text_click')">Send a text</a></span>
+          <div class="option-item">
+            <h3>One-Time Business IT Help</h3>
+            <p><strong>Remote $125/hr · Onsite $159/hr</strong></p>
+            <p class="muted">One-hour minimum. Additional time, travel outside the standard service area, equipment, and larger projects are quoted separately.</p>
           </div>
 
-          <p class="form-note">Prefer not to wait? Call or text now.</p>
+          <div class="option-item">
+            <h3>Ongoing Business IT Support</h3>
+            <p><strong>Plans from $149/month</strong></p>
+            <p class="muted">Defined monthly support allowances for small offices; proactive managed IT and security are separately scoped. <a href="/managed-it/">Compare business support plans</a>.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -973,6 +927,97 @@
       <div class="repeat-cta">
         <p>Get fast, reliable help for your business without staying stuck with poor IT support.</p>
         <a class="btn btn-primary" href="#contact" onclick="trackContact('assessment_click')">Request IT Help</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight pain" id="pain-points">
+    <div class="container">
+      <details class="site-disclosure">
+        <summary>Common Business IT Problems We Solve</summary>
+        <div class="disclosure-body">
+          <div class="grid-2" style="margin-top:14px">
+            <div>
+              <ul class="icon-list">
+                <li>Slow computers, crashes, and login issues</li>
+                <li>Wi-Fi, network, and internet problems</li>
+                <li>Microsoft 365, Outlook, and email issues</li>
+                <li>Printers, devices, user access, and security cleanup</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Unreliable technology slows down your business.</h3>
+              <p>Lost staff time, missed work, and avoidable security issues are good reasons to seek local support.</p>
+              <p style="margin-top:16px"><a href="#contact" style="color:var(--primary);text-decoration:underline">Request IT Help</a></p>
+            </div>
+          </div>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <section class="section offer" id="contact">
+    <div class="container">
+      <div class="grid-2">
+        <div class="card">
+          <h2>Free 15-Minute IT Review</h2>
+          <p>Limited availability for small businesses in Clearwater and the Tampa Bay area.</p>
+          <p><strong>Call, text, or send a request now and we will help you figure out the best next step.</strong></p>
+          <p><strong>Most requests start with a quick conversation about the issue, urgency, and whether remote or on-site support makes more sense.</strong></p>
+
+          <h3 style="margin-top:22px;">What Happens During Your Free IT Review:</h3>
+          <ul class="steps-list">
+            <li>Listen to the problem and how it is affecting your business</li>
+            <li>Review the affected devices, users, or systems</li>
+            <li>Determine whether remote or on-site support is best</li>
+            <li>Explain likely next steps, scope, and priority</li>
+            <li>Help you move toward a fix quickly</li>
+          </ul>
+        </div>
+
+        <div class="form-panel">
+          <div style="background:#f7fafc; border:1px solid var(--line); border-radius:14px; padding:16px; margin-bottom:18px;">
+            <h3 style="margin-bottom:10px;">Need Better Business IT Support?</h3>
+            <p>Work with a local IT partner for data security services, IT services for small business, and fast help with computer, Wi-Fi, email, Microsoft 365, printer, and security issues without getting locked into contracts.</p>
+            <ul class="icon-list" style="margin-top:12px;">
+              <li>On-site and remote support</li>
+              <li>No long-term contracts</li>
+              <li>Local Clearwater support</li>
+              <li>Projects and ongoing support available</li>
+            </ul>
+          </div>
+
+          <h3>Request Business IT Help</h3>
+          <p>Fill this out now and tell us a little about the issue.<br><strong>(Takes about 30 seconds. No spam. No pressure.)</strong></p>
+
+          <form class="inline-form" id="leadForm" method="POST" action="https://suncoast-lead-form.iammoeskicova0808.workers.dev/">
+            <input type="text" name="name" placeholder="Name" aria-label="Name" required>
+            <input type="email" name="email" placeholder="Email" aria-label="Email" required>
+            <input type="tel" name="phone" placeholder="Phone" aria-label="Phone">
+            <textarea name="help" placeholder="What do you need help with?" aria-label="What do you need help with?"></textarea>
+
+            <input type="hidden" name="lead_source" id="lead_source" value="Website">
+            <input type="hidden" name="page_name" id="page_name" value="Business IT Landing Page">
+            <input type="hidden" name="utm_source" id="utm_source" value="">
+            <input type="hidden" name="utm_campaign" id="utm_campaign" value="">
+            <input type="hidden" name="utm_term" id="utm_term" value="">
+            <input type="hidden" name="utm_medium" id="utm_medium" value="">
+            <input type="hidden" name="landing_page" id="landing_page" value="">
+
+            <div class="cf-turnstile" data-sitekey="0x4AAAAAACzrFz4NsVodL59R" data-size="compact"></div>
+            <button class="btn btn-primary" id="leadSubmitBtn" type="submit">
+              Request IT Help
+            </button>
+          </form>
+
+          <div class="contact-inline" style="margin-top:18px;">
+            <span><strong>Call:</strong> <a href="tel:17276479000" onclick="trackContact('phone_click')">(727) 647-9000</a></span>
+            <span class="contact-sep">•</span>
+            <span><strong>Text:</strong> <a href="sms:17276479000" onclick="trackContact('text_click')">Send a text</a></span>
+          </div>
+
+          <p class="form-note">Prefer not to wait? Call or text now.</p>
+        </div>
       </div>
     </div>
   </section>
