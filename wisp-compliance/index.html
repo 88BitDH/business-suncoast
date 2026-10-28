@@ -408,6 +408,18 @@
   .section-menu{grid-template-columns:1fr}
 }
 
+
+/* Shared footer: company, document links, and branded social redirects */
+.b2b-footer{background:#0e344e;color:white;padding:28px 18px 105px}
+.b2b-footer-inner{max-width:1120px;margin:auto;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:25px}
+.b2b-footer strong{display:block;font-size:18px;margin:0 0 12px}
+.b2b-footer p{margin:0;font-size:15px;line-height:1.6}
+.b2b-footer a{color:white;text-decoration:underline;text-underline-offset:3px}
+.b2b-footer nav{display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+.b2b-footer nav a{min-height:24px}
+@media(max-width:800px){.b2b-footer-inner{grid-template-columns:1fr;gap:24px}
+  .b2b-footer nav a{min-height:40px;display:inline-flex;align-items:center}}
+@media(min-width:801px){.b2b-footer{padding-bottom:28px}}
 </style>
 </head>
 <body>
@@ -710,11 +722,20 @@
     </div>
   </section>
 
-  <footer style="background:#123d5b;color:#fff;padding:24px 16px 105px;text-align:center;font-size:15px;">
-    <span>Suncoast Tech Support · Clearwater &amp; Pinellas County</span>
-    <span style="display:inline-block;margin:0 9px">·</span>
-    <a href="https://docs.google.com/document/d/1C_8kAg7DN8BRhG9cSECQ2Qh824-fmIPj7JtrDChEk_4/edit?tab=t.0#heading=h.bor022r69f3v" target="_blank" rel="noopener noreferrer" style="color:#fff;text-decoration:underline;font-weight:700">Privacy Policy</a>
-  </footer>
+  <footer class="b2b-footer">
+  <div class="b2b-footer-inner">
+    <div><strong>Suncoast Tech Support</strong><p>Veteran-Owned · Insured<br>Call or text <a href="tel:17276479000">(727) 647-9000</a></p></div>
+    <nav aria-label="Legal information"><strong>Legal</strong>
+      <a href="https://docs.google.com/document/d/1C_8kAg7DN8BRhG9cSECQ2Qh824-fmIPj7JtrDChEk_4/edit?tab=t.0" target="_blank" rel="noopener noreferrer">Terms of Service</a>
+      <a href="https://docs.google.com/document/d/1C_8kAg7DN8BRhG9cSECQ2Qh824-fmIPj7JtrDChEk_4/edit?tab=t.0#heading=h.bor022r69f3v" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+      <a href="https://docs.google.com/document/d/1C_8kAg7DN8BRhG9cSECQ2Qh824-fmIPj7JtrDChEk_4/edit?tab=t.0" target="_blank" rel="noopener noreferrer">Client Authorization and Consent</a>
+    </nav>
+    <nav aria-label="Social media"><strong>Follow Suncoast</strong>
+      <a href="https://business.suncoasttechsupport.net/facebook/" target="_blank" rel="noopener noreferrer">Facebook</a>
+      <a href="https://business.suncoasttechsupport.net/linkedin/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </nav>
+  </div>
+</footer>
   <div class="mobile-sticky-cta">
     <div class="inner">
       <a class="mobile-call" href="tel:17276479000" onclick="trackContact('phone_click')">Call</a>
