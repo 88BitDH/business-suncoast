@@ -85,6 +85,13 @@ footer{background:var(--deep);color:white;padding:27px 0}footer a{color:#dfedf7}
 @media(max-width:800px){.b2b-footer-inner{grid-template-columns:1fr;gap:24px}
   .b2b-footer nav a{min-height:40px;display:inline-flex;align-items:center}}
 @media(min-width:801px){.b2b-footer{padding-bottom:28px}}
+
+/* Real network equipment photo: mobile-safe aspect-ratio crop, lazy loaded. */
+.network-work-example{padding:12px 0 52px;background:var(--bg)}
+.network-work-example figure{margin:0;background:white;border:1px solid var(--line);border-radius:15px;overflow:hidden;box-shadow:0 4px 22px #0c466010}
+.network-work-example img{display:block;width:100%;height:auto;aspect-ratio:2.4/1;object-fit:cover;object-position:center 58%;background:#e4edf2}
+.network-work-example figcaption{font-size:14px;color:var(--muted);padding:13px 18px;line-height:1.5}
+@media(max-width:800px){.network-work-example{padding:4px 0 36px}.network-work-example img{aspect-ratio:1.45/1;object-position:center 58%}}
 </style>
 </head>
 <body>
@@ -93,6 +100,14 @@ footer{background:var(--deep);color:white;padding:27px 0}footer a{color:#dfedf7}
 <section class="hero"><div class="wrap hero-grid"><div><span class="eyebrow">CLEARWATER &amp; PINELLAS COUNTY BUSINESS IT</span><h1>Office Network and Wi-Fi Support</h1><p>Improve business connectivity, troubleshoot outages and keep office equipment communicating reliably.</p><div class="cta"><a class="btn primary" href="#contact">Request Business IT Help</a><a class="btn secondary" href="tel:17276479000">Call (727) 647-9000</a></div></div>
 <aside><h3>Local help, clear next steps</h3><p>Support for small offices, storefronts and professional practices. Start with an individual project or explore ongoing service.</p><p><strong>Free 15-minute initial consultation</strong></p><p>Remote-first support with onsite help when needed in the local service area.</p><a href="#contact">Tell us what your business needs</a></aside></div></section>
 <section><div class="wrap"><h2>How Suncoast can help</h2><div class="grid"><article><span class="step">01</span><h3>Commercial Wi-Fi coverage and stability</h3><p>Discuss your environment and get clear, practical next steps for your business.</p></article><article><span class="step">02</span><h3>Business routers, switches and network segmentation</h3><p>Discuss your environment and get clear, practical next steps for your business.</p></article><article><span class="step">03</span><h3>Office printer and connected-device troubleshooting</h3><p>Discuss your environment and get clear, practical next steps for your business.</p></article></div></div></section>
+<section class="network-work-example" aria-label="Network equipment example">
+  <div class="wrap">
+    <figure>
+      <img src="/images/omada-network-equipment.jpg" alt="TP-Link Omada network switch and controller connected with Ethernet cables" loading="lazy" decoding="async" width="1649" height="928">
+      <figcaption>Network switching and controller equipment used in business networking work.</figcaption>
+    </figure>
+  </div>
+</section>
 <section class="alt"><div class="wrap two"><div><h2>Common business requests</h2><p>We help clarify the problem, the next steps and an appropriate scope before work begins.</p></div><ul><li>Dropped Wi-Fi connections</li><li>Firewall and router configuration</li><li>VLAN and guest network review</li><li>Network printer connectivity</li></ul></div></section>
 <section id="contact"><div class="wrap two"><div><h2>Request Office Network &amp; Wi-Fi</h2><p>Improve business connectivity, troubleshoot outages and keep office equipment communicating reliably.</p><p><strong>Call or text:</strong> <a href="tel:17276479000">(727) 647-9000</a> · <a href="sms:17276479000">Send a text</a></p><p class="muted">Monday–Friday, 8 AM–5 PM ET. Onsite service by appointment.</p></div>
 <div class="panel"><h3>Get a free 15-minute IT consultation</h3><form id="leadForm" method="POST" action="https://suncoast-lead-form.iammoeskicova0808.workers.dev/">
