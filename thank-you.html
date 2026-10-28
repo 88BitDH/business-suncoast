@@ -14,11 +14,25 @@
     gtag('config', 'AW-17992501324');
   </script>
 
-  <!-- Google Ads conversion event -->
+  <!-- Count a lead only once after a recent form submission in this browser tab. -->
   <script>
-    gtag('event', 'conversion', {
-      'send_to': 'AW-17992501324/keBHCpWnk5McEMyQv4ND'
-    });
+    (function () {
+      var key = 'suncoast_b2b_lead_pending';
+      var submittedAt = 0;
+      try {
+        submittedAt = Number(sessionStorage.getItem(key));
+        sessionStorage.removeItem(key);
+      } catch (error) {
+        return;
+      }
+
+      var ageMs = Date.now() - submittedAt;
+      if (submittedAt > 0 && ageMs >= 0 && ageMs <= 10 * 60 * 1000) {
+        gtag('event', 'conversion', {
+          'send_to': 'AW-17992501324/keBHCpWnk5McEMyQv4ND'
+        });
+      }
+    })();
   </script>
 
   <style>
