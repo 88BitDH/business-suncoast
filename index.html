@@ -532,7 +532,24 @@
       .btn{padding:16px 20px;font-size:16px}
       .mobile-sticky-cta{display:block}
     }
-  </style>
+  
+/* Narrow-screen refinements without changing existing content or conversion logic. */
+@media (max-width:767px) {
+  .top-links a,.section-menu a{min-height:46px;display:inline-flex;align-items:center;justify-content:center;text-align:center}
+  .mobile-sticky-cta a{min-height:48px}
+  .card,.form-panel,.hero-card{min-width:0}
+  .inline-form{min-width:0}
+  .inline-form input,.inline-form textarea{font-size:16px;min-height:48px}
+  #contact{scroll-margin-top:12px}
+  .mobile-sticky-cta{padding-bottom:calc(10px + env(safe-area-inset-bottom))}
+}
+@media (max-width:359px) {
+  .logo-box img{height:72px}
+  .card,.form-panel,.hero-card{padding:16px}
+  .section-menu{grid-template-columns:1fr}
+}
+
+</style>
 </head>
 <body>
   <header class="hero">
@@ -844,7 +861,7 @@
             <input type="hidden" name="utm_medium" id="utm_medium" value="">
             <input type="hidden" name="landing_page" id="landing_page" value="">
 
-            <div class="cf-turnstile" data-sitekey="0x4AAAAAACzrFz4NsVodL59R"></div>
+            <div class="cf-turnstile" data-sitekey="0x4AAAAAACzrFz4NsVodL59R" data-size="compact"></div>
             <button class="btn btn-primary" id="leadSubmitBtn" type="submit">
               Request IT Help
             </button>
