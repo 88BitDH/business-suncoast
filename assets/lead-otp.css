@@ -1,0 +1,11 @@
+.otp-controls{grid-column:1/-1;margin:4px 0 5px;padding:14px 15px;border:1px solid #cbdde8;border-radius:10px;background:#f4f9fc}
+.otp-heading{font-weight:750;color:#163047;margin:0 0 5px}
+.otp-hint{font-size:13px;color:#526d7f;margin:0 0 12px}
+.otp-controls .otp-button{display:inline-block;padding:9px 13px;background:#11668e;color:white;border:0;border-radius:7px;font-weight:700;cursor:pointer}
+.otp-controls .otp-button:disabled{cursor:wait;opacity:.6}
+.otp-controls label{display:block;font-weight:700;margin:9px 0 5px}
+.otp-controls input{max-width:190px;display:block;margin-bottom:10px;padding:10px 12px}
+.otp-controls [hidden]{display:none!important}
+#otpStatus{font-size:13px;margin:10px 0 0;color:#1e5965}
+#otpStatus.otp-error{color:#a92820}
+.sales-form-submit:disabled{opacity:.55;cursor:not-allowed}
