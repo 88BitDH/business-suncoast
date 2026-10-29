@@ -3,6 +3,9 @@ main = "index.js"
 compatibility_date = "2026-10-28"
 workers_dev = true
 
+[triggers]
+crons = ["0 3 * * *"]
+
 [vars]
 SITE_ORIGIN = "https://business.suncoasttechsupport.net"
 LEAD_UPSTREAM_URL = "https://suncoast-lead-form.iammoeskicova0808.workers.dev/"
@@ -15,4 +18,4 @@ database_name = "suncoast-contact-otp"
 database_id = "REPLACE_WITH_D1_DATABASE_ID"
 
 # Set the following only using 'wrangler secret put' (not in GitHub):
-# TURNSTILE_SECRET, RESEND_API_KEY, OTP_SECRET
+# TURNSTILE_SECRET, RESEND_API_KEY, OTP_SECRET, LEAD_GATEWAY_SECRET
