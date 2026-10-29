@@ -68,3 +68,32 @@
  .sc-footer .sc-footer-grid{grid-template-columns:1fr;gap:23px}
  .sc-footer nav a{min-height:36px;display:inline-flex;align-items:center}
 }
+
+/* Shared sticky contact strip and site navigation. Each stays in normal flow.
+   Keeping the two top positions coordinated avoids overlap when scrolling. */
+:root{--sc-strip-height:40px}
+.sc-contact-strip{
+  position:sticky!important;top:0!important;z-index:1201!important;
+  height:var(--sc-strip-height)!important;min-height:var(--sc-strip-height)!important;
+}
+.sc-contact-strip .sc-shell-inner{
+  height:100%!important;min-height:0!important;flex-wrap:nowrap!important;
+}
+.sc-header{
+  position:sticky!important;top:var(--sc-strip-height)!important;z-index:1200!important;
+}
+/* Anchor destinations should remain visible below both sticky rows. */
+html{scroll-padding-top:146px}
+@media(max-width:1000px){
+ html{scroll-padding-top:196px}
+}
+@media(max-width:650px){
+ :root{--sc-strip-height:44px}
+ .sc-contact-strip .sc-shell-inner{gap:18px!important;justify-content:center!important}
+ .sc-contact-strip .sc-shell-inner>span{display:none!important}
+ .sc-header .sc-shell-inner{padding-top:7px!important;padding-bottom:7px!important;gap:7px!important}
+ .sc-header .sc-brand img{height:48px!important;max-width:145px!important}
+ .sc-header .sc-social a{width:35px!important;height:35px!important;min-width:35px!important}
+ .sc-header .sc-nav>a,.sc-header .sc-nav>.sc-services>summary{min-height:40px!important}
+ html{scroll-padding-top:211px}
+}
