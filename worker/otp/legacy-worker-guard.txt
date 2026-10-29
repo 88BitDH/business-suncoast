@@ -1,0 +1,28 @@
+// INTEGRATION SNIPPET for the existing Cloudflare lead Worker
+// REQUIREMENT: Insert this check at the start of its existing POST handler,
+// BEFORE parsing/submitting any form data. DO NOT replace its current Zoho
+// routing, notification, Turnstile validation or redirect logic.
+//
+// 1. Cloudflare Dashboard > Workers > existing suncoast-lead-form worker:
+//    Set an encrypted secret named LEAD_GATEWAY_SECRET.
+// 2. Set the SAME value on the new suncoast-contact-otp gateway Worker.
+// 3. The gateway forwards a request with the header below.
+// 4. Do not publish the secret in website HTML, JavaScript, or GitHub.
+//
+// Example guard inside the existing handler:
+//
+// if (request.method === "POST") {
+//   const got = request.headers.get("X-Suncoast-OTP-Gateway-Secret") || "";
+//   if (!env.LEAD_GATEWAY_SECRET || got !== env.LEAD_GATEWAY_SECRET) {
+//     return new Response("Forbidden", { status: 403 });
+//   }
+// }
+//
+// IMPORTANT: Keep existing Cloudflare Turnstile server-side validation.
+// The gateway validates a different Turnstile token when sending the OTP.
+// The browser resets Turnstile so the existing Worker can validate a fresh
+// second token on final submit.
+//
+// Do not enable the guard until a full gateway->lead worker test is successful,
+// or existing leads will be blocked. Once enabled, direct posts to the old
+// endpoint will be rejected. Requires access to the old Worker's source.
