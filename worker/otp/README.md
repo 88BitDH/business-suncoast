@@ -35,6 +35,9 @@ intentionally blank until the new gateway is deployed and verified. No secrets a
 - Run 'npx wrangler secret put RESEND_API_KEY' and supply the Resend API key.
 - Run 'npx wrangler secret put OTP_SECRET' and supply a separate random secret
   of at least 32 characters (prefer 64 hexadecimal characters).
+- Run 'npx wrangler secret put LEAD_GATEWAY_SECRET' with a SECOND, different
+  random secret of at least 32 characters; the existing lead Worker MUST get
+  this SAME secret and check it on every lead POST. See legacy-worker-guard.txt.
 - Run 'npx wrangler deploy'. Copy its HTTPS workers.dev URL.
 - On the website branch, configure that URL in index.html by setting the
   lead-otp.js script's 'data-otp-api' attribute. Do NOT enable before tests.
@@ -59,6 +62,8 @@ posting directly to the old Worker. To enforce email verification for ALL new
 inquiries, change the old Worker to reject unauthenticated direct submissions
 (e.g. require a separate shared gateway secret header known only to the two
 Workers, never to the browser), or consolidate delivery into this gateway.
+This gateway already sends an X-Suncoast-OTP-Gateway-Secret header, but the old
+Worker MUST be updated to enforce it before activation can be considered complete.
 That change requires the old Worker's code/configuration, which was not available
 through the connected repository. Do not disable the old Worker prematurely.
 Also, an OTP confirms inbox access, not whether the sender represents a real
@@ -73,6 +78,6 @@ company or is trustworthy.
   are persisted. Avoid storing or logging mail contents or raw user input.
 - Rate limits are based on hashed email/IP and time buckets; they are basic
   anti-abuse controls, not substitutes for Cloudflare's edge rate limiting.
-- Implement scheduled pruning of expired otp_challenges and otp_limits rows as
-  part of production operation. D1 does not automatically delete these rows.
+- A daily cron trigger purges expired otp_challenges and otp_limits records
+  after a 24-hour retention buffer; D1 does not automatically delete them.
 - For operational security, restrict who can view Resend email event logs.
