@@ -1,9 +1,11 @@
 # Suncoast business contact form — email OTP
 
 ## Status
-IMPLEMENTED IN A FEATURE BRANCH. NOT LIVE. This package does not replace or overwrite
-the currently running Cloudflare lead Worker. The page's data-otp-api attribute is
-intentionally blank until the new gateway is deployed and verified. No secrets are committed.
+IMPLEMENTED IN A FEATURE BRANCH. NOT LIVE. The original legacy Worker source
+was provided during the review and a secured replacement has now been staged at
+../legacy-lead/index.js, with its own deployment runbook. No production Worker
+was changed. The page's data-otp-api attribute remains blank until the new
+gateway is deployed and verified. No credentials are committed.
 
 ## How it works
 1. Visitor enters their email and passes the existing Cloudflare Turnstile challenge.
@@ -64,8 +66,9 @@ inquiries, change the old Worker to reject unauthenticated direct submissions
 Workers, never to the browser), or consolidate delivery into this gateway.
 This gateway already sends an X-Suncoast-OTP-Gateway-Secret header, but the old
 Worker MUST be updated to enforce it before activation can be considered complete.
-That change requires the old Worker's code/configuration, which was not available
-through the connected repository. Do not disable the old Worker prematurely.
+The required change has now been coded in ../legacy-lead/index.js and tested.
+The production Worker remains unchanged. Do not disable or replace it until
+live delivery through the OTP gateway is verified.
 Also, an OTP confirms inbox access, not whether the sender represents a real
 company or is trustworthy.
 
