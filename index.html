@@ -725,6 +725,61 @@ h2{font-size:clamp(29px,3.5vw,43px);line-height:1.16;letter-spacing:-.025em}
   .consultation-compact,.compact-form-panel{padding:19px}
   .compact-contact-grid{gap:15px}
 }
+
+/* Lean sales landing page: detailed information now lives on Services, About and Reviews pages. */
+.sales-section{padding:47px 0}.sales-heading{display:flex;justify-content:space-between;align-items:end;gap:18px;margin-bottom:22px}
+.sales-heading h2{font-size:clamp(27px,3vw,37px);line-height:1.2;margin:0 0 7px}
+.sales-heading p{color:#5b7080;font-size:15px;margin:0}
+.sales-more{color:#0b648b;font-weight:800;text-decoration:underline;text-underline-offset:3px;line-height:1.4}
+.sales-services{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.sales-service{display:flex;flex-direction:column;gap:9px;padding:20px 21px;background:white;
+ border:1px solid #dbe7ed;border-radius:13px;box-shadow:0 3px 13px #1454790e;text-decoration:none;min-width:0}
+.sales-service:hover{border-color:#89bdd7;transform:translateY(-2px)}
+.sales-service:focus-visible{outline:3px solid #ff9a3c;outline-offset:3px}
+.sales-index{color:#167096;font-size:11px;font-weight:800;letter-spacing:.1em}
+.sales-service h3{font-size:20px;margin:0;color:#154b69}
+.sales-service p{font-size:14px;color:#5c7181;margin:0;line-height:1.5}
+.sales-link{color:#105f86;font-size:14px;font-weight:800;margin-top:auto;padding-top:6px}
+.sales-options{background:#eaf4f9}
+.sales-prices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.sales-prices>div{background:white;padding:23px;border-radius:13px;border:1px solid #d5e6ee}
+.sales-prices h3{font-size:19px;margin:0 0 10px}
+.sales-prices strong{font-size:21px;line-height:1.25;color:#0c6289;display:block;margin-bottom:11px}
+.sales-prices p{font-size:14px;color:#5b7181;margin:0;line-height:1.5}
+.sales-prices p a{color:#0a608a;text-decoration:underline;font-weight:700}
+.sales-trust{background:#fff}
+.sales-trust-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
+.sales-trust-grid h2{font-size:clamp(26px,3vw,36px);line-height:1.2;margin:0 0 13px}
+.sales-trust-grid p{color:#58707f}
+.sales-testimonial{border-left:4px solid #ff9a3c;background:#f5f9fb;padding:24px;border-radius:0 13px 13px 0}
+.sales-testimonial blockquote{font-size:21px;line-height:1.4;margin:0 0 9px;font-style:italic}
+.sales-testimonial p{font-size:14px;margin:0 0 14px;font-weight:700}
+.sales-contact{background:#eaf4f9}
+.sales-contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;align-items:start;gap:25px}
+.sales-contact-intro{padding:11px 0}
+.sales-contact-intro h2{font-size:clamp(28px,3vw,38px);margin:0 0 14px}
+.sales-contact-intro p{color:#526d7f;font-size:16px}
+.sales-contact-intro a{color:#0c648d;text-decoration:underline;font-weight:700}
+.sales-consult-note{font-size:14px!important;background:white;border-radius:10px;border:1px solid #d4e6ee;padding:13px}
+.sales-contact-form{background:#fff;border:1px solid #d8e6ee;border-radius:15px;padding:23px;box-shadow:0 6px 22px #1649680e}
+.sales-contact-form h3{font-size:22px;margin:0 0 7px}
+.sales-contact-form>p{font-size:14px;color:#5e7382;margin:0}
+.sales-contact-form .inline-form{margin-top:13px;gap:9px}
+.sales-contact-form .inline-form input{padding:11px 12px}
+.sales-contact-form .inline-form textarea{min-height:85px;padding:11px 12px}
+.sales-form-submit{width:100%}
+@media(max-width:850px){
+ .sales-services,.sales-prices{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .sales-trust-grid,.sales-contact-grid{grid-template-columns:1fr}
+}
+@media(max-width:767px){
+ .sales-section{padding:34px 0}
+ .sales-heading{display:block}.sales-heading .sales-more{display:inline-block;margin-top:10px}
+ .sales-services,.sales-prices{grid-template-columns:1fr}
+ .sales-service,.sales-prices>div{padding:19px}
+ .sales-contact-form{padding:18px}
+ .sales-testimonial blockquote{font-size:18px}
+}
 </style>
 </head>
 <body>
@@ -758,8 +813,8 @@ h2{font-size:clamp(29px,3.5vw,43px);line-height:1.16;letter-spacing:-.025em}
               <a href="/services/" class="all-services-link">All Services, Consultation &amp; FAQs</a>
             </div>
           </details>
-          <a href="#why-suncoast">About</a><a href="#partners">Partners</a>
-          <a href="#options">Plans</a><a href="#reviews">Reviews</a><a href="#contact" class="nav-cta" onclick="trackContact('assessment_click')">Get IT Help</a>
+          <a href="/managed-it/">Plans</a><a href="/about/">About</a>
+          <a href="/reviews/">Reviews</a><a href="#contact" class="nav-cta" onclick="trackContact('assessment_click')">Get IT Help</a>
         </nav>
       </div>
       <div class="hero-grid">
@@ -784,269 +839,56 @@ h2{font-size:clamp(29px,3.5vw,43px);line-height:1.16;letter-spacing:-.025em}
     <div><strong>Florida OSD</strong><span>Veteran-owned certified</span></div>
     <div><strong>Pinellas SBE</strong><span>County certified</span></div>
   </div></div>
-  <section class="section solution" id="services">
-    <div class="container">
-      <div class="center">
-        <h2>Practical IT services for your business</h2>
-        <p class="muted">Suncoast Tech Support helps small businesses fix issues quickly, improve reliability, strengthen security, and handle practical compliance-related needs with on-site and remote support.</p>
+  <main>
+    <section class="sales-section" id="services">
+      <div class="container">
+        <div class="sales-heading"><div><h2>What can we help you with?</h2><p>Find the right business IT service without digging through the whole site.</p></div>
+          <a class="sales-more" href="/services/">All services, consultation details &amp; FAQs →</a>
+        </div>
+        <div class="sales-services"><a href="/it-support/" class="sales-service"><span class="sales-index">01</span><h3>Business IT Support</h3><p>Computers, printers and everyday IT issues.</p><span class="sales-link">Explore service →</span></a>
+<a href="/microsoft-365/" class="sales-service"><span class="sales-index">02</span><h3>Microsoft 365</h3><p>Outlook, email, accounts and migrations.</p><span class="sales-link">Explore service →</span></a>
+<a href="/office-networking/" class="sales-service"><span class="sales-index">03</span><h3>Network &amp; Wi-Fi</h3><p>Office connectivity, switches and Wi-Fi.</p><span class="sales-link">Explore service →</span></a>
+<a href="/business-security.html" class="sales-service"><span class="sales-index">04</span><h3>Business Security</h3><p>Practical account, device and security reviews.</p><span class="sales-link">Explore service →</span></a>
+<a href="/wisp-compliance/" class="sales-service"><span class="sales-index">05</span><h3>FTC Safeguards</h3><p>Readiness and WISP technical assistance.</p><span class="sales-link">Explore service →</span></a>
+<a href="/managed-it/" class="sales-service"><span class="sales-index">06</span><h3>Ongoing IT Support</h3><p>Monthly plans and managed IT options.</p><span class="sales-link">Explore service →</span></a></div>
       </div>
-      <div class="center" style="margin-top:30px;">
-        <h2>Explore Our Business IT Services</h2>
-        <p class="muted">Select a service to learn more or request help for your business.</p>
-      </div>
-      <nav class="grid-3" aria-label="Business IT service pages" style="margin-top:18px;align-items:stretch;">
-        <div class="card">
-          <h3><a href="/it-support/">Business IT Support</a></h3>
-          <p>Onsite and remote support for small business computers and staff.</p>
-        </div>
-        <div class="card">
-          <h3><a href="/microsoft-365/">Microsoft 365 Support</a></h3>
-          <p>Outlook, business email, account access, and Microsoft 365 help.</p>
-        </div>
-        <div class="card">
-          <h3><a href="/office-networking/">Office Network &amp; Wi-Fi</a></h3>
-          <p>Business Wi-Fi, routers, switches, and network connectivity.</p>
-        </div>
-        <div class="card">
-          <h3><a href="/business-security.html">Business Security Review</a></h3>
-          <p>Practical checks for business devices, accounts, and data protection.</p>
-        </div>
-        <div class="card">
-          <h3><a href="/wisp-compliance/">FTC Safeguards Support</a></h3>
-          <p>Technical compliance support for accounting and tax firms.</p>
-        </div>
-        <div class="card">
-          <h3><a href="/managed-it/">Ongoing IT Support</a></h3>
-          <p>Flexible ongoing IT help and support options for local offices.</p>
-        </div>
-      </nav>
-      <div class="repeat-cta">
-        <p>Need more details about a service, the free consultation, or common questions?</p>
-        <a class="btn btn-dark" href="/services/">Explore All Services &amp; FAQs</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section-tight" id="why-suncoast">
-    <div class="container">
-      <details class="site-disclosure">
-        <summary>Why Suncoast? Experience, Partners &amp; Certifications</summary>
-        <div class="disclosure-body">
-      <div class="grid-2" style="margin-top:18px;">
-        <div class="card">
-          <ul class="icon-list">
-            <li>5-star Google reviews from local clients</li>
-            <li>Local support for small businesses, offices, and security-conscious teams</li>
-            <li>No long-term contracts — stay because you want to</li>
-            <li>Local Clearwater-area support</li>
-            <li>On-site and remote help available for IT, security, and compliance support</li>
-            <li>Clear, honest communication</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Built for small local businesses</h3>
-          <p>You need fast, honest IT help from someone who can solve real problems, communicate clearly, and support the way your business actually works, including everyday security and compliance concerns.</p>
+    </section>
+    <section class="sales-section sales-options" id="options">
+      <div class="container">
+        <div class="sales-heading"><h2>Choose how to get help</h2><a class="sales-more" href="/managed-it/">Compare monthly support plans →</a></div>
+        <div class="sales-prices">
+          <div><h3>Free consultation</h3><strong>15 minutes · Free</strong><p>Discuss the issue and identify the next step. Technical work is separate.</p></div>
+          <div><h3>One-time IT support</h3><strong>$125/hour remote</strong><p>Onsite: $159/hour. One-hour minimum; travel and projects separately quoted.</p></div>
+          <div><h3>Ongoing support</h3><strong>From $149/month</strong><p>Defined monthly allowances. <a href="/managed-it/">View the plans</a>.</p></div>
         </div>
       </div>
-      <div class="card founder-inline">
-        <div class="founder-photo">
-          <img src="images/moe-headshot.jpg" alt="Founder photo">
+    </section>
+    <section class="sales-section sales-trust" id="why-suncoast">
+      <div class="container sales-trust-grid">
+        <div id="reviews" class="sales-testimonial">
+          <blockquote>“I would like to recognize Moe for his exceptional service.”</blockquote>
+          <p>— Lynn J, Oldsmar</p>
+          <a href="/reviews/" class="sales-more">Read customer reviews →</a>
         </div>
         <div>
-          <h3>I help local businesses solve day-to-day IT problems quickly so your team can get back to work without the usual runaround.</h3>
-          <p><strong>✔ 20+ Years Experience • ✔ Veteran-Owned • ✔ Insured</strong></p>
-          <p class="muted">Support for small offices that are tired of slow response times, recurring issues, security gaps, or IT that is no longer a good fit.</p>
-          <p class="review-proof">⭐ 5-Star Google Reviews</p>
+          <h2>Local experience. Personal service.</h2>
+          <p>Veteran-owned, insured, Florida OSD-certified and Pinellas County SBE-certified.</p>
+          <p id="partners"><strong>Technology partners:</strong> Aura and DeleteMe</p>
+          <a href="/about/" class="sales-more">About Suncoast, partners &amp; service area →</a>
         </div>
       </div>
-      <div class="center" style="margin-top:34px;">
-        <h2>Technology Partners &amp; Business Certifications</h2>
-        <p class="muted">Specialized technology solutions backed by recognized Florida and local small-business certifications.</p>
-      </div>
-      <div class="grid-2" style="margin-top:18px;">
-        <div class="card">
-          <h3>Technology Partners</h3>
-          <p><strong>Aura</strong> &mdash; Digital safety and identity protection options, including help with unwanted calls and online threats.</p>
-          <p style="margin-top:14px;"><strong>DeleteMe</strong> &mdash; Personal information removal services to help reduce exposure on data broker websites.</p>
+    </section>
+    <section class="sales-section sales-contact" id="contact">
+      <div class="container sales-contact-grid">
+        <div class="sales-contact-intro">
+          <h2>Tell us what you need.</h2>
+          <p>Share the problem, your project, or the type of support you're considering. We'll get in touch about the next step.</p>
+          <p class="sales-consult-note"><strong>Free 15-minute consultation:</strong> A conversation—not a technical assessment or repair session. <a href="/services/#consultation">See what's included</a>.</p>
+          <p><strong>Call or text:</strong> <a href="tel:17276479000" onclick="trackContact('phone_click')">(727) 647-9000</a></p>
         </div>
-        <div class="card">
-          <h3>Business Certifications</h3>
-          <p><strong>State of Florida Certified Veteran-Owned Business</strong> &mdash; Certified through the Florida Office of Supplier Development (OSD).</p>
-          <p style="margin-top:14px;"><strong>Pinellas County Certified Small Business Enterprise (SBE)</strong> &mdash; Recognized through the County's Small Business Enterprise program.</p>
-        </div>
-      </div>
-
-        </div>
-      </details>
-    </div>
-  </section>
-
-  <section class="section-tight partners-section" id="partners">
-    <div class="container">
-      <p class="section-overline">TECHNOLOGY PARTNERS</p>
-      <h2>Specialized protection, supported locally.</h2>
-      <p class="muted">Suncoast works with providers offering additional digital safety and privacy solutions.</p>
-      <div class="partner-grid">
-        <article class="partner-card"><div class="partner-wordmark">Aura</div><h3>Identity &amp; digital safety</h3><p>Protection options for identity, online activity, and unwanted calls.</p></article>
-        <article class="partner-card"><div class="partner-wordmark">DeleteMe</div><h3>Personal data removal</h3><p>Privacy services that help reduce data broker exposure.</p></article>
-      </div>
-      <p class="partner-disclaimer">Partner names are shown for identification. Their product terms apply. Official brand artwork will be added once approved logo files are available.</p>
-    </div>
-  </section>
-
-  <section class="section-tight" id="options">
-    <div class="container">
-      <div class="center">
-        <h2>Simple Business IT Options</h2>
-        <p class="muted">Start with a quick review, move into project support, or choose ongoing support if you want a longer-term IT partner for business technology, security, and compliance needs.</p>
-      </div>
-
-      <div class="card option-single-card">
-        <div class="option-row">
-          <div class="option-item">
-            <h3>Free IT Consultation</h3>
-            <p><strong>15 minutes · Free</strong></p>
-            <p class="muted">Talk through your business IT need and get guidance on next steps. Technical assessment and repair work are quoted separately.</p>
-          </div>
-
-          <div class="option-item">
-            <h3>One-Time Business IT Help</h3>
-            <p><strong>Remote $125/hr · Onsite $159/hr</strong></p>
-            <p class="muted">One-hour minimum. Additional time, travel outside the standard service area, equipment, and larger projects are quoted separately.</p>
-          </div>
-
-          <div class="option-item">
-            <h3>Ongoing Business IT Support</h3>
-            <p><strong>Plans from $149/month</strong></p>
-            <p class="muted">Defined monthly support allowances for small offices; proactive managed IT and security are separately scoped. <a href="/managed-it/">Compare business support plans</a>.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section reviews" id="reviews">
-    <div class="container">
-      <div class="center">
-        <h2>What Local Clients Say</h2>
-        <p class="rating-line">⭐ 5-Star Rated on Google</p>
-      </div>
-
-      <details class="site-disclosure" id="customer-reviews" style="margin-top:18px">
-        <summary>Read Customer Stories</summary>
-        <div class="disclosure-body">
-      <div class="grid-3" style="margin-top:18px;">
-        <div class="card">
-          <div class="stars">★★★★★</div>
-          <p class="quote">“I would like to recognize Moe for his exceptional service. He worked with us in getting our tech lab working better with Wi-Fi upgrades to our building and helped improve our security by creating policies in our SonicWall to filter traffic and segment our network.”</p>
-          <p><strong>— Lynn J</strong>, Oldsmar</p>
-        </div>
-
-        <div class="card">
-          <div class="stars">★★★★★</div>
-          <p class="quote">“Suncoast came to our office to help with several device issues we were having. He took the time to explain the errors and helped us upgrade devices to the latest Android version. He also made recommendations that improved our processes and saved us thousands in unnecessary software subscriptions.”</p>
-          <p><strong>— Julie K</strong>, Largo</p>
-        </div>
-
-        <div class="card">
-          <div class="stars">★★★★★</div>
-          <p class="quote">“We had a presentation due urgently and I called Moe in a panic on a Sunday. His calm demeanor reassured me everything would be handled. He came onsite, worked through everything, and ensured we met our deadline. Highly recommended.”</p>
-          <p><strong>— Bruce L</strong>, Clearwater</p>
-        </div>
-      </div>
-
-
-        </div>
-      </details>
-      <div class="center" style="margin-top:18px;">
-        <a class="btn btn-outline" href="#customer-reviews" onclick="document.getElementById('customer-reviews').open=true">Read Reviews on This Page</a>
-      </div>
-
-
-      <details class="site-disclosure" id="submit-review" style="margin-top:20px">
-        <summary>Leave a Review for Suncoast Tech Support</summary>
-        <div class="disclosure-body">
-          <p>Worked with Suncoast? Share your experience here without leaving our website. All feedback is welcome. Website submissions are sent privately to Suncoast for review and are not automatically posted to Google.</p>
-          <form id="websiteReviewForm" method="POST" action="https://suncoast-lead-form.iammoeskicova0808.workers.dev/" class="review-form">
-            <label for="review-name">Your name</label>
-            <input type="text" id="review-name" name="name" autocomplete="name" maxlength="160" required>
-            <label for="review-email">Your email (never shown publicly)</label>
-            <input type="email" id="review-email" name="email" autocomplete="email" maxlength="240" required>
-            <label for="review-rating">Your experience</label>
-            <select id="review-rating" name="review_rating" required>
-              <option value="" disabled selected>Select a rating</option>
-              <option value="5">5 stars — Excellent</option>
-              <option value="4">4 stars — Good</option>
-              <option value="3">3 stars — Average</option>
-              <option value="2">2 stars — Poor</option>
-              <option value="1">1 star — Very poor</option>
-            </select>
-            <label for="review-message">Your review</label>
-            <textarea id="review-message" name="help" rows="5" maxlength="3000" required placeholder="Tell us about your experience with Suncoast Tech Support"></textarea>
-            <label class="review-optin" for="review-consent">
-              <input type="checkbox" name="publish_consent" id="review-consent" value="yes">
-              <span>You may contact me to request permission to display this review on your website. This is optional.</span>
-            </label>
-            <input type="hidden" name="page_name" value="Website Customer Review">
-            <input type="hidden" name="lead_source" value="Customer Website Feedback">
-            <input type="hidden" name="phone" value="">
-            <div class="cf-turnstile" data-sitekey="0x4AAAAAACzrFz4NsVodL59R" data-size="compact"></div>
-            <button type="submit" class="btn btn-primary">Submit Website Review</button>
-          </form>
-          <p class="muted" style="font-size:14px;margin-top:12px">Submitting this form sends feedback to Suncoast; it does not publish a Google review. Your review is not posted publicly automatically. See our <a href="/privacy/" target="_blank" rel="noopener noreferrer" style="color:var(--primary);text-decoration:underline">Privacy Policy</a>.</p>
-          <p style="margin-top:12px">Prefer to post directly on Google? <a href="https://www.google.com/maps/place/Suncoast+Tech+Support/@27.9600634,-83.0269243,10z/data=!4m8!3m7!1s0xfda3740f6700f1b:0xbe48f9ed81314891!8m2!3d27.9598495!4d-82.6972656!9m1!1b1!16s%2Fg%2F11yvdld9vh?entry=ttu" target="_blank" rel="noopener noreferrer" style="color:var(--primary);text-decoration:underline;font-weight:700">Open Suncoast's Google listing in a new tab</a>, then select the option to write a review.</p>
-        </div>
-      </details>
-      <div class="repeat-cta">
-        <p>Get fast, reliable help for your business without staying stuck with poor IT support.</p>
-        <a class="btn btn-primary" href="#contact" onclick="trackContact('assessment_click')">Request IT Help</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section-tight pain" id="pain-points">
-    <div class="container">
-      <details class="site-disclosure">
-        <summary>Common Business IT Problems We Solve</summary>
-        <div class="disclosure-body">
-          <div class="grid-2" style="margin-top:14px">
-            <div>
-              <ul class="icon-list">
-                <li>Slow computers, crashes, and login issues</li>
-                <li>Wi-Fi, network, and internet problems</li>
-                <li>Microsoft 365, Outlook, and email issues</li>
-                <li>Printers, devices, user access, and security cleanup</li>
-              </ul>
-            </div>
-            <div>
-              <h3>Unreliable technology slows down your business.</h3>
-              <p>Lost staff time, missed work, and avoidable security issues are good reasons to seek local support.</p>
-              <p style="margin-top:16px"><a href="#contact" style="color:var(--primary);text-decoration:underline">Request IT Help</a></p>
-            </div>
-          </div>
-        </div>
-      </details>
-    </div>
-  </section>
-
-  <section class="section offer" id="contact">
-    <div class="container">
-      <div class="grid-2 compact-contact-grid">
-        <div class="card consultation-compact">
-          <div class="mini-eyebrow">START HERE</div>
-          <h2>Free 15-Minute IT Consultation</h2>
-          <p>Tell us what's happening with your business technology. We'll discuss the issue, its urgency, and the best next step.</p>
-          <p class="consultation-note">The free consultation is a conversation, not a technical assessment or repair session.</p>
-          <a href="/services/#consultation" class="more-consultation">See what's included and read FAQs <span aria-hidden="true">→</span></a>
-          <div class="contact-inline">
-            <span><strong>Call:</strong> <a href="tel:17276479000" onclick="trackContact('phone_click')">(727) 647-9000</a></span>
-            <span class="contact-sep">•</span>
-            <span><strong>Text:</strong> <a href="sms:17276479000" onclick="trackContact('text_click')">Send a text</a></span>
-          </div>
-        </div>
-        <div class="form-panel compact-form-panel">
+        <div class="sales-contact-form">
           <h3>Request Business IT Help</h3>
-          <p>Tell us a little about your issue. No obligation or pressure.</p>
+          <p>Tell us briefly what you need. No obligation.</p>
           <form class="inline-form" id="leadForm" method="POST" action="https://suncoast-lead-form.iammoeskicova0808.workers.dev/">
             <input type="text" name="name" placeholder="Name" aria-label="Name" required>
             <input type="email" name="email" placeholder="Email" aria-label="Email" required>
@@ -1062,44 +904,14 @@ h2{font-size:clamp(29px,3.5vw,43px);line-height:1.16;letter-spacing:-.025em}
             <input type="hidden" name="landing_page" id="landing_page" value="">
 
             <div class="cf-turnstile" data-sitekey="0x4AAAAAACzrFz4NsVodL59R" data-size="compact"></div>
-            <button class="btn btn-primary" id="leadSubmitBtn" type="submit">
+            <button class="btn btn-primary sales-form-submit" id="leadSubmitBtn" type="submit">
               Request IT Help
             </button>
           </form>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="section-tight" id="service-area">
-    <div class="container">
-      <details class="site-disclosure">
-        <summary>Our Local Service Area — See Interactive Google Map</summary>
-        <div class="disclosure-body">
-          <p class="service-area-copy">Suncoast supports offices in Clearwater, Dunedin, Largo, Safety Harbor, Palm Harbor, Oldsmar and nearby Pinellas County communities. Onsite service is generally within 20 miles, with travel terms confirmed before scheduling. Remote assistance is also available.</p>
-          <iframe class="service-area-map" title="Google Maps regional overview of Clearwater and Pinellas County"
-            src="https://www.google.com/maps?q=Clearwater%2C%20Pinellas%20County%2C%20Florida&amp;z=10&amp;output=embed"
-            loading="lazy" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
-          <p style="margin-top:14px"><a href="https://www.google.com/maps/search/?api=1&amp;query=Clearwater%2C+Pinellas+County%2C+Florida" target="_blank" rel="noopener noreferrer" style="color:var(--primary);text-decoration:underline;font-weight:700">Open the area in Google Maps</a></p>
-          <p class="muted" style="font-size:14px">This interactive map shows the region, not a surveyed 20-mile coverage boundary. Contact us to confirm travel and availability for your address.</p>
-        </div>
-      </details>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="final-cta center">
-        <h2>Ready to Get Your Business Running Smoother and More Secure?</h2>
-        <p>Get started today with local business IT support and find out how quickly you can resolve the issues slowing down your team while improving security and addressing compliance concerns.</p>
-        <p><strong>Call, text, or send a request now and we will help you figure out the best next step.</strong></p>
-        <div style="margin-top:18px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
-          <a class="btn btn-primary" href="#contact" onclick="trackContact('assessment_click')">Request IT Help</a>
-          <a class="btn btn-secondary" href="tel:17276479000" onclick="trackContact('phone_click')">Call Now: (727) 647-9000</a>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <footer class="site-footer">
     <div class="container" style="display:block">
@@ -1257,24 +1069,6 @@ h2{font-size:clamp(29px,3.5vw,43px);line-height:1.16;letter-spacing:-.025em}
   </script>
 -->
 
-  <!-- Review submissions use the existing contact intake but never set the ad-lead marker. -->
-  <script>
-    (function(){
-      var form=document.getElementById('websiteReviewForm');
-      if(!form) return;
-      form.addEventListener('submit',function(){
-        var message=document.getElementById('review-message');
-        var rating=document.getElementById('review-rating').value;
-        var consent=document.getElementById('review-consent').checked;
-        if(message && !message.dataset.prepared) {
-          message.value='Customer website review ('+rating+'/5 stars). Permission to contact about website publication: '+
-            (consent?'Yes':'No')+'.\n\n'+message.value;
-          message.dataset.prepared='1';
-        }
-        try { sessionStorage.setItem('suncoast_review_pending',String(Date.now())); }
-        catch(error) { /* Do not interrupt review submission. */ }
-      });
-    })();
-  </script>
+
 </body>
 </html>
