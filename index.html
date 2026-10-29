@@ -782,6 +782,7 @@ h2{font-size:clamp(29px,3.5vw,43px);line-height:1.16;letter-spacing:-.025em}
 }
 </style>
 <link rel="stylesheet" href="/assets/site-shell.css?v=20261029-sticky">
+<link rel="stylesheet" href="/assets/lead-otp.css?v=20261028">
 </head>
 <body>
   <div class="sc-contact-strip"><div class="sc-shell-inner">
@@ -1052,5 +1053,8 @@ h2{font-size:clamp(29px,3.5vw,43px);line-height:1.16;letter-spacing:-.025em}
 -->
 
 
+<!-- Enable ONLY after OTP Worker + D1 + email sender have been deployed and tested.
+     Example: data-otp-api="https://YOUR-DEPLOYED-OTP-WORKER.workers.dev" -->
+<script src="/assets/lead-otp.js?v=20261028" data-otp-api="" defer></script>
 </body>
 </html>

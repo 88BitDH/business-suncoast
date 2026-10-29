@@ -1,0 +1,27 @@
+name: Business contact OTP tests
+on:
+  push:
+    branches: [feature/contact-email-otp]
+    paths:
+      - 'worker/otp/**'
+      - 'worker/legacy-lead/**'
+      - '.github/workflows/otp-tests.yml'
+  pull_request:
+    paths:
+      - 'worker/otp/**'
+      - 'worker/legacy-lead/**'
+      - '.github/workflows/otp-tests.yml'
+jobs:
+  test-otp:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Test OTP challenge and replay protection
+        working-directory: worker/otp
+        run: node --test test.mjs
+      - name: Test existing lead Worker compatibility and bypass protection
+        working-directory: worker/legacy-lead
+        run: node --test test.mjs
