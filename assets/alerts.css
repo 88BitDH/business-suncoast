@@ -1,0 +1,54 @@
+/* Suncoast Alerts & Insights — readable, mobile-first article and index layouts. */
+:root{--abg:#f5f8fb;--aink:#17394e;--atext:#546f80;--ablue:#115f86;--aline:#d6e5ed;--aorange:#ff9a3c}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--abg);color:var(--aink);font:16px/1.65 Arial,Helvetica,sans-serif}
+a{color:var(--ablue)}a:focus-visible,summary:focus-visible{outline:3px solid var(--aorange);outline-offset:3px}
+.alerts-wrap{width:calc(100% - 38px);max-width:1110px;margin:0 auto}
+.alerts-hero{background:linear-gradient(118deg,#0d3553,#0d6386);color:#fff;padding:52px 0 58px}
+.alerts-eyebrow{display:block;color:#bce4f8;font:800 12px/1.5 Arial,sans-serif;letter-spacing:.12em;margin-bottom:12px}
+.alerts-hero h1{font-size:clamp(36px,5vw,58px);line-height:1.08;letter-spacing:-.04em;max-width:840px;margin:0 0 16px}
+.alerts-hero p{font-size:clamp(17px,2.1vw,21px);line-height:1.55;color:#e0f2fa;max-width:800px;margin:0}
+.alerts-section{padding:50px 0}
+.alerts-section h2{font-size:clamp(27px,3.2vw,38px);line-height:1.18;letter-spacing:-.025em;margin:0 0 12px}
+.alerts-intro{color:var(--atext);font-size:16px;max-width:830px;margin:0 0 24px}
+.alerts-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}
+.alerts-card{background:#fff;border:1px solid var(--aline);border-radius:15px;padding:25px;box-shadow:0 5px 18px #0f456b12;display:flex;flex-direction:column;min-width:0}
+.alerts-card h3{font-size:clamp(21px,2.6vw,26px);line-height:1.2;margin:11px 0}
+.alerts-card h3 a{text-decoration:none;color:#15465e}
+.alerts-card h3 a:hover{text-decoration:underline}
+.alerts-card p{color:var(--atext);margin:0 0 14px}
+.alerts-card .alerts-more{font-weight:800;margin-top:auto;text-decoration:underline;text-underline-offset:3px}
+.alerts-meta{font-size:13px;color:#5d7584}
+.alerts-tag{display:inline-flex;align-items:center;background:#e5f3fa;color:#175d7d;border-radius:25px;padding:6px 11px;font-weight:800;font-size:12px;align-self:flex-start}
+.alerts-guide{background:#e9f3f9}
+.alerts-guide-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.alerts-guide-panel{border:1px solid #d5e6ee;border-radius:15px;background:white;padding:25px}
+.alerts-guide-panel h3{font-size:21px;line-height:1.25;margin:0 0 11px}
+.alerts-guide-panel p{color:var(--atext);margin:0 0 11px}
+.alerts-guide-panel a{font-weight:800;text-underline-offset:3px}
+.alerts-cta{background:#fff}
+.alerts-cta-inner{display:grid;grid-template-columns:1fr auto;gap:25px;align-items:center}
+.alerts-cta p{max-width:750px;color:var(--atext);margin:0}
+.alerts-btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;background:var(--aorange);padding:13px 19px;
+font:800 15px Arial,sans-serif;color:#18394c;text-decoration:none;border-radius:9px;text-align:center}
+.alerts-article{background:#fff;padding:44px 0 55px}
+.alerts-article-inner{max-width:790px}
+.alerts-article h2{font-size:clamp(24px,3vw,32px);line-height:1.25;margin:31px 0 13px}
+.alerts-article p{font-size:17px;color:#354f5f;margin:0 0 18px}
+.alerts-article ul,.alerts-article ol{padding-left:25px;margin:12px 0 22px}
+.alerts-article li{margin-bottom:11px;color:#354f5f}
+.alerts-article li strong{color:#163d54}
+.alerts-article .alerts-caution{border-left:4px solid #f4ab56;background:#fff6ed;border-radius:0 10px 10px 0;padding:16px 18px;margin:21px 0}
+.alerts-article .alerts-caution p{margin:0;font-size:15px}
+.alerts-source{background:#f1f7fa;border:1px solid var(--aline);border-radius:12px;padding:19px;margin:25px 0}
+.alerts-source h2{font-size:19px;margin:0 0 8px}
+.alerts-source p{font-size:15px;margin:0 0 8px}
+.alerts-source p:last-child{margin:0}
+.alerts-related{border-top:1px solid var(--aline);padding-top:22px;margin-top:35px}
+.alerts-related a{font-weight:800}
+.alerts-back{display:inline-flex;color:#d5edf9!important;text-decoration:underline;text-underline-offset:3px;margin:0 0 17px;font-size:14px;font-weight:800}
+.alerts-article .alerts-byline{font-size:14px;color:var(--atext);margin:0 0 15px}
+@media(max-width:800px){.alerts-grid,.alerts-guide-grid,.alerts-cta-inner{grid-template-columns:1fr}}
+@media(max-width:650px){.alerts-hero{padding:35px 0 41px}.alerts-section{padding:36px 0}.alerts-article{padding:29px 0 38px}
+.alerts-wrap{width:calc(100% - 30px)}.alerts-card,.alerts-guide-panel{padding:19px}.alerts-btn{width:100%}}
