@@ -1,430 +1,105 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FTC Safeguards WISP Technical Support for Accountants | Suncoast</title>
-  <meta name="description" content="FTC Safeguards Rule technical readiness assessments and WISP IT assistance for Clearwater accountants and tax firms. Scoped projects, not legal certification.">
-  <meta name="keywords" content="FTC compliance Clearwater, accounting firm compliance IT, tax preparer data security, safeguards rule help, Clearwater IT compliance" />
-  <meta name="robots" content="index, follow" />
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17992501324"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'AW-17992501324');
-  </script>
-
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
-  <style>
-    :root{
-      --bg:#f7fafc;
-      --card:#ffffff;
-      --text:#163047;
-      --muted:#5b6b79;
-      --line:#d9e3ea;
-      --primary:#0f5f8f;
-      --accent:#ff8a3d;
-      --soft:#eaf5fb;
-      --soft2:#fff4ec;
-      --soft3:#eef8f1;
-      --max:1140px;
-      --radius:20px;
-      --shadow:0 10px 30px rgba(16,54,84,.08);
-    }
-
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-
-    body{
-      margin:0;
-      font-family:Arial, Helvetica, sans-serif;
-      background:var(--bg);
-      color:var(--text);
-      line-height:1.55;
-      padding-bottom:0;
-    }
-
-    a{text-decoration:none;color:inherit}
-    img{max-width:100%;display:block}
-    .container{max-width:var(--max);margin:0 auto;padding:0 20px}
-    .section{padding:70px 0}
-    .section-tight{padding:42px 0}
-    h1,h2,h3{margin:0 0 14px}
-    h1{font-size:50px;line-height:1.04}
-    h2{font-size:34px}
-    h3{font-size:23px}
-    p{margin:0 0 14px}
-    ul{margin:0;padding-left:20px}
-    .muted{color:var(--muted)}
-    .center{text-align:center}
-
-    .btn{
-      display:inline-block;
-      padding:14px 18px;
-      border-radius:12px;
-      font-weight:700;
-      border:2px solid transparent;
-      transition:transform .15s ease, opacity .15s ease;
-      cursor:pointer;
-    }
-    .btn:hover{transform:translateY(-1px);opacity:.96}
-    .btn-primary{background:var(--accent);color:#1f2e3a}
-    .btn-secondary{background:transparent;color:#fff;border-color:rgba(255,255,255,.32)}
-    .btn-dark{background:var(--primary);color:#fff}
-    .btn-outline{background:#fff;color:var(--primary);border-color:var(--line)}
-
-    .hero{
-      background:linear-gradient(135deg,#0d4d73 0%, #0f5f8f 55%, #1575aa 100%);
-      color:#fff;
-      padding:20px 0 50px;
-    }
-    .topbar{
-      display:flex;
-      align-items:center;
-      justify-content:flex-start;
-      padding-bottom:10px;
-    }
-    .logo-box{
-      width:auto;
-      min-height:56px;
-      padding:0;
-      background:transparent;
-      border:none;
-      display:flex;
-      align-items:center;
-      justify-content:flex-start;
-      overflow:visible;
-    }
-    .logo-box img{
-      width:auto;
-      height:110px;
-      max-width:min(230px, 60vw);
-      object-fit:contain;
-      filter:drop-shadow(0 6px 12px rgba(0,0,0,.18));
-    }
-
-    .hero-grid{
-      display:grid;
-      grid-template-columns:1.02fr .98fr;
-      gap:24px;
-      align-items:start;
-    }
-
-    .eyebrow{
-      display:inline-block;
-      background:rgba(255,255,255,.12);
-      border:1px solid rgba(255,255,255,.24);
-      border-radius:999px;
-      padding:8px 12px;
-      font-size:13px;
-      margin-bottom:14px;
-    }
-
-    .lead{font-size:21px;max-width:740px}
-    .hero-pain{
-      margin-top:14px;
-      font-weight:700;
-      display:grid;
-      gap:6px;
-    }
-
-    .hero-cta{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-      margin-top:18px;
-      margin-bottom:14px;
-    }
-
-    .offer-badge{
-      display:inline-block;
-      background:rgba(255,255,255,.14);
-      border:1px solid rgba(255,255,255,.26);
-      border-radius:14px;
-      padding:12px 14px;
-      font-weight:700;
-      margin-top:6px;
-    }
-
-    .limited{
-      margin-top:10px;
-      font-weight:800;
-      color:#fff0df;
-    }
-
-    .scarcity-list{
-      margin-top:8px;
-      display:grid;
-      gap:4px;
-      font-weight:700;
-      color:#ffe6cf;
-    }
-
-    .mini-proof{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:12px;
-      margin-top:18px;
-    }
-
-    .mini-proof-card{
-      background:rgba(255,255,255,.12);
-      border:1px solid rgba(255,255,255,.18);
-      border-radius:16px;
-      padding:14px;
-      color:#fff;
-    }
-
-    .mini-proof-card .stars{
-      color:#ffd36b;
-      font-size:16px;
-      margin-bottom:6px;
-      letter-spacing:1px;
-    }
-
-    .mini-proof-card p{
-      font-size:14px;
-      margin-bottom:8px;
-    }
-
-    .mini-proof-card .byline{
-      font-size:13px;
-      font-weight:700;
-      color:#e6f5ff;
-      margin:0;
-    }
-
-    .card,.faq-item,.form-panel,.hero-card{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:18px;
-      box-shadow:var(--shadow);
-    }
-
-    .hero-card{
-      color:var(--text);
-      padding:22px;
-    }
-
-    .founder-card{
-      display:grid;
-      grid-template-columns:140px 1fr;
-      gap:16px;
-      align-items:center;
-      margin-bottom:18px;
-    }
-
-    .founder-photo{
-      width:140px;
-      height:140px;
-      border-radius:18px;
-      overflow:hidden;
-      border:1px solid var(--line);
-      background:#edf3f8;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:0;
-    }
-
-    .founder-photo img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-    }
-
-    .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .card,.form-panel{padding:22px}
-    .faq-item{padding:18px}
-
-    .pain{background:linear-gradient(180deg,var(--soft2) 0%, transparent 100%)}
-    .solution{background:linear-gradient(180deg,var(--soft) 0%, transparent 100%)}
-    .offer{background:linear-gradient(180deg,var(--soft3) 0%, transparent 100%)}
-    .reviews{background:#ffffff}
-
-    .pain .card,
-    .solution .card{
-      background:transparent;
-      border:none;
-      box-shadow:none;
-      padding:10px 0;
-    }
-
-    .icon-list{display:grid;gap:10px;margin-top:14px}
-    .quote{font-style:italic;font-size:18px;margin-bottom:12px}
-    .stars{color:#d5891d;font-size:18px;letter-spacing:1px;margin-bottom:10px}
-    .rating-line{
-      margin:4px 0 8px;
-      font-weight:700;
-      color:#0d4d73;
-    }
-
-    .repeat-cta{
-      margin-top:22px;
-      text-align:center;
-    }
-    .repeat-cta p{
-      font-weight:700;
-      margin-bottom:12px;
-    }
-
-    .steps-list{
-      display:grid;
-      gap:10px;
-      margin-top:14px;
-      padding-left:0;
-      list-style:none;
-    }
-
-    .steps-list li{
-      padding-left:0;
-      font-weight:700;
-    }
-
-    .inline-form{
-      display:grid;
-      gap:12px;
-      margin-top:18px;
-    }
-
-    .inline-form input{
-      width:100%;
-      padding:14px 14px;
-      border-radius:12px;
-      border:1px solid var(--line);
-      font-size:16px;
-    }
-
-    .form-note{
-      font-size:14px;
-      color:var(--muted);
-      margin-top:10px;
-    }
-
-    .contact-inline{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px 14px;
-      margin:10px 0 14px;
-      font-weight:700;
-      align-items:center;
-    }
-
-    .contact-inline a{color:var(--primary);word-break:break-word}
-    .contact-sep{color:var(--muted);font-weight:400}
-
-    .final-cta{
-      background:linear-gradient(135deg,#143952 0%, #0f5f8f 100%);
-      color:#fff;
-      border-radius:24px;
-      padding:34px;
-      box-shadow:var(--shadow);
-    }
-
-    .mobile-sticky-cta{
-      display:none;
-      position:fixed;
-      left:0;
-      right:0;
-      bottom:0;
-      z-index:999;
-      background:#fff;
-      border-top:1px solid var(--line);
-      box-shadow:0 -6px 18px rgba(15,95,143,.12);
-      padding:10px 12px calc(10px + env(safe-area-inset-bottom));
-    }
-
-    .mobile-sticky-cta .inner{
-      display:grid;
-      grid-template-columns:1fr 1fr 1.35fr;
-      gap:8px;
-      max-width:760px;
-      margin:0 auto;
-    }
-
-    .mobile-sticky-cta a{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      min-height:46px;
-      border-radius:12px;
-      font-weight:700;
-      font-size:14px;
-      padding:10px 8px;
-    }
-
-    .mobile-call{background:#eaf5fb;color:var(--primary)}
-    .mobile-text{background:#fff4ec;color:#b9651b}
-    .mobile-assess{background:var(--accent);color:#1f2e3a}
-
-    @media (max-width:1024px){
-      h1{font-size:42px}
-      h2{font-size:30px}
-      .hero-grid,.grid-3,.mini-proof{grid-template-columns:1fr}
-      .grid-2{grid-template-columns:1fr 1fr}
-    }
-
-    @media (max-width:767px){
-      body{padding-bottom:82px}
-      .section{padding:30px 0}
-      .container{padding:0 16px}
-      h1{font-size:34px}
-      h2{font-size:28px}
-      h3{font-size:21px}
-      .lead{font-size:18px}
-      .topbar{justify-content:center}
-      .logo-box{justify-content:center}
-      .logo-box img{height:88px;max-width:220px}
-      .grid-2,.grid-3,.mini-proof{grid-template-columns:1fr}
-      .founder-card{grid-template-columns:1fr}
-      .founder-photo{width:100%;max-width:240px;height:240px}
-      .contact-inline{flex-direction:column;align-items:flex-start;gap:8px}
-      .contact-sep{display:none}
-      .hero-cta .btn,.form-panel .btn,.final-cta .btn{width:100%;text-align:center}
-      .btn{padding:16px 20px;font-size:16px}
-      .mobile-sticky-cta{display:block}
-    }
-  
-/* Narrow-screen refinements without changing existing content or conversion logic. */
-@media (max-width:767px) {
-  .top-links a,.section-menu a{min-height:46px;display:inline-flex;align-items:center;justify-content:center;text-align:center}
-  .mobile-sticky-cta a{min-height:48px}
-  .card,.form-panel,.hero-card{min-width:0}
-  .inline-form{min-width:0}
-  .inline-form input,.inline-form textarea{font-size:16px;min-height:48px}
-  #contact{scroll-margin-top:12px}
-  .mobile-sticky-cta{padding-bottom:calc(10px + env(safe-area-inset-bottom))}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FTC Safeguards Rule &amp; WISP IT Support for Tax Firms | Suncoast</title>
+<meta name="description" content="FTC Safeguards Rule technical assessments, WISP assistance, MFA, data security improvements, and annual validation for Clearwater tax and accounting firms.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://business.suncoasttechsupport.net/wisp-compliance/">
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17992501324"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17992501324');</script>
+<style>
+:root{--ink:#193449;--muted:#5a7081;--navy:#0d3857;--blue:#125f89;--orange:#ff9a3c;--bg:#f5f8fb;--line:#dbe6ed}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Arial,Helvetica,sans-serif}
+a{color:var(--blue)}a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+.wisp-container{max-width:1120px;width:calc(100% - 40px);margin-inline:auto}
+.wisp-hero{background:linear-gradient(115deg,#0c3654,#0e5b81 67%,#147b9b);color:#fff;padding:52px 0 58px}
+.wisp-hero-grid{display:grid;grid-template-columns:1.14fr .86fr;gap:50px;align-items:center}
+.wisp-kicker{display:block;font-size:12px;font-weight:800;letter-spacing:.12em;margin-bottom:12px;color:#d9effa}
+h1{font-size:clamp(36px,4.8vw,57px);line-height:1.09;letter-spacing:-.035em;margin:0 0 19px}
+h2{font-size:clamp(27px,3.2vw,38px);line-height:1.2;letter-spacing:-.025em;margin:0 0 12px}
+h3{font-size:20px;line-height:1.27;margin:0 0 9px}
+.wisp-lead{font-size:clamp(18px,2vw,22px);line-height:1.49;color:#e6f3fc;margin:0 0 13px}
+.wisp-hero-detail{color:#d7eaf5;margin:0 0 22px}
+.wisp-actions{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0 17px}
+.wisp-button{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 19px;border-radius:9px;
+ background:var(--orange);color:#173349;text-decoration:none;font:800 15px Arial,Helvetica,sans-serif;border:0;cursor:pointer;text-align:center}
+.wisp-button-ghost{background:transparent;color:#fff;border:1px solid #bbdce9}
+.wisp-button-blue{background:var(--blue);color:#fff}
+.wisp-hero-call{color:#e3f4fc;font-size:14px;margin:0}.wisp-hero-call a{font-weight:800;color:white;text-decoration:underline}
+.wisp-owner{background:#fff;border:1px solid #c8dee9;border-radius:16px;box-shadow:0 22px 55px #07253f40;color:var(--ink);padding:21px;display:grid;gap:14px}
+.wisp-owner-top{display:grid;grid-template-columns:110px 1fr;gap:18px;align-items:center}
+.wisp-photo-frame{height:115px;overflow:hidden;border-radius:12px;background:#e3edf3}
+.wisp-photo-frame img{width:100%;height:100%;object-fit:cover;object-position:center top;transform:scale(1.4);transform-origin:center top}
+.wisp-owner h2{font-size:22px;letter-spacing:-.02em;margin:0 0 6px}
+.wisp-owner p{color:#5a7181;margin:0;font-size:14px}
+.wisp-trust{border-top:1px solid var(--line);padding-top:12px;display:flex;gap:8px;flex-wrap:wrap}
+.wisp-trust span{display:inline-block;border-radius:25px;padding:7px 10px;font-weight:800;font-size:12px;color:#145c7d;background:#e9f4fa}
+.wisp-section{padding:56px 0}
+.wisp-heading{display:flex;align-items:end;justify-content:space-between;gap:26px;margin-bottom:23px}
+.wisp-heading p{color:var(--muted);margin:0;max-width:470px}
+.wisp-price-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.wisp-price{background:#fff;border:1px solid var(--line);border-radius:14px;padding:23px 20px;display:flex;flex-direction:column;gap:10px}
+.wisp-price h3{margin:0}.wisp-cost{font-size:23px;line-height:1.25;font-weight:800;color:#0a648e}
+.wisp-price p{color:var(--muted);font-size:14px;margin:0}
+.wisp-muted-note{color:var(--muted);font-size:14px;line-height:1.6;margin:17px 0 0}
+.wisp-focus{background:#eaf3f9}
+.wisp-focus-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.wisp-focus-card{background:#fff;border:1px solid #d9e8ee;border-radius:13px;padding:23px}
+.wisp-focus-card h3{font-size:19px}.wisp-focus-card p{margin:0;color:var(--muted);font-size:15px}
+.wisp-mini-icon{width:42px;height:42px;display:flex;align-items:center;justify-content:center;background:#e6f3fa;
+ border-radius:10px;color:#105e87;font-weight:800;font-size:20px;margin-bottom:15px}
+.wisp-proof{background:#fff}
+.wisp-proof-grid{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
+.wisp-proof p{margin:0 0 12px;color:var(--muted)}.wisp-proof a{font-weight:800;text-decoration:underline;text-underline-offset:3px}
+.wisp-contact{background:#eaf3f9}
+.wisp-contact-grid{display:grid;grid-template-columns:.86fr 1.14fr;gap:28px;align-items:start}
+.wisp-contact-copy{padding:12px 0}.wisp-contact-copy p{color:#4e6e7e;margin:0 0 15px}
+.wisp-contact-copy a{font-weight:800}
+.wisp-small-note{font-size:14px!important;background:#fff;border:1px solid #d6e6ef;border-radius:11px;padding:13px}
+.wisp-form-panel{padding:25px;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 6px 22px #164d6a10}
+.wisp-form-panel p{color:var(--muted);font-size:14px;margin:0 0 12px}
+.wisp-form-panel form{display:grid;gap:10px}
+.wisp-form-panel input:not([type=hidden]){width:100%;min-height:48px;padding:12px 13px;
+ border:1px solid #9cb2bf;border-radius:9px;font:16px Arial,Helvetica,sans-serif}
+.wisp-form-panel button{width:100%;margin-top:3px}
+.wisp-faq{background:#fff}.wisp-faq-details{max-width:870px;margin:22px auto 0}
+.wisp-faq-details details{margin-bottom:10px;background:#fff;border:1px solid var(--line);border-radius:11px}
+.wisp-faq-details summary{list-style:none;cursor:pointer;padding:16px 18px;display:flex;justify-content:space-between;gap:12px;
+ font-weight:800;color:#164768;min-height:54px;align-items:center}
+.wisp-faq-details summary::-webkit-details-marker{display:none}
+.wisp-faq-details summary::after{content:"+";font-size:22px;font-weight:400;line-height:1}
+.wisp-faq-details details[open] summary::after{content:"−"}
+.wisp-faq-details details p{margin:0;padding:0 18px 17px;color:var(--muted);font-size:15px}
+.wisp-faq-details a{font-weight:700}
+.wisp-mobile-cta{display:none}
+@media(max-width:1020px){.wisp-price-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.wisp-hero-grid{gap:26px}}
+@media(max-width:750px){.wisp-hero-grid,.wisp-contact-grid{grid-template-columns:1fr}
+.wisp-owner{max-width:460px}.wisp-focus-grid{grid-template-columns:1fr}
+.wisp-proof-grid{grid-template-columns:1fr}.wisp-hero{padding:38px 0}}
+@media(max-width:650px){.wisp-container{width:calc(100% - 30px)}.wisp-section{padding:38px 0}
+.wisp-heading{display:block;margin-bottom:18px}.wisp-heading p{margin-top:9px}
+.wisp-price-grid{grid-template-columns:1fr}.wisp-price{padding:19px}
+.wisp-actions{display:grid;gap:9px}.wisp-actions .wisp-button{width:100%}
+.wisp-owner{padding:17px}.wisp-form-panel{padding:19px}
+.wisp-owner-top{grid-template-columns:91px 1fr}.wisp-photo-frame{height:98px}
+.wisp-mobile-cta{position:fixed;z-index:1000;bottom:0;left:0;right:0;padding:9px 13px calc(9px + env(safe-area-inset-bottom));
+ display:grid;grid-template-columns:1fr 1.3fr;gap:9px;border-top:1px solid #d7e4ea;background:#fff;box-shadow:0 -4px 18px #0a355024}
+.wisp-mobile-cta a{min-height:45px;border-radius:9px;display:flex;align-items:center;justify-content:center;text-decoration:none;
+ font-size:14px;font-weight:800;text-align:center}
+.wisp-mobile-cta a:first-child{background:#e8f3fa;color:#125e84}
+.wisp-mobile-cta a:last-child{background:var(--orange);color:#17364b}
+body{padding-bottom:calc(70px + env(safe-area-inset-bottom))}
 }
-@media (max-width:359px) {
-  .logo-box img{height:72px}
-  .card,.form-panel,.hero-card{padding:16px}
-  .section-menu{grid-template-columns:1fr}
-}
-
-
-/* Shared footer: company, document links, and branded social redirects */
-.b2b-footer{background:#0e344e;color:white;padding:28px 18px 105px}
-.b2b-footer-inner{max-width:1120px;margin:auto;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:25px}
-.b2b-footer strong{display:block;font-size:18px;margin:0 0 12px}
-.b2b-footer p{margin:0;font-size:15px;line-height:1.6}
-.b2b-footer a{color:white;text-decoration:underline;text-underline-offset:3px}
-.b2b-footer nav{display:flex;flex-direction:column;align-items:flex-start;gap:10px}
-.b2b-footer nav a{min-height:24px}
-@media(max-width:800px){.b2b-footer-inner{grid-template-columns:1fr;gap:24px}
-  .b2b-footer nav a{min-height:40px;display:inline-flex;align-items:center}}
-@media(min-width:801px){.b2b-footer{padding-bottom:28px}}
 </style>
 <link rel="stylesheet" href="/assets/site-shell.css?v=20261029-sticky">
 </head>
 <body>
-  <div class="sc-contact-strip"><div class="sc-shell-inner">
+<div class="sc-contact-strip"><div class="sc-shell-inner">
 <span>Business IT Support · Clearwater &amp; Pinellas County</span>
 <a href="tel:17276479000" aria-label="Call Suncoast at 727 647 9000">Call (727) 647-9000</a>
 <a href="sms:17276479000" aria-label="Text Suncoast at 727 647 9000">Text (727) 647-9000</a>
@@ -451,316 +126,103 @@
 <a href="/services/">All Services &amp; FAQs</a>
 </div></details><a href="/managed-it/">Plans</a><a href="/about/">About</a><a href="/reviews/">Reviews</a><a class="sc-contact-cta" href="/#contact">Get IT Help</a></nav>
 </div></header>
-<header class="hero">
-    <div class="container">
-
-      <div class="hero-grid">
-        <div>
-          <div class="eyebrow">FTC Compliance Support • Clearwater Area • No Long-Term Contracts</div>
-          <h1>FTC Safeguards Rule &amp; WISP Technical Readiness</h1>
-          <p class="lead">Technical safeguard assessments, practical WISP assistance, and scoped remediation for accountants and tax preparers. Start with a free 15-minute consultation.</p>
-
-          <div class="hero-pain">
-            <span>Not sure if you’d pass an FTC safeguards audit?</span>
-            <span>Storing client financial data without clear protections?</span>
-            <span>Worried one mistake could lead to fines or liability?</span>
-          </div>
-
-          <div class="hero-cta">
-            <a class="btn btn-primary" href="#contact" onclick="trackContact('assessment_click')">Request a Free 15-Minute Consultation</a>
-            <a class="btn btn-secondary" href="tel:17276479000" onclick="trackContact('phone_click')">Call Now: (727) 647-9000</a>
-          </div>
-
-          <p style="font-weight:700; font-size:16px; margin:0 0 14px;">✔ Takes 30 seconds &nbsp; ✔ No spam &nbsp; ✔ Talk to a real person</p>
-
-          <div class="offer-badge">Free 15-Minute Consultation</div>
-          <div class="limited">We schedule implementation projects based on the scope and current availability.</div>
-          <div class="scarcity-list">
-            <span>Many accounting firms fail basic FTC safeguards requirements—one gap can lead to fines, liability, or forced reporting after a breach.</span>
-          </div>
-        </div>
-
-        <div class="hero-card">
-          <div class="founder-card">
-            <div class="founder-photo">
-              <img src="../images/moe-headshot.jpg" alt="Founder photo">
-            </div>
-            <div>
-              <h3>Most accounting firms I see are one missed safeguard away from a compliance issue—I help fix that before it becomes a problem.</h3>
-              <p><strong>✔ 20+ Years Experience • ✔ Veteran-Owned • ✔ Certified</strong></p>
-              <ul class="icon-list">
-                <li>Veteran-owned and operated</li>
-                <li>Certified in Cybersecurity and Artificial Intelligence</li>
-                <li>Microsoft 365, Azure, and Entra expertise</li>
-                <li>Exchange, SharePoint, Teams experience</li>
-                <li>Small business and enterprise IT support</li>
-              </ul>
-            </div>
-          </div>
-
-          <h3>Why accounting firms call Suncoast</h3>
-          <p class="muted">When compliance gaps are ignored, client data is exposed and risk grows. Suncoast helps accounting firms close those gaps before they become costly problems.</p>
-
-          <div style="margin-top:14px; font-weight:700; line-height:1.8;">
-            ✔ Trusted by Local Businesses<br>
-            ✔ Fast Response Times<br>
-            ✔ No Contracts Required
-          </div>
-
-          <div style="margin-top:16px; display:grid; gap:10px;">
-            <div style="background:#f7fafc; padding:12px; border-radius:12px;">
-              ★★★★★ “Exceptional service and strong security improvements.” — Lynn J
-            </div>
-            <div style="background:#f7fafc; padding:12px; border-radius:12px;">
-              ★★★★★ “Saved us thousands and fixed multiple device issues.” — Julie K
-            </div>
-            <div style="background:#f7fafc; padding:12px; border-radius:12px;">
-              ★★★★★ “Came onsite fast and handled a rush job.” — Bruce L
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <section class="section-tight" id="pricing">
-    <div class="container">
-      <div class="center">
-        <h2>FTC Safeguards Support &amp; Pricing</h2>
-        <p class="muted">Start with a free 15-minute conversation. Technical assessments and implementation work are priced separately.</p>
-      </div>
-      <div class="grid-2" style="margin-top:18px;">
-        <div class="card">
-          <h3>Initial Consultation</h3><p><strong>Free · 15 minutes</strong></p>
-          <ul class="icon-list"><li>Discuss security and compliance concerns</li><li>Clarify next steps</li><li>Determine whether a technical assessment is needed</li></ul>
-        </div>
-        <div class="card">
-          <h3>Readiness Assessment</h3><p><strong>$399–$599</strong></p>
-          <ul class="icon-list"><li>Review agreed technical safeguards</li><li>Identify priority IT risks and gaps</li><li>Receive a practical technical remediation summary</li></ul>
-        </div>
-        <div class="card">
-          <h3>Remediation &amp; WISP Assistance</h3><p><strong>Starting at $1,250</strong></p>
-          <ul class="icon-list"><li>Implement agreed technical improvements</li><li>Assist with WISP documentation</li><li>Project scope and pricing confirmed beforehand</li></ul>
-        </div>
-        <div class="card">
-          <h3>Annual Technical Validation</h3><p><strong>Starting at $350</strong></p>
-          <ul class="icon-list"><li>Review agreed security controls</li><li>Document technical findings and next steps</li><li>Ongoing security management quoted separately</li></ul>
-        </div>
-      </div>
-      <p class="muted" style="margin-top:16px;font-size:14px">Suncoast provides technical assistance, not legal advice, regulatory certification, or a guarantee of FTC Safeguards Rule compliance. Final pricing depends on scope.</p>
-    </div>
-  </section>
-
-  <section class="section pain">
-    <div class="container">
-      <div class="center"><h2>Need Help Meeting FTC Compliance Requirements?</h2></div>
-      <div class="grid-2" style="margin-top:18px;">
-        <div style="padding:10px 0;">
-          <ul class="icon-list">
-            <li>Unclear FTC Safeguards Rule requirements</li>
-            <li>Need to protect sensitive client financial data</li>
-            <li>Concerned about fines, liability, or weak controls</li>
-            <li>Need a clear compliance action plan without hiring full-time IT</li>
-          </ul>
-        </div>
-        <div style="padding:10px 0;">
-          <h3>If your compliance is weak, your business is exposed.</h3>
-          <p>That is the real cost of unclear compliance. Client data risk. Avoidable liability. Missed requirements. Preventable exposure.</p>
-        </div>
-      </div>
-      <div class="repeat-cta">
-        <p>We schedule implementation projects based on the scope and current availability.</p>
-        <a class="btn btn-primary" href="#contact" onclick="trackContact('assessment_click')">Request a Free 15-Minute Consultation</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section solution">
-    <div class="container">
-      <div class="center">
-        <h2>We Help You Meet FTC Requirements Before They Cost You Money</h2>
-        <p class="muted">Suncoast Tech Support helps accountants and tax preparers secure systems, protect client data, and build a clearer compliance path.</p>
-      </div>
-      <div class="grid-3" style="margin-top:18px;">
-        <div style="padding:10px 0;"><h3>FTC Safeguards Rule support</h3><p>Get help understanding what your firm needs to do next.</p></div>
-        <div style="padding:10px 0;"><h3>Client data protection</h3><p>We secure email, user access, and file storage—the most common points where accounting firms get exposed.</p></div>
-        <div style="padding:10px 0;"><h3>Security control review</h3><p>Review systems, accounts, and practices that may affect compliance readiness.</p></div>
-        <div style="padding:10px 0;"><h3>Gap identification</h3><p>Identify weak points before they become audit, liability, or breach problems.</p></div>
-        <div style="padding:10px 0;"><h3>Clear action plan</h3><p>Get practical next steps without contract pressure or unnecessary complexity.</p></div>
-        <div style="padding:10px 0;"><h3>Ongoing monitoring available</h3><p>Start with setup, then add monthly monitoring if you want continued support.</p></div>
-      </div>
-      <div class="repeat-cta">
-        <p>Many accounting firms fail basic FTC safeguards requirements—one gap can lead to fines, liability, or forced reporting after a breach.</p>
-        <a class="btn btn-dark" href="#contact" onclick="trackContact('assessment_click')">Book Your Free 15-Minute Consultation</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="center">
-        <h2>Why Accounting Firms Choose Us</h2>
-      </div>
-      <div class="grid-2" style="margin-top:18px;">
-        <div class="card">
-          <ul class="icon-list">
-            <li>Compliance-focused support for accountants and tax preparers</li>
-            <li>No long-term contracts — stay because you want to</li>
-            <li>Local Clearwater-area support</li>
-            <li>Setup available now with optional ongoing monitoring</li>
-            <li>Clear, honest communication</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Built for small accounting offices</h3>
-          <p>You need clear compliance guidance, stronger protection for client data, and a provider who can help without overcomplicating everything.</p>
-        </div>
-      </div>
-      <div class="repeat-cta">
-        <p>Find compliance gaps before they turn into liability.</p>
-        <a class="btn btn-primary" href="#contact" onclick="trackContact('assessment_click')">Request a Free 15-Minute Consultation</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section offer" id="contact">
-    <div class="container">
-      <div class="grid-2">
-        <div class="card">
-          <h2>Free 15-Minute Consultation</h2>
-          <p>For accountants and tax preparers in Clearwater and the surrounding Pinellas County area.</p>
-          <p>Discuss current technology and security concerns and learn about separately priced technical assessments.</p>
-          <h3 style="margin-top:22px;">What to Expect During Your Free Consultation</h3>
-          <ul class="steps-list">
-            <li>Discuss your firm's environment and immediate concerns</li>
-            <li>Clarify whether a readiness assessment is appropriate</li>
-            <li>Explain the possible service scope and next steps</li>
-            <li>Decide whether to request a quote</li>
-          </ul>
-        </div>
-
-        <div class="form-panel">
-          <div style="background:#f7fafc; border:1px solid var(--line); border-radius:14px; padding:16px; margin-bottom:18px;">
-            <h3 style="margin-bottom:10px;">Need Help With FTC Compliance?</h3>
-            <p>Work with a local IT partner that helps accountants protect client data, improve safeguards, and move faster without getting locked into contracts.</p>
-            <ul class="icon-list" style="margin-top:12px;">
-              <li>FTC safeguards support</li>
-              <li>No long-term contracts</li>
-              <li>Local Clearwater support</li>
-              <li>Setup + optional monitoring</li>
-            </ul>
-          </div>
-
-          <h3>Request Your Free 15-Minute Consultation</h3>
-          <p>Tell us a little about your firm's needs so we can schedule a free 15-minute conversation.<br><strong>(Takes 30 seconds. No spam. No pressure.)</strong></p>
-
-          <form class="inline-form" id="leadForm" method="POST" action="https://suncoast-lead-form.iammoeskicova0808.workers.dev/">
+<main>
+<section class="wisp-hero">
+<div class="wisp-container wisp-hero-grid">
+<div>
+<span class="wisp-kicker">FOR TAX PREPARERS &amp; ACCOUNTING OFFICES · CLEARWATER / PINELLAS</span>
+<h1>FTC Safeguards &amp; WISP technical support for your firm.</h1>
+<p class="wisp-lead">Review technical safeguards, identify security gaps, and plan practical improvements to protect sensitive client information.</p>
+<p class="wisp-hero-detail">Get local help with Microsoft 365 security, MFA, devices, and network controls. Projects are scoped to your firm's environment and needs.</p>
+<div class="wisp-actions">
+<a class="wisp-button" href="#contact" onclick="trackContact('assessment_click')">Request a Free 15-Minute Consultation</a>
+<a class="wisp-button wisp-button-ghost" href="#pricing">View Service Pricing</a>
+</div>
+<p class="wisp-hero-call">Call or text <a href="tel:17276479000" onclick="trackContact('phone_click')">(727) 647-9000</a></p>
+</div>
+<div class="wisp-owner">
+<div class="wisp-owner-top">
+<div class="wisp-photo-frame"><img src="/images/moe-headshot.jpg" alt="Suncoast Tech Support founder" width="640" height="640"></div>
+<div><h2>Local IT expertise. Clear next steps.</h2><p>Work directly with Suncoast on the technical measures your office needs reviewed or improved.</p></div>
+</div>
+<div class="wisp-trust"><span>20+ years experience</span><span>Veteran-owned</span><span>Insured</span><span>Pinellas SBE certified</span></div>
+</div>
+</div>
+</section>
+<section class="wisp-section" id="pricing">
+<div class="wisp-container">
+<div class="wisp-heading"><div><h2>Services and starting prices</h2><p>Start with a conversation, then choose the technical services that fit your firm's needs.</p></div></div>
+<div class="wisp-price-grid">
+<article class="wisp-price"><h3>Initial Consultation</h3><div class="wisp-cost">Free · 15 minutes</div><p>Discuss your current concerns and decide whether a paid technical review makes sense.</p></article>
+<article class="wisp-price"><h3>Readiness Assessment</h3><div class="wisp-cost">$399–$599</div><p>Review agreed technical safeguards, identify gaps, and receive a practical findings summary.</p></article>
+<article class="wisp-price"><h3>Remediation &amp; WISP Assistance</h3><div class="wisp-cost">Starting at $1,250</div><p>Implement agreed security improvements and support technical portions of WISP documentation.</p></article>
+<article class="wisp-price"><h3>Annual Technical Validation</h3><div class="wisp-cost">Starting at $350</div><p>Review specified controls and document technical findings and recommended next steps.</p></article>
+</div>
+<p class="wisp-muted-note">Final scope and pricing are confirmed before work begins. Technical assessment, remediation, and ongoing monitoring are separate from the free consultation.</p>
+</div>
+</section>
+<section class="wisp-section wisp-focus" id="support">
+<div class="wisp-container">
+<div class="wisp-heading"><div><h2>Technical areas we can review</h2></div><p>These are examples of the practical work included when relevant to your agreed scope.</p></div>
+<div class="wisp-focus-grid">
+<article class="wisp-focus-card"><div class="wisp-mini-icon" aria-hidden="true">01</div><h3>Microsoft 365, email &amp; MFA</h3><p>Account access, multifactor authentication, email security settings, and administrative controls.</p></article>
+<article class="wisp-focus-card"><div class="wisp-mini-icon" aria-hidden="true">02</div><h3>Devices &amp; client data</h3><p>Workstation protection, access privileges, encryption readiness, and sensitive-file handling.</p></article>
+<article class="wisp-focus-card"><div class="wisp-mini-icon" aria-hidden="true">03</div><h3>Networks &amp; security documentation</h3><p>Office network configuration, identified technical risks, and WISP-related technical findings.</p></article>
+</div>
+<p class="wisp-muted-note">Suncoast provides technical services, not legal advice, regulatory certification, or a guarantee that a firm meets every FTC Safeguards Rule requirement. Applicability and final compliance responsibility remain with the business.</p>
+<p class="wisp-muted-note">Learn more from the <a href="https://www.ftc.gov/business-guidance/resources/ftc-safeguards-rule-what-your-business-needs-know" target="_blank" rel="noopener noreferrer">FTC's official Safeguards Rule guidance</a>.</p>
+</div>
+</section>
+<section class="wisp-section wisp-proof">
+<div class="wisp-container wisp-proof-grid">
+<div><h2>Local support for small professional offices.</h2><p>Veteran-owned and insured, with support for Clearwater and surrounding Pinellas County businesses. Get a defined project scope without committing to a monthly plan.</p>
+<a href="/about/">Learn about Suncoast</a> · <a href="/reviews/">Read customer reviews</a></div>
+<a href="#contact" class="wisp-button wisp-button-blue" onclick="trackContact('assessment_click')">Discuss Your IT Needs</a>
+</div>
+</section>
+<section class="wisp-section wisp-contact" id="contact">
+<div class="wisp-container wisp-contact-grid">
+<div class="wisp-contact-copy">
+<h2>Start with a free 15-minute consultation.</h2>
+<p>Tell us where your firm has questions—MFA, user access, security controls, client-data handling, or WISP technical readiness. We'll discuss the next step.</p>
+<p class="wisp-small-note">The free consultation is an initial conversation, not an audit, technical assessment, WISP deliverable, or compliance determination. Paid services are quoted separately.</p>
+<p><strong>Call:</strong> <a href="tel:17276479000" onclick="trackContact('phone_click')">(727) 647-9000</a><br><strong>Text:</strong> <a href="sms:17276479000" onclick="trackContact('text_click')">Send a text</a></p>
+</div>
+<div class="wisp-form-panel">
+<h3>Request your consultation</h3><p>Share your contact details. We'll follow up to discuss your firm's needs.</p>
+<form class="inline-form" id="leadForm" method="POST" action="https://suncoast-lead-form.iammoeskicova0808.workers.dev/">
             <input type="hidden" name="lead_source" value="Website">
             <input type="hidden" name="page_name" value="FTC Safeguards Support">
             <input type="text" name="name" placeholder="Name" aria-label="Name" required>
             <input type="email" name="email" placeholder="Email" aria-label="Email" required>
             <input type="tel" name="phone" placeholder="Phone" aria-label="Phone">
             <div class="cf-turnstile" data-sitekey="0x4AAAAAACzrFz4NsVodL59R" data-size="compact"></div>
-            <button class="btn btn-primary" id="leadSubmitBtn" type="submit">
+            <button class="wisp-button" id="leadSubmitBtn" type="submit">
               Request a Free 15-Minute Consultation
             </button>
           </form>
-
-          <div class="contact-inline" style="margin-top:18px;">
-            <span><strong>Call:</strong> <a href="tel:17276479000" onclick="trackContact('phone_click')">(727) 647-9000</a></span>
-            <span class="contact-sep">•</span>
-            <span><strong>Text:</strong> <a href="sms:17276479000" onclick="trackContact('text_click')">Send a text</a></span>
-          </div>
-
-          <p class="form-note">Prefer not to wait? Call or text now.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section reviews">
-    <div class="container">
-      <div class="center">
-        <h2>What Clients Say</h2>
-        <p class="rating-line">⭐ 5-Star Rated on Google</p>
-      </div>
-
-      <div class="grid-3" style="margin-top:18px;">
-        <div class="card">
-          <div class="stars">★★★★★</div>
-          <p class="quote">“I would like to recognize Moe for his exceptional service. He worked with us in getting our tech lab working better with Wi-Fi upgrades to our building and helped improve our security by creating policies in our SonicWall to filter traffic and segment our network.”</p>
-          <p><strong>— Lynn J</strong>, Oldsmar</p>
-        </div>
-
-        <div class="card">
-          <div class="stars">★★★★★</div>
-          <p class="quote">“Suncoast came to our office to help with several device issues we were having. He took the time to explain the errors and helped us upgrade devices to the latest Android version. He also made recommendations that improved our processes and saved us thousands in unnecessary software subscriptions.”</p>
-          <p><strong>— Julie K</strong>, Largo</p>
-        </div>
-
-        <div class="card">
-          <div class="stars">★★★★★</div>
-          <p class="quote">“We had a presentation due urgently and I called Moe in a panic on a Sunday. His calm demeanor reassured me everything would be handled. He came onsite, worked through everything, and ensured we met our deadline. Highly recommended.”</p>
-          <p><strong>— Bruce L</strong>, Clearwater</p>
-        </div>
-      </div>
-
-      <div class="center" style="margin-top:18px;">
-        <a class="btn btn-outline" href="https://www.google.com/maps/place/Suncoast+Tech+Support/@27.9600634,-83.0269243,10z/data=!4m8!3m7!1s0xfda3740f6700f1b:0xbe48f9ed81314891!8m2!3d27.9598495!4d-82.6972656!9m1!1b1!16s%2Fg%2F11yvdld9vh?entry=ttu" target="_blank" rel="noopener">Read More Google Reviews</a>
-      </div>
-
-      <div class="repeat-cta">
-        <p>Get the same fast, reliable help for your business.</p>
-        <a class="btn btn-primary" href="#contact" onclick="trackContact('assessment_click')">Request a Free 15-Minute Consultation</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section-tight">
-    <div class="container">
-      <div class="center"><h2>Frequently Asked Questions</h2></div>
-      <div class="grid-3" style="margin-top:18px;">
-        <div class="faq-item"><h3>Who is this for?</h3><p>This offer is built for accountants, tax preparers, and similar small offices handling sensitive financial data.</p></div>
-        <div class="faq-item"><h3>Do I have to sign a contract?</h3><p>No. You can start with setup and add ongoing monitoring only if you want it.</p></div>
-        <div class="faq-item"><h3>What do you help with?</h3><p>We help review your setup, identify compliance gaps, and outline practical next steps to better protect client data.</p></div>
-      </div>
-      <div class="repeat-cta">
-        <p>Still deciding? Start with a no-pressure consultation.</p>
-        <a class="btn btn-primary" href="#contact" onclick="trackContact('assessment_click')">Request a Free 15-Minute Consultation</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="final-cta center">
-        <h2>Ready to Get Your Firm More Compliant?</h2>
-        <p>Get started today with compliance-focused support and find out where your current setup may be exposing your firm to unnecessary risk.</p>
-        <p><strong>We schedule implementation projects based on the scope and current availability.</strong></p>
-        <div style="margin-top:18px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
-          <a class="btn btn-primary" href="#contact" onclick="trackContact('assessment_click')">Request a Free 15-Minute Consultation</a>
-          <a class="btn btn-secondary" href="tel:17276479000" onclick="trackContact('phone_click')">Call Now: (727) 647-9000</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer class="sc-footer"><div class="sc-shell-inner">
+</div>
+</div>
+</section>
+<section class="wisp-section wisp-faq" id="faq">
+<div class="wisp-container">
+<h2>Frequently asked questions</h2>
+<div class="wisp-faq-details">
+<details><summary>Who is this service for?</summary><p>Tax preparation businesses and accounting offices seeking technical assistance with client-data safeguards. Whether the FTC Safeguards Rule applies to your particular activities is a separate business and legal determination.</p></details>
+<details><summary>Does Suncoast certify my business as FTC-compliant?</summary><p>No. Suncoast can assess agreed technical safeguards, document findings, and implement scoped improvements. Regulatory compliance and any required program oversight remain the firm's responsibility.</p></details>
+<details><summary>Do I need a monthly contract?</summary><p>No. You can begin with a one-time consultation or scoped assessment. Ongoing support or monitoring, if appropriate, is quoted separately.</p></details>
+</div>
+</div>
+</section>
+</main>
+<footer class="sc-footer"><div class="sc-shell-inner">
 <div class="sc-footer-grid">
 <div><strong>Suncoast Tech Support</strong><p>Veteran-owned · Florida OSD certified · Pinellas County SBE · Insured</p>
 <p>Call <a href="tel:17276479000">(727) 647-9000</a> · <a href="sms:17276479000">Text Suncoast</a></p></div>
 <nav aria-label="Legal pages"><strong>Legal</strong><a href="/terms/">Terms of Service</a><a href="/privacy/">Privacy Policy</a><a href="/client-authorization/">Client Authorization and Consent</a></nav>
 <nav aria-label="Social media"><strong>Follow Suncoast</strong><a href="/facebook/" target="_blank" rel="noopener noreferrer">Facebook</a><a href="/linkedin/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://www.google.com/maps/place/Suncoast+Tech+Support/@27.9600634,-83.0269243,10z/data=!4m8!3m7!1s0xfda3740f6700f1b:0xbe48f9ed81314891!8m2!3d27.9598495!4d-82.6972656!9m1!1b1!16s%2Fg%2F11yvdld9vh?entry=ttu" target="_blank" rel="noopener noreferrer">Google Business Profile</a></nav>
 </div><p class="sc-copyright">© Suncoast Tech Support · 88 Bit Diamond Hands LLC</p></div></footer>
-  <div class="mobile-sticky-cta">
-    <div class="inner">
-      <a class="mobile-call" href="tel:17276479000" onclick="trackContact('phone_click')">Call</a>
-      <a class="mobile-text" href="sms:17276479000" onclick="trackContact('text_click')">Text</a>
-      <a class="mobile-assess" href="#contact" onclick="trackContact('assessment_click')">Free Consultation</a>
-    </div>
-  </div>
-
-
+<div class="wisp-mobile-cta" aria-label="Quick WISP support contact"><a href="tel:17276479000" onclick="trackContact('phone_click')">Call Suncoast</a><a href="#contact" onclick="trackContact('assessment_click')">Free Consultation</a></div>
   <script>
     function trackContact(actionName) {
       if (typeof gtag === 'function') {
@@ -801,52 +263,6 @@
       return false;
     }
   </script>
-<!--
-  <script>
-    (function () {
-      emailjs.init({
-        publicKey: 'UW7iU4gQwbDKvCQoY'
-      });
-
-      var leadForm = document.getElementById('leadForm');
-      var submitBtn = document.getElementById('leadSubmitBtn');
-
-      if (!leadForm || !submitBtn) return;
-
-      leadForm.addEventListener('submit', function (event) {
-        event.preventDefault();
-
-        var originalText = submitBtn.textContent;
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Submitting...';
-
-        var formData = {
-          name: leadForm.elements['name'].value,
-          email: leadForm.elements['email'].value,
-          phone: leadForm.elements['phone'].value,
-          source: 'B2B Landing Page'
-        };
-
-        emailjs.send(
-          'service_34x2w4r',
-          'template_jcdi9tq',
-          formData
-        ).then(function () {
-          if (typeof gtag === 'function') {
-            gtag_report_conversion();
-          }
-          window.location.href = '/thank-you.html';
-        }).catch(function (error) {
-          console.error('EmailJS error:', error);
-          alert('There was a problem sending your request. Please call (727) 647-9000 or text us now.');
-          submitBtn.disabled = false;
-          submitBtn.textContent = originalText;
-        });
-      });
-    })();
-  </script>
--->
 
 </body>
 </html>
-
