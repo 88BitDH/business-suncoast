@@ -686,6 +686,45 @@ h2{font-size:clamp(29px,3.5vw,43px);line-height:1.16;letter-spacing:-.025em}
  .brand-and-social .logo-box img{height:64px;max-width:138px}
  .header-social{gap:3px}.header-social a{width:35px;height:35px;border-radius:8px}
  .header-social svg{width:20px;height:20px}}
+
+/* Header service picker: native details for tap, keyboard and mouse. */
+.top-links{position:relative}
+.services-menu{position:relative;flex:none}
+.services-menu>summary{list-style:none;cursor:pointer;color:#ebf5fc;font-size:15px;font-weight:700;
+  padding:10px 0;min-height:43px;display:inline-flex;align-items:center;gap:7px;line-height:1.2}
+.services-menu>summary::-webkit-details-marker{display:none}
+.services-menu>summary::after{content:"⌄";font-size:20px;line-height:1;transition:transform .15s}
+.services-menu[open]>summary::after{transform:rotate(180deg)}
+.services-menu>summary:focus-visible{outline:3px solid #ff9a3c;outline-offset:3px;border-radius:5px}
+.services-dropdown{position:absolute;z-index:1000;left:0;top:calc(100% + 5px);width:300px;max-width:calc(100vw - 36px);
+  border:1px solid #d3e5ef;border-radius:12px;background:#fff;padding:7px;
+  box-shadow:0 16px 42px rgba(0,35,57,.28)}
+.top-links .services-dropdown a{display:block;font-size:14px;color:#183e57!important;font-weight:700;
+  text-decoration:none;padding:11px 13px;line-height:1.35;min-height:40px;border-radius:7px;background:transparent}
+.top-links .services-dropdown a:hover,.top-links .services-dropdown a:focus-visible{background:#eaf4f9;color:#075f83!important}
+.top-links .services-dropdown .all-services-link{border-top:1px solid #dde9ef;margin-top:5px;padding-top:14px;color:#0a6286!important}
+.compact-contact-grid{align-items:start;gap:24px}
+.consultation-compact{padding:25px;align-self:start}
+.mini-eyebrow{font-size:12px;letter-spacing:.11em;font-weight:800;color:#116789;margin-bottom:10px}
+.consultation-compact h2{font-size:clamp(26px,3vw,34px);margin-bottom:13px}
+.consultation-compact p{color:#536a79;margin-bottom:14px;font-size:16px}
+.consultation-compact .consultation-note{font-size:14px;background:#eaf4f9;border-radius:9px;padding:12px 14px}
+.more-consultation{font-weight:800;color:#0e5f87;text-decoration:underline;text-underline-offset:3px;display:inline-block;margin:6px 0 14px}
+.compact-form-panel{padding:23px;align-self:start}
+.compact-form-panel>h3{margin:0 0 7px}.compact-form-panel>p{color:#566b79;font-size:15px;margin:0}
+.compact-form-panel .inline-form{gap:10px;margin-top:12px}
+.compact-form-panel .inline-form input{padding:12px 13px}
+.compact-form-panel .inline-form textarea{min-height:85px;padding:12px 13px}
+.compact-form-panel .inline-form .btn{width:100%}
+@media(max-width:767px){
+  .services-menu{width:100%}
+  .services-menu>summary{display:flex;justify-content:center;min-height:44px;font-size:13px;
+    padding:9px 5px;text-align:center;border:1px solid rgba(255,255,255,.27);border-radius:8px;color:#ebf5fc}
+  .services-dropdown{left:0;top:calc(100% + 4px);width:min(330px,calc(100vw - 36px))}
+  .top-links .services-dropdown a{min-height:43px;font-size:14px;justify-content:flex-start;border:none;text-align:left;padding:11px 12px}
+  .consultation-compact,.compact-form-panel{padding:19px}
+  .compact-contact-grid{gap:15px}
+}
 </style>
 </head>
 <body>
@@ -707,7 +746,19 @@ h2{font-size:clamp(29px,3.5vw,43px);line-height:1.16;letter-spacing:-.025em}
           </nav>
         </div>
         <nav class="top-links" aria-label="Main sections">
-          <a href="#services">Services</a><a href="#why-suncoast">About</a><a href="#partners">Partners</a>
+          <details class="services-menu">
+            <summary>Services</summary>
+            <div class="services-dropdown" role="group" aria-label="Choose a business IT service">
+              <a href="/it-support/">Business IT Support</a>
+              <a href="/microsoft-365/">Microsoft 365 Support</a>
+              <a href="/office-networking/">Office Network &amp; Wi-Fi</a>
+              <a href="/business-security.html">Business Security Review</a>
+              <a href="/wisp-compliance/">FTC Safeguards Support</a>
+              <a href="/managed-it/">Ongoing IT Support</a>
+              <a href="/services/" class="all-services-link">All Services, Consultation &amp; FAQs</a>
+            </div>
+          </details>
+          <a href="#why-suncoast">About</a><a href="#partners">Partners</a>
           <a href="#options">Plans</a><a href="#reviews">Reviews</a><a href="#contact" class="nav-cta" onclick="trackContact('assessment_click')">Get IT Help</a>
         </nav>
       </div>
@@ -739,20 +790,6 @@ h2{font-size:clamp(29px,3.5vw,43px);line-height:1.16;letter-spacing:-.025em}
         <h2>Practical IT services for your business</h2>
         <p class="muted">Suncoast Tech Support helps small businesses fix issues quickly, improve reliability, strengthen security, and handle practical compliance-related needs with on-site and remote support.</p>
       </div>
-      <details class="site-disclosure" style="margin-top:18px">
-        <summary>Explore More Service Details</summary>
-        <div class="disclosure-body">
-      <div class="grid-3" style="margin-top:18px;">
-        <div style="padding:10px 0;"><h3>On-site IT support</h3><p>Get local hands-on help when problems need to be fixed at your office.</p></div>
-        <div style="padding:10px 0;"><h3>Remote IT support</h3><p>Resolve many issues faster without waiting for an on-site visit.</p></div>
-        <div style="padding:10px 0;"><h3>Wi-Fi and network help</h3><p>Improve office connectivity, coverage, and basic network reliability.</p></div>
-        <div style="padding:10px 0;"><h3>Email and Microsoft 365</h3><p>Fix login, sync, account, and everyday Microsoft 365 issues.</p></div>
-        <div style="padding:10px 0;"><h3>Data security services</h3><p>Reduce common risks with practical small business IT security improvements and data loss prevention steps.</p></div>
-        <div style="padding:10px 0;"><h3>Security and compliance support</h3><p>Support for security reviews, policy cleanup, account controls, and practical compliance-related improvements for small offices.</p></div>
-      </div>
-
-        </div>
-      </details>
       <div class="center" style="margin-top:30px;">
         <h2>Explore Our Business IT Services</h2>
         <p class="muted">Select a service to learn more or request help for your business.</p>
@@ -784,8 +821,8 @@ h2{font-size:clamp(29px,3.5vw,43px);line-height:1.16;letter-spacing:-.025em}
         </div>
       </nav>
       <div class="repeat-cta">
-        <p>Get help for the technology, security, and compliance issues local businesses deal with every day, without getting pushed into a complicated long-term agreement.</p>
-        <a class="btn btn-dark" href="#contact" onclick="trackContact('assessment_click')">Book Your Free IT Review</a>
+        <p>Need more details about a service, the free consultation, or common questions?</p>
+        <a class="btn btn-dark" href="/services/">Explore All Services &amp; FAQs</a>
       </div>
     </div>
   </section>
@@ -994,38 +1031,22 @@ h2{font-size:clamp(29px,3.5vw,43px);line-height:1.16;letter-spacing:-.025em}
 
   <section class="section offer" id="contact">
     <div class="container">
-      <div class="grid-2">
-        <div class="card">
-          <h2>Free 15-Minute IT Review</h2>
-          <p>Limited availability for small businesses in Clearwater and the Tampa Bay area.</p>
-          <p><strong>Call, text, or send a request now and we will help you figure out the best next step.</strong></p>
-          <p><strong>Most requests start with a quick conversation about the issue, urgency, and whether remote or on-site support makes more sense.</strong></p>
-
-          <h3 style="margin-top:22px;">What Happens During Your Free IT Review:</h3>
-          <ul class="steps-list">
-            <li>Listen to the problem and how it is affecting your business</li>
-            <li>Review the affected devices, users, or systems</li>
-            <li>Determine whether remote or on-site support is best</li>
-            <li>Explain likely next steps, scope, and priority</li>
-            <li>Help you move toward a fix quickly</li>
-          </ul>
-        </div>
-
-        <div class="form-panel">
-          <div style="background:#f7fafc; border:1px solid var(--line); border-radius:14px; padding:16px; margin-bottom:18px;">
-            <h3 style="margin-bottom:10px;">Need Better Business IT Support?</h3>
-            <p>Work with a local IT partner for data security services, IT services for small business, and fast help with computer, Wi-Fi, email, Microsoft 365, printer, and security issues without getting locked into contracts.</p>
-            <ul class="icon-list" style="margin-top:12px;">
-              <li>On-site and remote support</li>
-              <li>No long-term contracts</li>
-              <li>Local Clearwater support</li>
-              <li>Projects and ongoing support available</li>
-            </ul>
+      <div class="grid-2 compact-contact-grid">
+        <div class="card consultation-compact">
+          <div class="mini-eyebrow">START HERE</div>
+          <h2>Free 15-Minute IT Consultation</h2>
+          <p>Tell us what's happening with your business technology. We'll discuss the issue, its urgency, and the best next step.</p>
+          <p class="consultation-note">The free consultation is a conversation, not a technical assessment or repair session.</p>
+          <a href="/services/#consultation" class="more-consultation">See what's included and read FAQs <span aria-hidden="true">→</span></a>
+          <div class="contact-inline">
+            <span><strong>Call:</strong> <a href="tel:17276479000" onclick="trackContact('phone_click')">(727) 647-9000</a></span>
+            <span class="contact-sep">•</span>
+            <span><strong>Text:</strong> <a href="sms:17276479000" onclick="trackContact('text_click')">Send a text</a></span>
           </div>
-
+        </div>
+        <div class="form-panel compact-form-panel">
           <h3>Request Business IT Help</h3>
-          <p>Fill this out now and tell us a little about the issue.<br><strong>(Takes about 30 seconds. No spam. No pressure.)</strong></p>
-
+          <p>Tell us a little about your issue. No obligation or pressure.</p>
           <form class="inline-form" id="leadForm" method="POST" action="https://suncoast-lead-form.iammoeskicova0808.workers.dev/">
             <input type="text" name="name" placeholder="Name" aria-label="Name" required>
             <input type="email" name="email" placeholder="Email" aria-label="Email" required>
@@ -1045,14 +1066,6 @@ h2{font-size:clamp(29px,3.5vw,43px);line-height:1.16;letter-spacing:-.025em}
               Request IT Help
             </button>
           </form>
-
-          <div class="contact-inline" style="margin-top:18px;">
-            <span><strong>Call:</strong> <a href="tel:17276479000" onclick="trackContact('phone_click')">(727) 647-9000</a></span>
-            <span class="contact-sep">•</span>
-            <span><strong>Text:</strong> <a href="sms:17276479000" onclick="trackContact('text_click')">Send a text</a></span>
-          </div>
-
-          <p class="form-note">Prefer not to wait? Call or text now.</p>
         </div>
       </div>
     </div>
@@ -1071,20 +1084,6 @@ h2{font-size:clamp(29px,3.5vw,43px);line-height:1.16;letter-spacing:-.025em}
           <p class="muted" style="font-size:14px">This interactive map shows the region, not a surveyed 20-mile coverage boundary. Contact us to confirm travel and availability for your address.</p>
         </div>
       </details>
-    </div>
-  </section>
-
-  <section class="section-tight" id="faq">
-    <div class="container">
-      <div class="center"><h2>Frequently Asked Questions</h2></div>
-      <div class="faq-accordion">
-        <details><summary>Who does Suncoast support?</summary>
-          <p>Small businesses, professional offices, and local teams that need practical, commercial IT support.</p></details>
-        <details><summary>Do I need a long-term agreement?</summary>
-          <p>No. Start with one-time IT assistance or a project. Monthly plans have clearly defined support allowances.</p></details>
-        <details><summary>Which services do you provide?</summary>
-          <p>Business PCs, networking, Wi-Fi, Microsoft 365, printers, account support, security reviews, and technical compliance assistance.</p></details>
-      </div>
     </div>
   </section>
 
