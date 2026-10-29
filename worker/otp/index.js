@@ -106,7 +106,7 @@ async function sendCodeEmail(env, email, code) {
 function validConfiguration(env) {
   return Boolean(env.DB && env.OTP_SECRET && env.OTP_SECRET.length >= 32 &&
     env.RESEND_API_KEY && env.TURNSTILE_SECRET && env.OTP_FROM &&
-    env.SITE_ORIGIN && env.LEAD_UPSTREAM_URL);
+    env.SITE_ORIGIN && env.LEAD_UPSTREAM_URL && env.LEAD_GATEWAY_SECRET && env.LEAD_GATEWAY_SECRET.length >= 32);
 }
 
 function trustedUpstream(env) {
@@ -231,7 +231,8 @@ async function submit(request, env, origin) {
       method: "POST",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
-        "Origin": env.SITE_ORIGIN
+        "Origin": env.SITE_ORIGIN,
+        "X-Suncoast-OTP-Gateway-Secret": env.LEAD_GATEWAY_SECRET
       },
       body: upstreamData.toString(),
       redirect: "manual",
@@ -292,5 +293,11 @@ export default {
       console.error("Suncoast OTP request failed:", error.name);
       return respond({ error: "Service temporarily unavailable." }, 503, origin);
     }
+  },
+  async scheduled(_event, env) {
+    const now = Math.floor(Date.now() / 1000);
+    await env.DB.prepare("DELETE FROM otp_challenges WHERE expires_at < ? AND (proof_expires_at IS NULL OR proof_expires_at < ?)")
+      .bind(now - 86400, now - 86400).run();
+    await env.DB.prepare("DELETE FROM otp_limits WHERE expires_at < ?").bind(now - 86400).run();
   }
 };
