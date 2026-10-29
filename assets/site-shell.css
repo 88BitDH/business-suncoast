@@ -1,0 +1,70 @@
+/* Shared Suncoast business header, service icons, and footer — 2026-10 */
+.sc-contact-strip{background:#082c45!important;color:#fff!important;font:700 14px/1.35 Arial,Helvetica,sans-serif!important}
+.sc-shell-inner{max-width:1180px;width:calc(100% - 36px);margin:0 auto}
+.sc-contact-strip .sc-shell-inner{display:flex;align-items:center;justify-content:flex-end;gap:18px;min-height:38px;flex-wrap:wrap}
+.sc-contact-strip a{color:#fff!important;text-decoration:none!important;font-size:14px!important;display:inline-flex;align-items:center;justify-content:center;min-height:36px;gap:6px}
+.sc-contact-strip a:hover{text-decoration:underline!important}
+.sc-header{display:block!important;background:#0c3957!important;padding:0!important;border:0!important;color:#fff!important;position:relative;z-index:1100}
+.sc-header .sc-shell-inner{display:flex;align-items:center;justify-content:space-between;gap:22px;padding-top:12px;padding-bottom:12px;flex-wrap:wrap}
+.sc-header .sc-brand-social{display:flex;align-items:center;gap:12px;flex:none}
+.sc-header .sc-brand{display:inline-flex;align-items:center;padding:0!important;margin:0!important;background:none!important;border:0!important;text-decoration:none!important;color:#fff!important}
+.sc-header .sc-brand img{width:auto!important;height:66px!important;max-width:176px!important;object-fit:contain!important;background:none!important;border-radius:0!important;filter:none!important}
+.sc-header .sc-social{display:flex!important;align-items:center;gap:5px;flex-wrap:nowrap;margin:0}
+.sc-header .sc-social a{width:39px;height:39px;min-width:39px;display:inline-flex;align-items:center;justify-content:center;
+ border:1px solid #ffffff55;border-radius:9px;background:#ffffff14;color:white!important;text-decoration:none!important;padding:0!important}
+.sc-header .sc-social a:hover{background:#ffffff33}
+.sc-header .sc-social svg{width:21px;height:21px;display:block}
+.sc-header .sc-nav{display:flex!important;flex-wrap:wrap;align-items:center;justify-content:flex-end;gap:9px 17px;width:auto!important;margin:0!important}
+.sc-header .sc-nav>a,.sc-header .sc-nav>.sc-services>summary{color:#eaf6fe!important;text-decoration:none!important;min-height:42px;
+ font:700 14px/1.25 Arial,Helvetica,sans-serif!important;display:inline-flex!important;align-items:center;justify-content:center;
+ border:0!important;border-radius:0;padding:8px 0!important;margin:0!important;cursor:pointer}
+.sc-header .sc-nav>a:hover{text-decoration:underline!important}
+.sc-header .sc-nav>a.sc-contact-cta{background:#ff9a3c!important;color:#193448!important;border-radius:9px!important;padding:11px 15px!important}
+.sc-header .sc-services{position:relative;margin:0;padding:0;border:0}
+.sc-header .sc-services>summary{list-style:none;gap:5px;white-space:nowrap}
+.sc-header .sc-services>summary::-webkit-details-marker{display:none}
+.sc-header .sc-services>summary::after{content:"⌄";font-size:19px;line-height:1;margin-left:4px;color:#eaf6fe}
+.sc-header .sc-services[open]>summary::after{content:"⌃"}
+.sc-header .sc-dropdown{position:absolute;top:100%;left:0;width:300px;max-width:calc(100vw - 36px);padding:7px;
+ border-radius:12px;border:1px solid #cfdfe8;background:#fff;box-shadow:0 16px 36px #001f3460;z-index:1400;display:block}
+.sc-header .sc-dropdown a{display:block!important;font:700 14px/1.35 Arial,Helvetica,sans-serif!important;padding:10px 12px!important;
+ background:none!important;color:#173f56!important;border-radius:7px;border:0!important;text-decoration:none!important;min-height:41px!important}
+.sc-header .sc-dropdown a:hover,.sc-header .sc-dropdown a:focus-visible{background:#e8f3fa!important}
+.sc-header .sc-dropdown a:last-child{border-top:1px solid #d9e7ed!important;color:#0c628b!important;margin-top:5px;padding-top:14px!important}
+.sc-header a:focus-visible,.sc-header summary:focus-visible,.sc-footer a:focus-visible,.sc-contact-strip a:focus-visible{
+ outline:3px solid #ff9a3c!important;outline-offset:3px!important}
+.sc-footer{background:#0c3957!important;color:#fff!important;padding:30px 0!important}
+.sc-footer .sc-footer-grid{display:grid!important;grid-template-columns:1.5fr 1fr 1fr;gap:25px;align-items:start}
+.sc-footer .sc-footer-grid>*{min-width:0}
+.sc-footer strong{display:block;color:#fff!important;font-size:17px;line-height:1.35;margin-bottom:9px}
+.sc-footer p{font:14px/1.7 Arial,Helvetica,sans-serif!important;color:#e8f2f9!important;margin:0!important}
+.sc-footer a{color:#fff!important;text-decoration:underline!important;text-underline-offset:3px;font:700 14px/1.45 Arial,Helvetica,sans-serif!important}
+.sc-footer nav{display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:10px!important;
+ flex-wrap:nowrap!important;justify-content:flex-start!important;margin:0!important;padding:0!important}
+.sc-footer .sc-copyright{margin-top:20px!important;font-size:12px!important;color:#e9f2f8!important}
+.sc-service-icon{width:45px;height:45px;flex:none;display:inline-flex;align-items:center;justify-content:center;
+ background:#e7f3fb;color:#0c638d;border-radius:11px;margin:0 0 4px}
+.sc-service-icon svg{display:block;width:25px;height:25px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.sc-service-icon svg [fill="currentColor"]{stroke:none}
+@media(max-width:1000px){
+ .sc-header .sc-shell-inner{justify-content:center;gap:10px}
+ .sc-header .sc-brand-social{width:100%;justify-content:center}
+ .sc-header .sc-nav{justify-content:center!important}
+}
+@media(max-width:650px){
+ .sc-contact-strip .sc-shell-inner{justify-content:center;gap:12px;min-height:41px}
+ .sc-contact-strip a{font-size:13px!important;min-height:40px}
+ .sc-header .sc-brand img{height:58px!important;max-width:148px!important}
+ .sc-header .sc-social a{width:37px;height:37px;min-width:37px}
+ .sc-header .sc-brand-social{gap:9px}
+ .sc-header .sc-nav{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));width:100%!important;gap:7px!important}
+ .sc-header .sc-nav>a,.sc-header .sc-nav>.sc-services>summary{font-size:12px!important;min-height:44px;
+  text-align:center;padding:7px 5px!important;border:1px solid #ffffff47!important;border-radius:8px!important;width:100%!important}
+ .sc-header .sc-services>summary{display:flex!important}
+ .sc-header .sc-nav>a.sc-contact-cta{padding:7px 5px!important}
+ .sc-header .sc-services{width:100%}
+ .sc-header .sc-dropdown{width:300px;left:0;right:auto}
+ .sc-header .sc-dropdown a{text-align:left!important;font-size:14px!important;justify-content:flex-start!important}
+ .sc-footer .sc-footer-grid{grid-template-columns:1fr;gap:23px}
+ .sc-footer nav a{min-height:36px;display:inline-flex;align-items:center}
+}
