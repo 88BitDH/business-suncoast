@@ -15,11 +15,18 @@
   const pageSize = 4;
   let shown = pageSize;
 
-  function categoryOf(card) {
-    const raw = (card.dataset.topic || card.querySelector(".alerts-tag")?.textContent || "").toLowerCase();
-    if (/scam|fraud|phish|payment|bank/.test(raw)) return "scams";
-    if (/employee|awareness|guide|checklist|habits/.test(raw)) return "guides";
-    return "alerts";
+  function topicsOf(card) {
+    // Explicit topic assignments support articles relevant to more than one category.
+    // Legacy cards and queued data-topic cards remain supported.
+    const assigned = (card.dataset.topics || card.dataset.topic || "").toLowerCase().trim();
+    if (assigned) return assigned.split(/[\s,|]+/).filter(Boolean);
+    const label = (card.querySelector(".alerts-tag")?.textContent || "").toLowerCase();
+    const title = (card.querySelector("h3")?.textContent || "").toLowerCase();
+    const topics = new Set();
+    if (/security alert|vulnerabilit|cisa/.test(label)) topics.add("alerts");
+    if (/scam|fraud|phish|payment|bank/.test(label + " " + title)) topics.add("scams");
+    if (/employee|awareness|guide|checklist|habits/.test(label)) topics.add("guides");
+    return topics.size ? [...topics] : ["alerts"];
   }
   function update(resetPage = false) {
     if (resetPage) shown = pageSize;
@@ -27,7 +34,7 @@
     const category = topic.value;
     const matches = cards.filter(card => {
       const text = card.textContent.toLocaleLowerCase();
-      return (!query || text.includes(query)) && (category === "all" || categoryOf(card) === category);
+      return (!query || text.includes(query)) && (category === "all" || topicsOf(card).includes(category));
     });
     const visible = new Set(matches.slice(0, shown));
     for (const card of cards) card.hidden = !visible.has(card);
