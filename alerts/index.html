@@ -50,6 +50,13 @@
 <section class="alerts-section" id="updates"><div class="alerts-wrap">
 <h2>Business security guides</h2>
 <p class="alerts-intro">These articles provide practical business guidance and summaries of publicly reported threats. They are not reports of a confirmed local incident. For developing threats, consult the original research and official advisories linked in each post.</p>
+<div class="alerts-browser" id="alerts-browser" hidden>
+  <div class="alerts-browser-fields">
+    <div><label for="alerts-search">Find an article</label><input id="alerts-search" type="search" placeholder="Search security alerts or business tips" autocomplete="off"></div>
+    <div><label for="alerts-topic">Browse by topic</label><select id="alerts-topic"><option value="all">All topics</option><option value="alerts">Vulnerabilities &amp; security alerts</option><option value="scams">Scams, phishing &amp; fraud</option><option value="guides">Employee awareness &amp; guides</option></select></div>
+  </div>
+  <p id="alerts-result-count" aria-live="polite" class="alerts-count"></p>
+</div>
 <!-- ADD A NEW ARTICLE CARD HERE when publishing a new post. Give each post its own /alerts/slug/ URL and link to the relevant services. -->
 <div class="alerts-grid">
 <article class="alerts-card">
@@ -73,7 +80,12 @@
 <span class="alerts-meta">October 28, 2026 · Tech support scams</span>
 <a class="alerts-more" href="/alerts/fake-tech-support-scams/">Read the guide →</a>
 </article>
-</div></div></section>
+</div>
+<div class="alerts-browser-actions" id="alerts-browser-actions">
+  <p id="alerts-empty" hidden>No articles found. Try another keyword or select All topics.</p>
+  <button type="button" id="alerts-more" class="alerts-more-button" hidden>Show more articles</button>
+</div>
+</div></section>
 <section class="alerts-section alerts-guide"><div class="alerts-wrap">
 <h2>Useful resources for business owners</h2>
 <div class="alerts-guide-grid">
@@ -94,4 +106,4 @@
 <p>Call <a href="tel:17276479000">(727) 647-9000</a> · <a href="sms:17276479000">Text Suncoast</a></p></div>
 <nav aria-label="Legal pages"><strong>Legal</strong><a href="/terms/">Terms of Service</a><a href="/privacy/">Privacy Policy</a><a href="/client-authorization/">Client Authorization and Consent</a></nav>
 <nav aria-label="Social media"><strong>Follow Suncoast</strong><a href="/facebook/" target="_blank" rel="noopener noreferrer">Facebook</a><a href="/linkedin/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://www.google.com/maps/place/Suncoast+Tech+Support/@27.9600634,-83.0269243,10z/data=!4m8!3m7!1s0xfda3740f6700f1b:0xbe48f9ed81314891!8m2!3d27.9598495!4d-82.6972656!9m1!1b1!16s%2Fg%2F11yvdld9vh?entry=ttu" target="_blank" rel="noopener noreferrer">Google Business Profile</a></nav>
-</div><p class="sc-copyright">© Suncoast Tech Support · 88 Bit Diamond Hands LLC</p></div></footer></body></html>
+</div><p class="sc-copyright">© Suncoast Tech Support · 88 Bit Diamond Hands LLC</p></div></footer><script src="/assets/alerts-browser.js?v=20261106" defer></script></body></html>
