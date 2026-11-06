@@ -9,9 +9,9 @@
   const cards = [...grid.querySelectorAll(":scope > .alerts-card")];
   const input = panel.querySelector("#alerts-search");
   const topic = panel.querySelector("#alerts-topic");
-  const more = panel.querySelector("#alerts-more");
+  const more = document.getElementById("alerts-more");
   const status = panel.querySelector("#alerts-result-count");
-  const empty = panel.querySelector("#alerts-empty");
+  const empty = document.getElementById("alerts-empty");
   const pageSize = 4;
   let shown = pageSize;
 
