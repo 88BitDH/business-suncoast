@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "site": "https://business.suncoasttechsupport.net",
+  "repo": "88BitDH/business-suncoast",
+  "branch": "editorial/cisa-queue-2026",
+  "timezone": "America/New_York",
+  "publication_policy": "Publish no earlier than scheduled date; verify claims against official CISA/vendor sources on publication day; if cannot verify, do not publish and alert owner; never touch consumer website.",
+  "note": "DigiCert scheduled separately for 2026-11-10; do not duplicate it.",
+  "posts": [
+    {
+      "date": "2026-11-12",
+      "slug": "wordpress-active-exploitation-cisa-2026",
+      "title": "CISA WordPress warning: check your business website for an exploited flaw",
+      "tag": "Website security · CISA alert",
+      "summary": "CISA has flagged an exploited WordPress Core vulnerability. Learn which business websites may be affected and what to ask your webmaster.",
+      "topic": "alerts",
+      "source": "https://content.govdelivery.com/accounts/USDHSCISA/bulletins/4318a48"
+    },
+    {
+      "date": "2026-11-17",
+      "slug": "apple-security-updates-cisa-kev-2026",
+      "title": "CISA Apple warning: why office Macs and iPhones need update checks",
+      "tag": "Device security · CISA alert",
+      "summary": "CISA's exploited-vulnerability listing is a reminder to verify update coverage on business Macs, iPads and iPhones.",
+      "topic": "alerts",
+      "source": "https://content.govdelivery.com/accounts/USDHSCISA/bulletins/431ad4e"
+    },
+    {
+      "date": "2026-11-19",
+      "slug": "cisa-cisco-firewall-security-review",
+      "title": "CISA Cisco firewall alert: a practical checklist for small offices",
+      "tag": "Network security · CISA alert",
+      "summary": "Review affected Cisco ASA and FTD firewalls, software updates and exposed management interfaces without assuming other brands are affected.",
+      "topic": "alerts",
+      "source": "https://content.govdelivery.com/accounts/USDHSCISA/bulletins/4310049"
+    },
+    {
+      "date": "2026-11-24",
+      "slug": "beyondtrust-remote-support-cisa-security",
+      "title": "CISA BeyondTrust warning: review affected remote-support deployments",
+      "tag": "Remote support · CISA alert",
+      "summary": "A product-specific vulnerability illustrates why businesses should review remote-support access and self-hosted platform updates.",
+      "topic": "alerts",
+      "source": "https://www.cisa.gov/news-events/alerts/2026/10/16/cisa-urges-patching-critical-vulnerability-beyondtrust-remote-support"
+    },
+    {
+      "date": "2026-12-01",
+      "slug": "windows-ncentral-security-updates-small-business",
+      "title": "Windows and MSP management security: what your office should verify",
+      "tag": "IT security · Practical guide",
+      "summary": "CISA's Windows and N-able N-central notices illustrate why small offices need organized patching, remote management oversight and recovery.",
+      "topic": "guides",
+      "source": "https://content.govdelivery.com/accounts/USDHSCISA/bulletins/428fa64"
+    },
+    {
+      "date": "2026-12-03",
+      "slug": "cisa-cybersecurity-habits-small-business",
+      "title": "Four CISA cybersecurity habits every small business can start today",
+      "tag": "Cybersecurity basics · Practical guide",
+      "summary": "Teach employees four core habits: spot phishing, use strong passwords, enable MFA and keep software updated.",
+      "topic": "guides",
+      "source": "https://www.cisa.gov/secure-our-world"
+    }
+  ]
+}
