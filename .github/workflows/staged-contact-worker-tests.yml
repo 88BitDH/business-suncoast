@@ -1,0 +1,28 @@
+name: Staged contact Worker regression (no deploy)
+
+on:
+  push:
+    branches:
+      - security/combined-contact-protection-2026
+    paths:
+      - 'security/combined-contact-protection/business-lead/**'
+      - '.github/workflows/staged-contact-worker-tests.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test-business-lead:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out staging branch
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify Worker syntax
+        run: node --check security/combined-contact-protection/business-lead/index.js
+      - name: Run offline tests (mock Siteverify and Make webhook)
+        run: node --test security/combined-contact-protection/business-lead/test.mjs
