@@ -1,0 +1,8 @@
+"test_id","source_page","expected_test_marker","timestamp_et","browser_redirect_pass","turnstile_pass","make_execution_id","make_delivered_pass","zoho_record_id","zoho_received_pass","notification_pass","duplicate_count","overall_result","sanitized_notes"
+"B01","/","SCQA-20261107-B01","","","","","","","","","","NOT RUN",""
+"B02","/services/","SCQA-20261107-B02","","","","","","","","","","NOT RUN",""
+"B03","/wisp-compliance/","Suncoast QA Test B03","","","","","","","","","","NOT RUN",""
+"B04","/reviews/","SCQA-20261107-B04","","","","","","","","","","NOT RUN",""
+"B05","/ (no Turnstile)","SCQA-20261107-B05","","","","","","","","","","NOT RUN",""
+"B06","staging only","SCQA-20261107-B06","","","","","","","","","","NOT RUN",""
+"R01","residential form (verify URL)","SCQA-20261107-R01","","","","","","","","","","NOT RUN",""
