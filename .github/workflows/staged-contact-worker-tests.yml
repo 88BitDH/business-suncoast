@@ -24,5 +24,5 @@ jobs:
           node-version: '22'
       - name: Verify Worker syntax
         run: node --check security/combined-contact-protection/business-lead/index.js
-      - name: Run offline tests (mock Siteverify and Make webhook)
-        run: node --test security/combined-contact-protection/business-lead/test.mjs
+      - name: Run offline Worker and real-site form-contract tests
+        run: node --test security/combined-contact-protection/business-lead/test.mjs security/combined-contact-protection/business-lead/site-contract.test.mjs
