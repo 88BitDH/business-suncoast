@@ -97,3 +97,68 @@ html{scroll-padding-top:146px}
  .sc-header .sc-nav>a,.sc-header .sc-nav>.sc-services>summary{min-height:40px!important}
  html{scroll-padding-top:211px}
 }
+
+
+/* Services slider control: same native details/summary accessibility, no chevron.
+   Only the Services menu is restyled; other header buttons remain unchanged. */
+.sc-header .sc-services>summary{
+  position:relative!important;
+  gap:9px!important;
+  padding:8px 12px!important;
+  border:1px solid #ffffff2e!important;
+  border-radius:9px!important;
+  background:#ffffff12!important;
+  text-decoration:none!important;
+  transition:background-color .18s ease,border-color .18s ease;
+}
+.sc-header .sc-services>summary::after,
+.sc-header .sc-services[open]>summary::after{
+  content:""!important;
+  position:static!important;
+  display:inline-block!important;
+  flex:none!important;
+  width:18px!important;
+  height:18px!important;
+  margin:0!important;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23eaf6fe' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 7h8m4 0h4M4 17h4m4 0h8'/%3E%3Ccircle cx='14' cy='7' r='2'/%3E%3Ccircle cx='10' cy='17' r='2'/%3E%3C/svg%3E") center/contain no-repeat!important;
+  font-size:0!important;
+  line-height:0!important;
+  color:transparent!important;
+}
+.sc-header .sc-services>summary::before{
+  content:"";
+  position:absolute;
+  left:12px;
+  right:12px;
+  bottom:3px;
+  height:2px;
+  border-radius:2px;
+  background:#ff9a3c;
+  transform:scaleX(0);
+  transform-origin:left center;
+  transition:transform .2s ease;
+}
+.sc-header .sc-services>summary:hover,
+.sc-header .sc-services[open]>summary{
+  background:#ffffff24!important;
+  border-color:#ffffff60!important;
+}
+.sc-header .sc-services>summary:hover::before,
+.sc-header .sc-services[open]>summary::before{transform:scaleX(1)}
+.sc-header .sc-services>.sc-dropdown{
+  top:calc(100% + 9px);
+  border:1px solid #d2e3ed;
+  box-shadow:0 15px 32px #001f3445;
+}
+.sc-header .sc-services[open]>.sc-dropdown{
+  animation:sc-services-slide .2s ease-out both;
+}
+@keyframes sc-services-slide{
+  from{opacity:0;transform:translate(-12px,-6px)}
+  to{opacity:1;transform:translate(0,0)}
+}
+@media(prefers-reduced-motion:reduce){
+  .sc-header .sc-services[open]>.sc-dropdown{animation:none}
+  .sc-header .sc-services>summary,
+  .sc-header .sc-services>summary::before{transition:none}
+}
