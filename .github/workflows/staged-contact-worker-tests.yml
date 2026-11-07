@@ -6,6 +6,7 @@ on:
       - security/combined-contact-protection-2026
     paths:
       - 'security/combined-contact-protection/business-lead/**'
+      - 'security/combined-contact-protection/stage-worker/**'
       - '.github/workflows/staged-contact-worker-tests.yml'
   workflow_dispatch:
 
@@ -24,5 +25,7 @@ jobs:
           node-version: '22'
       - name: Verify Worker syntax
         run: node --check security/combined-contact-protection/business-lead/index.js
-      - name: Run offline Worker and real-site form-contract tests
-        run: node --test security/combined-contact-protection/business-lead/test.mjs security/combined-contact-protection/business-lead/site-contract.test.mjs
+      - name: Verify isolated QA Worker syntax
+        run: node --check security/combined-contact-protection/stage-worker/index.js
+      - name: Run offline Worker, QA isolation, and real-site form-contract tests
+        run: node --test security/combined-contact-protection/business-lead/test.mjs security/combined-contact-protection/business-lead/site-contract.test.mjs security/combined-contact-protection/stage-worker/test.mjs
