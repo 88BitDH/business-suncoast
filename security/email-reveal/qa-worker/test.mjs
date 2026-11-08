@@ -96,3 +96,18 @@ test("QA requests with missing binding fail closed",async()=>{
   const response=await qa.fetch(request(base+"/api/email-reveal"),{...env,TURNSTILE_SECRET:""});
   assert.equal(response.status,503);
 });
+
+test("QA page exercises the real modal entrypoints, header icon, and preloaded Turnstile branch", async()=>{
+ const response=await qa.fetch(new Request(base+"/qa"),env);
+ assert.equal(response.status,200);
+ const html=await response.text();
+ assert.match(html,/class="sc-header"/);
+ assert.match(html,/class="sc-email-trigger" data-email-reveal="sales"/);
+ assert.match(html,/class="sc-email-inline" data-email-reveal="sales"/);
+ assert.match(html,/class="sc-email-inline" data-email-reveal="partners"/);
+ assert.match(html,/name="viewport"/);
+ assert.match(html,/turnstile\/v0\/api\.js/);
+ assert.match(html,/assets\/email-reveal\.js/);
+ assert.match(html,/business\.suncoasttechsupport\.net\/#contact/);
+ assert.doesNotMatch(html,/(?:sales|partners|support)@suncoasttechsupport\.(com|net)/i);
+});
