@@ -46,7 +46,8 @@ Do not use a real client email or personal data.
 
 ## Remaining gates before any production action
 
-- [x] User-confirmed synthetic Sales and Partners reveals with the earlier QA browser page.\n- [ ] Confirm the **new full modal** renders, accepts real Turnstile tokens, and reveals both synthetic aliases.
+- [x] User-confirmed synthetic Sales and Partners reveals with the earlier QA browser page.
+- [ ] Confirm the **new full modal** renders, accepts real Turnstile tokens, and reveals both synthetic aliases.
 - [ ] Confirm both synthetic aliases reveal after verification, while invalid/expired/replayed tokens fail in the real runtime.
 - [ ] Test the **actual business-site modal and shared header** on mobile, desktop, keyboard and screen reader, not only this compact QA page.
 - [ ] Configure a separately named **production** email-reveal Worker and Cloudflare route `business.suncoasttechsupport.net/api/email-reveal`, with proper encrypted real Sales/Partners aliases and rate limiting **only after explicit approval**.
