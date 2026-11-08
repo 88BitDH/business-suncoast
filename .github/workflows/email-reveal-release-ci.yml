@@ -1,0 +1,27 @@
+name: Suncoast Verified Email Production Release CI
+on:
+  push:
+    branches:
+      - release/verified-email-reveal-2026-11-08
+    paths:
+      - 'assets/email-reveal.*'
+      - 'security/email-reveal/**'
+      - '**/*.html'
+      - '.github/workflows/email-reveal-release-ci.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check client and backend JavaScript
+        run: |
+          node --check assets/email-reveal.js
+          node --check security/email-reveal/worker.mjs
+      - name: Verify email reveal, existing forms, Ads conversions and contact paths
+        run: node --test security/email-reveal/production.test.mjs
