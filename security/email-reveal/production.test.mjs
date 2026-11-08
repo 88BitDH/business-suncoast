@@ -191,6 +191,6 @@ test("latest shared mobile navigation and contact click tracking retained",()=>{
  assert.match(js,/phone_click/);
  for(const path of pages){
   const html=readFileSync(join(ROOT,path),"utf8");
-  assert.match(html,/\/assets\/site-shell\.js\?v=20261108-mobile-contact/,path);
+  assert.match(html,/\/assets\/site-shell\.js\?v=20261108-phone-conversion/,path);
  }
 });

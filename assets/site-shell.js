@@ -118,12 +118,21 @@
     var action = /^tel:/i.test(href) ? 'phone_click' : /^sms:/i.test(href) ? 'text_click' : '';
     if (!action) return;
     try {
-      contactTag()('event', action, {
+      var tag = contactTag();
+      tag('event', action, {
         event_category: 'contact',
         event_label: action,
         link_location: contactLocation(link),
         transport_type: 'beacon'
       });
+      if (action === 'phone_click') {
+        tag('event', 'conversion', {
+          send_to: 'AW-17992501324/rt-XCLrMoa8cEMyQv4ND',
+          value: 1.0,
+          currency: 'USD',
+          transport_type: 'beacon'
+        });
+      }
     } catch (error) {
       // Analytics must never prevent the normal phone or messaging action.
     }
