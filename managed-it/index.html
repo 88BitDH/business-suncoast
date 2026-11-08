@@ -87,6 +87,7 @@ footer{background:var(--deep);color:white;padding:27px 0}footer a{color:#dfedf7}
 @media(min-width:801px){.b2b-footer{padding-bottom:28px}}
 </style>
 <link rel="stylesheet" href="/assets/site-shell.css?v=20261107-services-slider">
+<link rel="stylesheet" href="/assets/email-reveal.css?v=20261108-guarded">
 </head>
 <body>
 <div class="sc-contact-strip"><div class="sc-shell-inner">
@@ -105,9 +106,9 @@ footer{background:var(--deep);color:white;padding:27px 0}footer a{color:#dfedf7}
             <a href="https://www.google.com/maps/place/Suncoast+Tech+Support/@27.9600634,-83.0269243,10z/data=!4m8!3m7!1s0xfda3740f6700f1b:0xbe48f9ed81314891!8m2!3d27.9598495!4d-82.6972656!9m1!1b1!16s%2Fg%2F11yvdld9vh?entry=ttu" aria-label="Suncoast Google Business Profile (opens in a new tab)" title="Google Business Profile" target="_blank" rel="noopener noreferrer">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 10c0 5.1-8 12-8 12S4 15.1 4 10a8 8 0 1 1 16 0Z"/><path d="M14.6 8.4a3.3 3.3 0 1 0 .2 3.7M14.7 10.4h-3"/></svg>
             </a>
-            <a href="mailto:Sales@SuncoastTechSupport.com" aria-label="Email Suncoast Sales" title="Email Sales">
+            <button type="button" class="sc-email-trigger" data-email-reveal="sales" aria-label="Show Sales email after verification" title="Show Sales Email">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 7 8.5 6 8.5-6"/></svg>
-            </a>
+            </button>
           </nav></div>
 <nav class="sc-nav" aria-label="Primary site navigation"><details class="sc-services"><summary>Services</summary><div class="sc-dropdown">
 <a href="/it-support/">Business IT Support</a>
@@ -206,4 +207,5 @@ if(params.get('utm_source'))document.getElementById('lead_source').value=params.
 form.addEventListener('submit',function(){try{sessionStorage.setItem('suncoast_b2b_lead_pending',String(Date.now()))}catch(e){/* Do not block submission */}});
 })();
 </script>
+<script src="/assets/email-reveal.js?v=20261108-guarded" defer></script>
 </body></html>
