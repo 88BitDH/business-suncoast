@@ -1,0 +1,70 @@
+{
+  "document_status": "preflight_design_only_not_approved",
+  "prepared_at": "2026-11-08",
+  "production_site": "business.suncoasttechsupport.net",
+  "github": {
+    "repository": "88BitDH/business-suncoast",
+    "staging_branch": "feature/verified-email-reveal-latest-2026-11-08",
+    "baseline_main_commit_at_review": "c981a8f9c61401816e69f314c59a5b36dfc0ab67",
+    "require_fast_forward_against_latest_main_before_merge": true
+  },
+  "worker": {
+    "suggested_name": "suncoast-email-reveal",
+    "main_module": "security/email-reveal/worker.mjs",
+    "compatibility_date": "2026-11-08",
+    "public_workers_dev": false,
+    "route": "business.suncoasttechsupport.net/api/email-reveal",
+    "route_method": "POST",
+    "zone_id_omitted_from_public_file": true
+  },
+  "cloudflare_widget": {
+    "name": "Suncoast Verified Email Reveal - Staged",
+    "public_sitekey": "0x4AAAAAAF4tQwhQiUBOGQe0",
+    "allowed_hostnames": [
+      "business.suncoasttechsupport.net"
+    ],
+    "required_action": "email_reveal",
+    "source_of_secret": "Cloudflare widget secret stored only as encrypted binding"
+  },
+  "bindings": [
+    {
+      "name": "TURNSTILE_SECRET",
+      "type": "secret_text",
+      "value_in_git": false
+    },
+    {
+      "name": "SALES_EMAIL",
+      "type": "secret_text",
+      "value_in_git": false
+    },
+    {
+      "name": "PARTNERS_EMAIL",
+      "type": "secret_text",
+      "value_in_git": false
+    },
+    {
+      "name": "EMAIL_REVEAL_LIMITER",
+      "type": "ratelimit",
+      "namespace_id": "8811082",
+      "simple": {
+        "limit": 12,
+        "period": 60
+      },
+      "tuning_required": true
+    }
+  ],
+  "rollout_order": [
+    "Confirm interactive browser QA results for both synthetic email aliases",
+    "Review privacy/contact wording and site accessibility",
+    "Verify staging tests pass and staging branch is based on current production main",
+    "Record current main commit and route list as rollback evidence",
+    "Create separate production email-reveal Worker with encrypted bindings, no public workers.dev and no site route at first",
+    "Attach exact /api/email-reveal route only after explicit approval",
+    "Verify HTTPS POST/GET behavior, Siteverify, rate limiting and real mailbox receipt with controlled test",
+    "Publish updated website HTML/CSS/JS after Worker is verified",
+    "Coordinate CISA and DigiCert scheduled article publication templates to prevent old address reappearance",
+    "Monitor requests and contact conversions; if API breaks, switch UI to contact form/phone fallback without republishing raw email addresses"
+  ],
+  "deployment_mode": "manual_owner_approved_only",
+  "script_does_not_deploy": true
+}
