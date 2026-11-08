@@ -5,16 +5,16 @@
 
 ## Part W — Browser QA verification
 
-The operator's shorthand `w` was interpreted as **browser testing completed**. However **the actual browser result is not in the conversation**, and it cannot be independently confirmed as successful:
+**User-confirmed PASS, earlier synthetic QA page:** The user selected the shortcut **“Both test addresses appeared”** on November 8, confirming that `sales@example.test` and `partners@example.test` were revealed after Cloudflare verification on the **original simplified QA page**. This is the user's reported browser result, not a telemetry-derived finding.
 
-- Cloudflare confirms `suncoast-email-reveal-qa-20261108` exists; its `workers.dev` URL is enabled; four bindings are present: `TURNSTILE_SECRET`, synthetic `SALES_EMAIL` and `PARTNERS_EMAIL`, and `EMAIL_REVEAL_LIMITER` (12 calls/60 seconds).
-- The separate managed Turnstile QA widget is bound to `suncoast-email-reveal-qa-20261108.iammoeskicova0808.workers.dev`.
-- Cloudflare Workers Observability event/usage lookup covering **2026-11-08 00:00Z to approximately 13:38Z** returned **zero events attributed to the QA Worker**. Other Workers did show recorded events. This could indicate no recorded invocation or unconfigured/unavailable QA logs; **do not infer the test failed, succeeded, or did not occur**.
-- Browser retrieval from the assistant runtime was unsuccessful due DNS resolution/network access. The remote web fetch likewise could not access the QA page.
-- **Expected real-user evidence:** first, after completing the QA Turnstile, `sales@example.test` is shown; after reloading and repeating for Partners, `partners@example.test` is shown. Save a screenshot of each result or report the exact HTTP/visible error.
-- Node/GitHub Actions tests validate simulated Siteverify and handler rules; **they are not proof a genuine Turnstile token was accepted at the live Cloudflare edge**.
+**New full-modal QA page deployed — browser verification still PENDING.** The isolated Worker `suncoast-email-reveal-qa-20261108` now serves the actual staged Show Email JavaScript and CSS, a header email icon, Sales and Partners links, and a preloaded Turnstile script. Four encrypted/rate-limit bindings were preserved on upload with strict inheritance. The production site and Workers remain unchanged.
 
-**Do not advance release gate until browser evidence is provided and the genuine token result is known.**
+- QA browser link: `https://suncoast-email-reveal-qa-20261108.iammoeskicova0808.workers.dev/qa`.
+- Confirm the modal appears for Sales, Partners and the header envelope, reveals the two synthetic aliases only after a fresh token, closes with Escape and its Close button, restores focus, and fits on a phone.
+- Cloudflare telemetry was not conclusive in the previous check; never claim independent log confirmation of the original run.
+- Browser automation and screen-reader testing remain separate sign-off gates.
+
+**Do not deploy production until the full-modal browser tests are confirmed, privacy wording reviewed, and release explicitly approved.**
 
 ## Part D — Production release prerequisites
 
@@ -49,7 +49,7 @@ See `release-plan.json` for the machine-readable **non-executable** release mani
 
 ## 10-stage release and rollback order
 
-1. **Verify** both QA browser results using actual Cloudflare Turnstile tokens; record two synthetic reveals or the exact failure before any production change.
+1. **Verify** the newly deployed **full modal** with actual Cloudflare Turnstile tokens on desktop and mobile (the earlier simplified QA page was user-confirmed passed). Record both synthetic reveals and keyboard/focus behavior before any production change.
 2. **Review** the Privacy Policy modification and accessible interface. Do not inadvertently redirect privacy complaints to an unmonitored Sales mailbox.
 3. **Freeze** the exact current `main` commit, current production site deployment, Cloudflare Worker route inventory, and existing Mail/Make workflow behavior. Re-run GitHub comparison against `main` before merge.
 4. **Prepare** a separate production Worker with the production widget secret and real alias secrets in encrypted Cloudflare bindings only; disable public `workers.dev`. Do not modify existing live lead Workers.
