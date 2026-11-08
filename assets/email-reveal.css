@@ -1,0 +1,52 @@
+/* Staged email-reveal controls, scoped so existing header/menu styles remain unchanged. */
+.sc-header .sc-social button.sc-email-trigger {
+  appearance:none; -webkit-appearance:none; box-sizing:border-box;
+  width:39px; height:39px; min-width:39px; margin:0; padding:0;
+  display:inline-flex; align-items:center; justify-content:center;
+  border:0; border-radius:8px; background:transparent; color:inherit;
+  font:inherit; cursor:pointer; transition:background .15s ease;
+}
+.sc-header .sc-social button.sc-email-trigger:hover {background:#ffffff33}
+.sc-header .sc-social button.sc-email-trigger:focus-visible,
+button.sc-email-inline:focus-visible {
+  outline:3px solid #ffa746!important; outline-offset:3px;
+}
+.sc-header .sc-social button.sc-email-trigger svg {width:21px;height:21px;display:block}
+button.sc-email-inline {
+  display:inline; appearance:none; -webkit-appearance:none;
+  margin:0; padding:0; color:inherit; background:none;
+  border:0; border-radius:2px; text-decoration:underline;
+  text-underline-offset:3px; font:inherit; cursor:pointer;
+}
+button.sc-email-inline:hover {text-decoration-thickness:2px}
+.sc-email-shade {position:fixed;inset:0;z-index:100000;display:grid;
+  place-items:center; overflow:auto; padding:16px;
+  background:rgba(3,21,34,.74)}
+.sc-email-panel {position:relative; width:min(100%,490px);max-height:calc(100dvh - 32px);
+  overflow:auto;box-sizing:border-box;padding:30px 24px;border-radius:14px;
+  background:#fff;color:#1b3140;box-shadow:0 20px 70px #071a2a7a;
+  font:16px/1.55 Arial,Helvetica,sans-serif;text-align:left}
+.sc-email-panel h2{margin:0 36px 10px 0;font-size:23px;line-height:1.25;color:#0c3957}
+.sc-email-panel p{margin:12px 0}
+.sc-email-panel a{color:#075e88!important;text-decoration:underline!important}
+.sc-email-panel a:focus-visible{outline:3px solid #f58220;outline-offset:3px}
+.sc-email-close{position:absolute;right:12px;top:12px;display:inline-flex;
+  align-items:center;justify-content:center;width:42px;height:42px;
+  border:0;border-radius:8px;color:#11354c;background:#e9f1f5;
+  font-size:28px;cursor:pointer}
+.sc-email-close:focus-visible{outline:3px solid #f58220}
+.sc-email-challenge{min-height:64px;margin:18px 0 8px}
+.sc-email-status{font-size:14px;color:#334f62}
+.sc-email-result{background:#edf7f8;border:1px solid #b1d6db;border-radius:8px;
+  margin:14px 0;padding:12px 14px;overflow-wrap:anywhere;font-weight:700}
+.sc-email-alternatives{font-size:14px;color:#405866}
+@media(max-width:600px){
+  .sc-header .sc-social button.sc-email-trigger{width:37px;min-width:37px;height:37px}
+  .sc-email-panel{padding:26px 16px}
+}
+@media(max-width:400px){
+  .sc-header .sc-social button.sc-email-trigger{width:35px;min-width:35px;height:35px}
+}
+@media(prefers-reduced-motion:reduce){
+  .sc-header .sc-social button.sc-email-trigger{transition:none}
+}
