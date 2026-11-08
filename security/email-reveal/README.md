@@ -1,5 +1,12 @@
 # Suncoast Tech Support — verified Show Email rollout
 
+## November 8 QA deployment update
+
+A **separately named test-only Worker** `suncoast-email-reveal-qa-20261108` is deployed to its own `workers.dev` URL, with a dedicated Turnstile widget, encrypted synthetic `example.test` mailbox bindings, and a rate-limit binding (12 requests/60 seconds). No customer email addresses or production Worker routes are involved.
+
+This does **not** mean production email reveal is deployed. The normal business-site buttons remain staged and unusable on the live site until the production API is explicitly approved and configured. The separate QA page still requires an interactive browser challenge to confirm real Cloudflare runtime behavior. See `qa-worker/README.md` for the smoke test and the 48-passing-test evidence.
+
+
 **November 8, 2026. STAGING ONLY — do not merge or deploy before completing all gates.**
 
 ## Scope completed on this branch
