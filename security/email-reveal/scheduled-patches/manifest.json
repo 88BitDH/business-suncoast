@@ -1,0 +1,55 @@
+{
+  "status": "staged_not_published",
+  "publishBranchesUnchanged": true,
+  "files": [
+    {
+      "sourceBranch": "editorial/cisa-queue-2026",
+      "sourcePath": "alerts/apple-security-updates-cisa-kev-2026/index.html",
+      "stagedTemplate": "security/email-reveal/scheduled-patches/alerts__apple-security-updates-cisa-kev-2026__index.html.txt",
+      "replacements": 1,
+      "publishGate": "Email-reveal Worker and rate limiter must be live and validated before applying"
+    },
+    {
+      "sourceBranch": "editorial/cisa-queue-2026",
+      "sourcePath": "alerts/cisa-cybersecurity-habits-small-business/index.html",
+      "stagedTemplate": "security/email-reveal/scheduled-patches/alerts__cisa-cybersecurity-habits-small-business__index.html.txt",
+      "replacements": 1,
+      "publishGate": "Email-reveal Worker and rate limiter must be live and validated before applying"
+    },
+    {
+      "sourceBranch": "editorial/cisa-queue-2026",
+      "sourcePath": "alerts/beyondtrust-remote-support-cisa-security/index.html",
+      "stagedTemplate": "security/email-reveal/scheduled-patches/alerts__beyondtrust-remote-support-cisa-security__index.html.txt",
+      "replacements": 1,
+      "publishGate": "Email-reveal Worker and rate limiter must be live and validated before applying"
+    },
+    {
+      "sourceBranch": "editorial/cisa-queue-2026",
+      "sourcePath": "alerts/windows-ncentral-security-updates-small-business/index.html",
+      "stagedTemplate": "security/email-reveal/scheduled-patches/alerts__windows-ncentral-security-updates-small-business__index.html.txt",
+      "replacements": 1,
+      "publishGate": "Email-reveal Worker and rate limiter must be live and validated before applying"
+    },
+    {
+      "sourceBranch": "editorial/cisa-queue-2026",
+      "sourcePath": "alerts/cisa-cisco-firewall-security-review/index.html",
+      "stagedTemplate": "security/email-reveal/scheduled-patches/alerts__cisa-cisco-firewall-security-review__index.html.txt",
+      "replacements": 1,
+      "publishGate": "Email-reveal Worker and rate limiter must be live and validated before applying"
+    },
+    {
+      "sourceBranch": "editorial/cisa-queue-2026",
+      "sourcePath": "alerts/wordpress-active-exploitation-cisa-2026/index.html",
+      "stagedTemplate": "security/email-reveal/scheduled-patches/alerts__wordpress-active-exploitation-cisa-2026__index.html.txt",
+      "replacements": 1,
+      "publishGate": "Email-reveal Worker and rate limiter must be live and validated before applying"
+    },
+    {
+      "sourceBranch": "scheduled/digicert-alert-2026-11-10",
+      "sourcePath": "alerts/digicert-customer-data-exposure/index.html",
+      "stagedTemplate": "security/email-reveal/scheduled-patches/alerts__digicert-customer-data-exposure__index.html.txt",
+      "replacements": 1,
+      "publishGate": "Email-reveal Worker and rate limiter must be live and validated before applying"
+    }
+  ]
+}
