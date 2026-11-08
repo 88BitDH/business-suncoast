@@ -1,0 +1,33 @@
+name: Verified email reveal — staging tests only
+
+on:
+  push:
+    branches:
+      - feature/verified-email-reveal-2026-11-08
+    paths:
+      - 'assets/email-reveal.js'
+      - 'assets/email-reveal.css'
+      - 'security/email-reveal/**'
+      - '**/*.html'
+      - '.github/workflows/staged-email-reveal.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out staged changes
+        uses: actions/checkout@v4
+      - name: Use Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify email-reveal frontend syntax
+        run: node --check assets/email-reveal.js
+      - name: Verify email-reveal Worker syntax
+        run: node --check security/email-reveal/worker.mjs
+      - name: Test rate limiting, verification, site emails and scheduled article templates
+        run: node --test security/email-reveal/test.mjs
