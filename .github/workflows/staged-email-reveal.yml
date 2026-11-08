@@ -29,6 +29,8 @@ jobs:
       - name: Verify email-reveal frontend syntax
         run: node --check assets/email-reveal.js
       - name: Verify email-reveal Worker syntax
-        run: node --check security/email-reveal/worker.mjs
+        run: |
+          node --check security/email-reveal/worker.mjs
+          node --check security/email-reveal/qa-worker/index.js
       - name: Test rate limiting, verification, site emails and scheduled article templates
-        run: node --test security/email-reveal/test.mjs
+        run: node --test security/email-reveal/test.mjs security/email-reveal/qa-worker/test.mjs
