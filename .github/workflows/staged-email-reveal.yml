@@ -32,5 +32,6 @@ jobs:
         run: |
           node --check security/email-reveal/worker.mjs
           node --check security/email-reveal/qa-worker/index.js
+          node --check security/email-reveal/qa-worker/runtime.js
       - name: Test rate limiting, verification, site emails and scheduled article templates
-        run: node --test security/email-reveal/test.mjs security/email-reveal/qa-worker/test.mjs
+        run: node --test security/email-reveal/test.mjs security/email-reveal/qa-worker/test.mjs security/email-reveal/qa-worker/runtime.test.mjs
