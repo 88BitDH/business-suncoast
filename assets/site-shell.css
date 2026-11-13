@@ -13,6 +13,12 @@
 .sc-header .sc-social a{width:39px;height:39px;min-width:39px;display:inline-flex;align-items:center;justify-content:center;
  border:1px solid #ffffff55;border-radius:9px;background:#ffffff14;color:white!important;text-decoration:none!important;padding:0!important}
 .sc-header .sc-social a:hover{background:#ffffff33}
+/* Match the CAPTCHA-protected email button to the adjacent social icon tiles. */
+.sc-header .sc-social button.sc-email-trigger{width:39px;height:39px;min-width:39px;display:inline-flex;align-items:center;justify-content:center;border:1px solid #ffffff55;border-radius:9px;background:#ffffff14;color:#fff!important;padding:0!important;cursor:pointer;font:inherit}
+.sc-header .sc-social button.sc-email-trigger:hover{background:#ffffff33}
+.sc-header .sc-social button.sc-email-trigger:focus-visible{outline:3px solid #ff9a3c!important;outline-offset:3px!important}
+@media(max-width:650px){.sc-header .sc-social button.sc-email-trigger{width:35px;height:35px;min-width:35px}.sc-header.sc-mobile-ready .sc-mobile-panel .sc-social button.sc-email-trigger{width:44px;height:44px;min-width:44px}}
+
 .sc-header .sc-social svg{width:21px;height:21px;display:block}
 .sc-header .sc-nav{display:flex!important;flex-wrap:wrap;align-items:center;justify-content:flex-end;gap:9px 17px;width:auto!important;margin:0!important}
 .sc-header .sc-nav>a,.sc-header .sc-nav>.sc-services>summary{color:#eaf6fe!important;text-decoration:none!important;min-height:42px;
